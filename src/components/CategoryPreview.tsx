@@ -62,7 +62,7 @@ export default function CategoryPreview() {
   }
 
   return (
-    <section className="relative py-6 md:py-16 px-6 bg-transparent">
+    <section className="relative py-8 md:py-16 px-5 sm:px-6 bg-transparent">
 
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -78,7 +78,7 @@ export default function CategoryPreview() {
           <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#38bdf8]/[0.08] px-4 py-1.5 rounded-full inline-block">
             Browse by Category
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mt-3 mb-2 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mt-3 mb-2 leading-tight">
             Our <span className="text-[#38bdf8]">Product Lines</span>
           </h2>
           <p className="text-[#b0d0e8] text-sm md:text-base max-w-xl mx-auto leading-relaxed">

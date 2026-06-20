@@ -230,7 +230,7 @@ export default function ContactPage() {
             ))}
           </div>
 
-          <div className="max-w-5xl mx-auto px-6 text-center z-10" ref={hero.ref}>
+          <div className="max-w-5xl mx-auto px-5 sm:px-6 text-center z-10" ref={hero.ref}>
             <div style={{ opacity: hero.visible ? 1 : 0, transform: `translateY(${hero.visible ? 0 : 30}px)`, transition: "opacity 1.2s cubic-bezier(0.22,1,0.36,1) 0.1s, transform 1.2s cubic-bezier(0.22,1,0.36,1) 0.1s" }}>
               <span className="text-xs text-[#38bdf8] font-semibold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-5 py-2 rounded-full border border-[#0ea5e9]/10 inline-block mb-5">
                 EverCeutical Support
@@ -257,7 +257,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          <div className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
             style={{ opacity: hero.visible ? 1 : 0, transition: "opacity 0.8s ease 1s" }}>
             <span className="text-[10px] text-white/50 tracking-widest uppercase">Scroll</span>
             <div className="w-5 h-8 border-2 border-white/30 rounded-full flex justify-center pt-1.5">
@@ -273,7 +273,7 @@ export default function ContactPage() {
             <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-[#38bdf8]/[0.02] blur-3xl" />
           </div>
 
-          <div className="w-full max-w-7xl mx-auto px-6 z-10 text-glow">
+          <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 text-glow">
             <div ref={formSection.ref} className="text-center mb-8"
               style={{ opacity: formSection.visible ? 1 : 0, transform: `translateY(${formSection.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
               <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">Contact Us</span>
@@ -395,7 +395,7 @@ export default function ContactPage() {
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-[#0ea5e9]/[0.02] blur-[120px]" />
           </div>
 
-          <div className="w-full max-w-4xl mx-auto px-6 z-10 text-glow">
+          <div className="w-full max-w-4xl mx-auto px-5 sm:px-6 z-10 text-glow">
             <div ref={faqSection.ref} className="text-center mb-8"
               style={{ opacity: faqSection.visible ? 1 : 0, transform: `translateY(${faqSection.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
               <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">Got Questions?</span>
@@ -423,7 +423,7 @@ export default function ContactPage() {
             <div className="absolute -bottom-20 right-1/4 w-[350px] h-[350px] rounded-full bg-[#38bdf8]/[0.02] blur-3xl" />
           </div>
 
-          <div className="w-full max-w-7xl mx-auto px-6 z-10 text-glow">
+          <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 text-glow">
             <div ref={locationSection.ref} className="text-center mb-8"
               style={{ opacity: locationSection.visible ? 1 : 0, transform: `translateY(${locationSection.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
               <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">Our Office</span>
@@ -525,7 +525,7 @@ export default function ContactPage() {
             <div className="absolute bottom-1/3 left-0 w-[350px] h-[350px] rounded-full bg-[#38bdf8]/[0.02] blur-3xl" />
           </div>
 
-          <div className="w-full max-w-5xl mx-auto px-6 z-10 text-glow">
+          <div className="w-full max-w-5xl mx-auto px-5 sm:px-6 z-10 text-glow">
             <div ref={socialSection.ref} className="text-center mb-8"
               style={{ opacity: socialSection.visible ? 1 : 0, transform: `translateY(${socialSection.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
               <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">Stay Connected</span>
@@ -592,7 +592,7 @@ export default function ContactPage() {
 
         {/* NEWSLETTER CTA */}
         <section className="relative bg-transparent py-10 md:py-14 overflow-hidden">
-          <div className="w-full max-w-3xl mx-auto px-6">
+          <div className="w-full max-w-3xl mx-auto px-5 sm:px-6">
             <div ref={newsletterSection.ref}
               className="relative rounded-3xl p-7 md:p-10 lg:p-14 text-center overflow-hidden glass-surface"
               style={{
@@ -639,7 +639,7 @@ export default function ContactPage() {
 
         {/* BOTTOM CTA */}
         <section className="relative bg-transparent py-16 md:py-24">
-          <div className="max-w-4xl mx-auto px-6 text-center">
+          <div className="max-w-4xl mx-auto px-5 sm:px-6 text-center">
             <div ref={ctaSection.ref} style={{ opacity: ctaSection.visible ? 1 : 0, transform: `translateY(${ctaSection.visible ? 0 : 60}px) scale(${ctaSection.visible ? 1 : 0.9})`, transition: "opacity 1.5s cubic-bezier(0.22,1,0.36,1), transform 1.5s cubic-bezier(0.22,1,0.36,1)" }}>
               <div className="relative rounded-3xl p-8 md:p-12 lg:p-16 overflow-hidden"
                 style={{

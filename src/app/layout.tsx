@@ -14,11 +14,11 @@ export const metadata: Metadata = {
     "Advanced exosome biotechnology engineered for regenerative medicine, aesthetic dermatology, and cellular optimization.",
   icons: {
     icon: [
-      { url: "https://huggingface.co/spaces/bilal23bhai/EVERCEUTICALS/resolve/main/images/logo.png", type: "image/png" },
+      { url: "images/logo.png", type: "image/png" },
     ],
-    shortcut: "https://huggingface.co/spaces/bilal23bhai/EVERCEUTICALS/resolve/main/images/logo.png",
+    shortcut: "images/logo.png",
     apple: [
-      { url: "https://huggingface.co/spaces/bilal23bhai/EVERCEUTICALS/resolve/main/images/logo.png", type: "image/png" },
+      { url: "images/logo.png", type: "image/png" },
     ],
   },
 }
@@ -27,6 +27,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  userScalable: true,
   themeColor: "#0c1929",
 }
 

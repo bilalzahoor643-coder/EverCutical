@@ -34,7 +34,7 @@ export default function WhatAreExosomesSection() {
   return (
     <section
       id="learn"
-      className="relative bg-transparent pt-4 pb-3 md:pt-14 md:pb-7 overflow-hidden"
+      className="relative bg-transparent pt-10 pb-8 md:pt-14 md:pb-7 overflow-hidden"
     >
       {/* Subtle background accent */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -42,7 +42,7 @@ export default function WhatAreExosomesSection() {
         <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-[#0369a1]/[0.03] blur-3xl" />
       </div>
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 z-10">
+      <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10">
         {/* ── HERO PANEL ── */}
         <div
           ref={hero.ref}

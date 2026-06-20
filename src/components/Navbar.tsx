@@ -32,24 +32,24 @@ export default function Navbar() {
           : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <Link href="/" className="group shrink-0">
-            <div className="flex items-center gap-2.5">
-              <div className="relative w-10 h-10 md:w-11 md:h-11 flex items-center justify-center">
+            <div className="flex items-center gap-2 sm:gap-2.5">
+              <div className="relative w-8 h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 flex items-center justify-center">
                 <img
-                  src="https://huggingface.co/spaces/bilal23bhai/EVERCEUTICALS/resolve/main/images/logo.png?v=2"
+                  src="images/logo.png?v=2"
                   alt="EverCeutical Logo"
                   className="w-full h-full object-contain mix-blend-screen"
                   draggable={false}
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-sm md:text-base font-bold tracking-tight text-white">
+                <span className="text-[13px] sm:text-sm md:text-base font-bold tracking-tight text-white">
                   Ever<span className="text-[#38bdf8]">Ceutical</span>
                 </span>
-                <span className="text-[9px] md:text-[10px] text-sky-300/60 font-medium tracking-wider uppercase -mt-[1px]">
+                <span className="hidden sm:block text-[9px] md:text-[10px] text-sky-300/60 font-medium tracking-wider uppercase -mt-[1px]">
                   Leaders in Exosome Innovation
                 </span>
               </div>
@@ -129,7 +129,7 @@ export default function Navbar() {
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
             className="lg:hidden mt-0 bg-[#061224]/95 backdrop-blur-xl border-t border-white/[0.08] shadow-lg overflow-hidden"
           >
-            <div className="px-6 py-4 space-y-0.5">
+            <div className="px-5 sm:px-6 py-4 space-y-0.5">
               {navLinks.map((link, i) => {
                 const isActive = pathname === link.href
                 return (

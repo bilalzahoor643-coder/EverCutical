@@ -5,10 +5,10 @@ import { exosomeClasses } from "@/data/siteData"
 
 const RING_DESKTOP = 540
 const RING_TABLET = 420
-const RING_MOBILE = 260
+const RING_MOBILE = 240
 const NODE_R_DESKTOP = 42
 const NODE_R_TABLET = 34
-const NODE_R_MOBILE = 22
+const NODE_R_MOBILE = 20
 const OUTER_R = 0.92
 const CENTER_CIRCLE_R = 48
 
@@ -73,10 +73,10 @@ export default function ExosomeClassesSection() {
   return (
     <section
       id="classes"
-      className="relative flex flex-col items-center justify-center bg-transparent py-6 md:py-12 overflow-x-hidden"
+      className="relative flex flex-col items-center justify-center bg-transparent py-10 md:py-12 overflow-x-hidden"
     >
       {/* Title */}
-      <div className="w-full max-w-7xl mx-auto px-6 text-center mb-5 md:mb-7 z-10 text-glow">
+      <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 text-center mb-6 md:mb-7 z-10 text-glow">
         <span className="text-xs text-[#38bdf8] font-semibold tracking-[0.2em] uppercase bg-white/[0.06] px-4 py-1.5 rounded-full">
           Our Science
         </span>
@@ -408,10 +408,10 @@ export default function ExosomeClassesSection() {
                 <img src={node.icon} alt={node.name}
                   className="w-[65%] h-[65%] object-contain" draggable={false} />
               </div>
-              <p className="mt-1.5 text-[10px] md:text-[11px] font-bold text-center leading-tight whitespace-nowrap text-white">
+              <p className="mt-1.5 text-[9px] md:text-[11px] font-bold text-center leading-tight whitespace-nowrap text-white">
                 {node.name}
               </p>
-              <p className="text-[8px] md:text-[9px] text-[#b0d0e8] text-center mt-0.5">
+              <p className="hidden md:block text-[8px] md:text-[9px] text-[#b0d0e8] text-center mt-0.5">
                 {node.tagline}
               </p>
             </div>
@@ -450,7 +450,7 @@ export default function ExosomeClassesSection() {
       </div>
 
       {/* Bottom text */}
-      <div className="mt-5 md:mt-7 max-w-2xl mx-auto text-center z-10 px-6 text-glow"
+      <div className="mt-6 md:mt-7 max-w-2xl mx-auto text-center z-10 px-5 sm:px-6 text-glow"
         style={{ opacity: show ? 1 : 0, transform: `translateY(${show ? 0 : 15}px)`,
           transition: "opacity 0.8s ease 1s, transform 0.8s ease 1s" }}>
         <h3 className="text-lg md:text-xl font-bold text-white mb-2">

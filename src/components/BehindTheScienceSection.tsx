@@ -184,7 +184,7 @@ export default function BehindTheScienceSection() {
   return (
     <section
       id="behind-the-science"
-      className="relative bg-transparent py-6 sm:py-14 overflow-hidden"
+      className="relative bg-transparent py-10 sm:py-14 overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/3 left-1/4 w-[500px] h-[500px] rounded-full bg-[#0ea5e9]/[0.02] blur-[100px]" />
@@ -205,7 +205,7 @@ export default function BehindTheScienceSection() {
         ))}
       </div>
 
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 z-10 relative">
+      <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 relative">
         <div
           ref={header.ref}
           className="text-center mb-5 sm:mb-7 text-glow"

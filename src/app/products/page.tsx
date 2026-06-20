@@ -48,7 +48,7 @@ export default function ProductsPage() {
       {/* Hero */}
       <section
         ref={heroRef.ref}
-        className="relative pt-28 pb-12 md:pt-32 md:pb-16 px-6 bg-transparent"
+        className="relative pt-24 pb-10 md:pt-32 md:pb-16 px-5 sm:px-6 bg-transparent"
       >
         <div className="max-w-7xl mx-auto text-center">
           <div
@@ -72,7 +72,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Stats Bar */}
-      <section ref={statsRef.ref} className="py-8 px-6 glass-card border-y border-white/[0.08]">
+      <section ref={statsRef.ref} className="py-6 sm:py-8 px-5 sm:px-6 glass-card border-y border-white/[0.08]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
@@ -94,7 +94,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Filter + Products Grid */}
-      <section ref={gridRef.ref} className="py-8 md:py-12 px-6">
+      <section ref={gridRef.ref} className="py-8 md:py-12 px-5 sm:px-6">
         <div className="max-w-7xl mx-auto">
           {/* Filter Tabs */}
           <div
@@ -153,7 +153,7 @@ export default function ProductsPage() {
       </section>
 
       {/* CTA Section */}
-      <section ref={ctaRef.ref} className="py-10 px-6 glass-card border-t border-white/[0.08]">
+      <section ref={ctaRef.ref} className="py-10 px-5 sm:px-6 glass-card border-t border-white/[0.08]">
         <div
           className="max-w-4xl mx-auto text-center"
           style={{

@@ -123,7 +123,7 @@ export default function FAQSection() {
   return (
     <section
       id="faq"
-      className="relative bg-transparent py-6 md:py-14 overflow-hidden"
+      className="relative bg-transparent py-10 md:py-14 overflow-hidden"
     >
       {/* Background accents */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -131,7 +131,7 @@ export default function FAQSection() {
         <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] rounded-full bg-[#38bdf8]/[0.02] blur-[80px]" />
       </div>
 
-      <div className="w-full max-w-7xl mx-auto px-6 z-10 relative text-glow">
+      <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 relative text-glow">
         {/* ── HEADER ── */}
         <div
           ref={header.ref}
@@ -169,10 +169,10 @@ export default function FAQSection() {
               transition: "opacity 0.8s ease 0.2s, transform 0.8s cubic-bezier(0.22,1,0.36,1) 0.2s",
             }}
           >
-            <div className="relative rounded-3xl overflow-hidden aspect-[4/5] max-h-[500px] md:max-h-[600px]">
+            <div className="relative rounded-3xl overflow-hidden aspect-[4/3] md:aspect-[4/5] max-h-[300px] md:max-h-[500px] lg:max-h-[600px]">
               {/* Actual image */}
               <img
-                src="https://huggingface.co/spaces/bilal23bhai/EVERCEUTICALS/resolve/main/images/faq-doctor.jpg"
+                src="images/faq-doctor.jpg"
                 alt="Medical Professional"
                 className="absolute inset-0 w-full h-full object-cover object-top"
               />

@@ -2,18 +2,18 @@
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center bg-transparent">
-      <div className="max-w-4xl mx-auto px-6 text-center z-10">
+    <section id="hero" className="relative min-h-[70vh] md:min-h-screen flex items-center justify-center bg-transparent pt-20 pb-20 md:pt-0 md:pb-0">
+      <div className="max-w-4xl mx-auto px-5 sm:px-6 text-center z-10">
         <div
-          className="inline-block mb-4 opacity-0 animate-[fadeUp_0.6s_0.2s_forwards]"
+          className="inline-block mb-5 md:mb-4 opacity-0 animate-[fadeUp_0.6s_0.2s_forwards]"
         >
-          <span className="text-xs text-[#38bdf8] font-semibold tracking-[0.2em] uppercase bg-[#0ea5e9]/15 px-4 py-1.5 rounded-full border border-[#0ea5e9]/25">
+          <span className="text-[10px] sm:text-xs text-[#38bdf8] font-semibold tracking-[0.15em] sm:tracking-[0.2em] uppercase bg-[#0ea5e9]/[0.08] px-4 sm:px-5 py-1.5 sm:py-2 rounded-full">
             Korean Exosome Biotechnology
           </span>
         </div>
 
         <h1
-          className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4 opacity-0 animate-[fadeUp_0.6s_0.3s_forwards] text-glow-strong"
+          className="text-[28px] sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4 opacity-0 animate-[fadeUp_0.6s_0.3s_forwards] text-glow-strong"
         >
           Where Science Meets
           <br />
@@ -21,7 +21,7 @@ export default function HeroSection() {
         </h1>
 
         <p
-          className="text-[#b0d0e8] text-sm md:text-base max-w-xl mx-auto leading-relaxed mb-8 opacity-0 animate-[fadeUp_0.6s_0.4s_forwards]"
+          className="text-[#b0d0e8] text-[13px] sm:text-sm md:text-base max-w-xl mx-auto leading-relaxed mb-8 sm:mb-8 opacity-0 animate-[fadeUp_0.6s_0.4s_forwards]"
         >
           EverCeutical is a Korea-based leader in exosome research and manufacturing,
           delivering high-purity, clinically engineered exosome solutions for
@@ -47,11 +47,11 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-0 animate-[fadeUp_0.6s_0.8s_forwards]">
-        <span className="text-[10px] text-white/50 tracking-widest uppercase">Scroll</span>
-        <div className="w-5 h-8 border-2 border-white/25 rounded-full flex justify-center pt-1.5">
-          <div className="w-1 h-2 bg-white/50 rounded-full animate-[scrollBounce_1.5s_infinite]" />
+      {/* Scroll indicator - hidden on mobile, shown on desktop */}
+      <div className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-3 opacity-0 animate-[fadeUp_0.6s_0.8s_forwards]">
+        <span className="text-[11px] text-white/60 tracking-widest uppercase font-medium">Scroll</span>
+        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
+          <div className="w-1.5 h-3 bg-white/60 rounded-full animate-[scrollBounce_1.5s_infinite]" />
         </div>
       </div>
     </section>

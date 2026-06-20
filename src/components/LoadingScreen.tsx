@@ -15,12 +15,20 @@ export default function LoadingScreen() {
 
   useEffect(() => {
     if (allReady && mounted) {
-      window.scrollTo(0, 0)
       setFading(true)
-      const timer = setTimeout(() => setVisible(false), 800)
+      const timer = setTimeout(() => setVisible(false), 350)
       return () => clearTimeout(timer)
     }
   }, [allReady, mounted])
+
+  // Force hide after 3 seconds no matter what
+  useEffect(() => {
+    const forceHide = setTimeout(() => {
+      setFading(true)
+      setTimeout(() => setVisible(false), 350)
+    }, 3000)
+    return () => clearTimeout(forceHide)
+  }, [])
 
   if (!visible) return null
 
@@ -31,7 +39,7 @@ export default function LoadingScreen() {
         backdropFilter: "blur(24px)",
         WebkitBackdropFilter: "blur(24px)",
         background: "rgba(8,20,40,0.55)",
-        transition: "opacity 0.8s cubic-bezier(0.22,1,0.36,1)",
+        transition: "opacity 0.35s cubic-bezier(0.22,1,0.36,1)",
         opacity: fading ? 0 : 1,
         pointerEvents: fading ? "none" : "auto",
       }}
@@ -52,7 +60,7 @@ export default function LoadingScreen() {
 
           {/* Logo */}
           <img
-            src="https://huggingface.co/spaces/bilal23bhai/EVERCEUTICALS/resolve/main/images/logo.png?v=2"
+            src="images/logo.png?v=2"
             alt="Loading"
             className="w-full h-full object-contain"
             style={{

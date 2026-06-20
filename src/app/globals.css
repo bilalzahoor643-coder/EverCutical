@@ -471,7 +471,42 @@ section[id] {
   .glass-surface,
   .glass-surface-strong,
   .glass-card {
-    backdrop-filter: blur(18px);
-    -webkit-backdrop-filter: blur(18px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+}
+
+/* Mobile touch improvements */
+@media (max-width: 768px) {
+  html, body {
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior: none;
+  }
+  
+  section[id] {
+    scroll-margin-top: 4rem;
+  }
+
+  /* Better tap targets on mobile */
+  a, button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Reduce animation complexity on mobile */
+  .glass-card:hover {
+    transform: none;
+  }
+}
+
+/* Smooth section transitions */
+section {
+  position: relative;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .lenis {
+    scroll-behavior: auto !important;
   }
 }

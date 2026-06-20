@@ -24,8 +24,8 @@ function useInView(threshold = 0.15) {
 
 const CARD_W = 220
 const CARD_H = 310
-const CARD_W_MOBILE = 170
-const CARD_H_MOBILE = 240
+const CARD_W_MOBILE = 200
+const CARD_H_MOBILE = 280
 const RADIUS = 420
 const AUTO_DEG = 120
 const AUTO_INTERVAL = 5000
@@ -184,7 +184,7 @@ export default function ProductsSection() {
   return (
     <section
       id="products"
-      className="relative flex flex-col items-center justify-center overflow-hidden pt-8 pb-12 md:pt-10 md:pb-16"
+      className="relative flex flex-col items-center justify-center overflow-hidden pt-8 pb-10 md:pt-10 md:pb-16"
     >
       {/* Section Header */}
       <div

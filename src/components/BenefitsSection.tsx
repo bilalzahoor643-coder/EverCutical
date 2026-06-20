@@ -197,7 +197,7 @@ export default function BenefitsSection() {
   return (
     <section
       id="benefits"
-      className="relative bg-transparent py-6 md:py-14 overflow-hidden"
+      className="relative bg-transparent py-10 md:py-14 overflow-hidden"
     >
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-[#0ea5e9]/[0.03] blur-[120px]" />
@@ -210,7 +210,7 @@ export default function BenefitsSection() {
         ))}
       </div>
 
-      <div className="w-full max-w-6xl mx-auto px-6 z-10 relative text-glow">
+      <div className="w-full max-w-6xl mx-auto px-5 sm:px-6 z-10 relative text-glow">
         <div
           ref={header.ref}
           className="text-center mb-8"

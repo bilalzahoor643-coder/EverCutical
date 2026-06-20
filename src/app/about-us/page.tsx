@@ -101,7 +101,7 @@ export default function AboutUsPage() {
             ))}
           </div>
 
-          <div className="max-w-5xl mx-auto px-6 text-center z-10 text-glow-strong" ref={hero.ref}>
+          <div className="max-w-5xl mx-auto px-5 sm:px-6 text-center z-10 text-glow-strong" ref={hero.ref}>
             <div style={{ opacity: hero.visible ? 1 : 0, transform: `translateY(${hero.visible ? 0 : 30}px)`, transition: "opacity 1.2s cubic-bezier(0.22,1,0.36,1) 0.1s, transform 1.2s cubic-bezier(0.22,1,0.36,1) 0.1s" }}>
               <span className="text-xs text-[#1e3a5f] font-semibold tracking-[0.25em] uppercase bg-[#5b7c91]/[0.08] px-5 py-2 rounded-full border border-[#5b7c91]/10 inline-block mb-5">
                 {aboutUs.hero.tagline}
@@ -131,7 +131,7 @@ export default function AboutUsPage() {
             </div>
           </div>
 
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+          <div className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
             style={{ opacity: hero.visible ? 1 : 0, transition: "opacity 0.8s ease 1s" }}>
             <span className="text-[10px] text-gray-500 tracking-widest uppercase">Scroll</span>
             <div className="w-5 h-8 border-2 border-gray-300 rounded-full flex justify-center pt-1.5">
@@ -147,7 +147,7 @@ export default function AboutUsPage() {
             <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-[#1e3a5f]/[0.02] blur-3xl" />
           </div>
 
-          <div className="w-full max-w-7xl mx-auto px-6 z-10 text-glow">
+          <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 text-glow">
             <div ref={mission.ref} className="text-center mb-8"
               style={{ opacity: mission.visible ? 1 : 0, transform: `translateY(${mission.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
               <span className="text-[10px] text-[#3d6a82] font-bold tracking-[0.25em] uppercase bg-[#5b7c91]/[0.08] px-4 py-1.5 rounded-full inline-block">Our Purpose</span>
@@ -182,7 +182,7 @@ export default function AboutUsPage() {
             <div className="absolute -bottom-20 right-1/4 w-[350px] h-[350px] rounded-full bg-[#1e3a5f]/[0.02] blur-3xl" />
           </div>
 
-          <div className="w-full max-w-7xl mx-auto px-6 z-10 text-glow">
+          <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 text-glow">
             <div ref={about.ref} className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div style={{
                 opacity: about.visible ? 1 : 0,
@@ -224,7 +224,7 @@ export default function AboutUsPage() {
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-[#5b7c91]/[0.02] blur-[120px]" />
           </div>
 
-          <div className="w-full max-w-7xl mx-auto px-6 z-10 relative text-glow">
+          <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 relative text-glow">
             <div ref={vesco.ref} className="text-center mb-8"
               style={{ opacity: vesco.visible ? 1 : 0, transform: `translateY(${vesco.visible ? 0 : 50}px) scale(${vesco.visible ? 1 : 0.9})`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
               <span className="text-[10px] text-[#3d6a82] font-bold tracking-[0.25em] uppercase bg-[#5b7c91]/[0.08] px-4 py-1.5 rounded-full inline-block">{aboutUs.vesco.subtitle}</span>
@@ -251,7 +251,7 @@ export default function AboutUsPage() {
             <div className="absolute -bottom-20 right-1/4 w-[350px] h-[350px] rounded-full bg-[#1e3a5f]/[0.02] blur-3xl" />
           </div>
 
-          <div className="w-full max-w-7xl mx-auto px-6 z-10 text-glow">
+          <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 text-glow">
             <div ref={facility.ref} className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div style={{
                 opacity: facility.visible ? 1 : 0,
@@ -311,7 +311,7 @@ export default function AboutUsPage() {
             ))}
           </div>
 
-          <div className="w-full max-w-7xl mx-auto px-6 z-10 text-glow">
+          <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 text-glow">
             <div ref={rd.ref} className="text-center mb-8"
               style={{ opacity: rd.visible ? 1 : 0, transform: `translateY(${rd.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
               <span className="text-[10px] text-[#3d6a82] font-bold tracking-[0.25em] uppercase bg-[#5b7c91]/[0.08] px-4 py-1.5 rounded-full inline-block">Our People</span>
@@ -338,7 +338,7 @@ export default function AboutUsPage() {
             <div className="absolute bottom-1/3 left-0 w-[350px] h-[350px] rounded-full bg-[#1e3a5f]/[0.02] blur-3xl" />
           </div>
 
-          <div className="w-full max-w-6xl mx-auto px-6 z-10 text-glow">
+          <div className="w-full max-w-6xl mx-auto px-5 sm:px-6 z-10 text-glow">
             <div ref={exosomes.ref} className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div style={{
                 opacity: exosomes.visible ? 1 : 0,
@@ -387,7 +387,7 @@ export default function AboutUsPage() {
             <div className="absolute -bottom-20 right-1/4 w-[350px] h-[350px] rounded-full bg-[#1e3a5f]/[0.02] blur-3xl" />
           </div>
 
-          <div className="w-full max-w-5xl mx-auto px-6 z-10 text-glow">
+          <div className="w-full max-w-5xl mx-auto px-5 sm:px-6 z-10 text-glow">
             <div ref={quality.ref} className="text-center mb-8"
               style={{ opacity: quality.visible ? 1 : 0, transform: `translateY(${quality.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
               <span className="text-[10px] text-[#3d6a82] font-bold tracking-[0.25em] uppercase bg-[#5b7c91]/[0.08] px-4 py-1.5 rounded-full inline-block">Our Standards</span>
@@ -428,7 +428,7 @@ export default function AboutUsPage() {
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#5b7c91]/[0.03] blur-3xl" />
           </div>
 
-          <div className="w-full max-w-4xl mx-auto px-6 z-10 relative text-glow">
+          <div className="w-full max-w-4xl mx-auto px-5 sm:px-6 z-10 relative text-glow">
             <div ref={cta.ref} style={{ opacity: cta.visible ? 1 : 0, transform: `translateY(${cta.visible ? 0 : 60}px) scale(${cta.visible ? 1 : 0.9})`, transition: "opacity 1.5s cubic-bezier(0.22,1,0.36,1), transform 1.5s cubic-bezier(0.22,1,0.36,1)" }}>
               <div className="relative rounded-3xl p-8 md:p-12 lg:p-16 text-center overflow-hidden"
                 style={{ background: "linear-gradient(135deg, #1e3a5f 0%, #5b7c91 100%)" }}>

@@ -5,7 +5,6 @@ import { Canvas } from "@react-three/fiber"
 import * as THREE from "three"
 import ExosomeParticles from "./ExosomeParticles"
 import { PostProcessing } from "./PostProcessing"
-import { useLoading } from "@/components/LoadingContext"
 
 class WebGLErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
   state = { hasError: false }
@@ -31,25 +30,28 @@ export default function ExosomeBackground() {
   const [webglOk, setWebglOk] = useState(true)
   const [isMobile, setIsMobile] = useState(false)
   const [mounted, setMounted] = useState(false)
-  const { setTexturesReady, setSceneReady } = useLoading()
+  const [canvasReady, setCanvasReady] = useState(false)
 
   useEffect(() => {
     setMounted(true)
     if (!checkWebGLSupport()) {
       setWebglOk(false)
-      setTexturesReady(true)
-      setSceneReady(true)
       return
     }
     setIsMobile(window.innerWidth < 768)
-    setTexturesReady(true)
-  }, [setTexturesReady, setSceneReady])
 
-  if (!mounted || !webglOk) return null
+    // Delay canvas init to not block first paint
+    const timer = setTimeout(() => {
+      setCanvasReady(true)
+    }, 200)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (!mounted || !webglOk || !canvasReady) return null
 
   return (
     <>
-      {/* Blue fluid gradient background */}
+      {/* Blue fluid gradient background - instant, no 3D needed */}
       <div
         className="fixed inset-0 pointer-events-none"
         style={{
@@ -89,7 +91,7 @@ export default function ExosomeBackground() {
         <WebGLErrorBoundary>
           <Canvas
             camera={{ position: [0, 0, 14], fov: 55, near: 0.1, far: 150 }}
-            dpr={isMobile ? [0.75, 1] : [1, 1.2]}
+            dpr={isMobile ? [0.5, 0.75] : [1, 1.2]}
             gl={{
               alpha: true,
               antialias: false,
@@ -103,7 +105,6 @@ export default function ExosomeBackground() {
               gl.setClearColor(0x000000, 0)
               gl.toneMapping = THREE.ACESFilmicToneMapping
               gl.toneMappingExposure = 1.3
-              setSceneReady(true)
             }}
           >
             <ExosomeParticles />

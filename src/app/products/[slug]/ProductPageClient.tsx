@@ -96,7 +96,7 @@ export default function ProductPageClient({ slug }: { slug: string }) {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[100vh] flex items-center justify-center bg-transparent overflow-hidden">
+      <section className="relative min-h-[80vh] md:min-h-[100vh] flex items-center justify-center bg-transparent overflow-hidden">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full blur-3xl" style={{ backgroundColor: `${accent}08` }} />
           <div className="absolute -bottom-20 -left-20 w-[500px] h-[500px] rounded-full bg-[#0ea5e9]/[0.03] blur-3xl" />
@@ -136,7 +136,7 @@ export default function ProductPageClient({ slug }: { slug: string }) {
           </div>
         </div>
 
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style={{ opacity: hero.visible ? 1 : 0, transition: "opacity 0.8s ease 1s" }}>
+        <div className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style={{ opacity: hero.visible ? 1 : 0, transition: "opacity 0.8s ease 1s" }}>
             <span className="text-[10px] sm:text-[11px] text-white/50 tracking-widest uppercase">Scroll</span>
           <div className="w-5 h-8 border-2 border-white/[0.08] rounded-full flex justify-center pt-1.5">
             <div className="w-1 h-2 bg-white/40 rounded-full animate-[scrollBounce_1.5s_infinite]" />
@@ -149,7 +149,7 @@ export default function ProductPageClient({ slug }: { slug: string }) {
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -top-20 left-1/4 w-[400px] h-[400px] rounded-full blur-3xl" style={{ backgroundColor: `${accent}05` }} />
         </div>
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 z-10">
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10">
           <div ref={kitContents.ref} className="text-center mb-8" style={{ opacity: kitContents.visible ? 1 : 0, transform: `translateY(${kitContents.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
             <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase px-4 py-1.5 rounded-full inline-block mb-3" style={{ color: accent, backgroundColor: `${accent}08` }}>What&apos;s Inside</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 mb-2 leading-tight">Kit <span style={{ color: accent }}>Contents</span></h2>
@@ -168,7 +168,7 @@ export default function ProductPageClient({ slug }: { slug: string }) {
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute top-1/4 right-0 w-[400px] h-[400px] rounded-full blur-3xl" style={{ backgroundColor: `${accent}05` }} />
         </div>
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 z-10">
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10">
           <div ref={peptidesSection.ref} className="text-center mb-8" style={{ opacity: peptidesSection.visible ? 1 : 0, transform: `translateY(${peptidesSection.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
             <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase px-4 py-1.5 rounded-full inline-block mb-3" style={{ color: accent, backgroundColor: `${accent}08` }}>Scientific Formulation</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 mb-2 leading-tight">Powered by <span style={{ color: accent }}>Peptides</span></h2>
@@ -187,7 +187,7 @@ export default function ProductPageClient({ slug }: { slug: string }) {
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -top-20 left-1/4 w-[400px] h-[400px] rounded-full blur-3xl" style={{ backgroundColor: `${accent}05` }} />
         </div>
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 z-10">
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10">
           <div ref={benefitsSection.ref} className="text-center mb-8" style={{ opacity: benefitsSection.visible ? 1 : 0, transform: `translateY(${benefitsSection.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
             <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase px-4 py-1.5 rounded-full inline-block mb-3" style={{ color: accent, backgroundColor: `${accent}08` }}>Clinical Outcomes</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 mb-2 leading-tight">Key <span style={{ color: accent }}>Benefits</span></h2>
@@ -202,7 +202,7 @@ export default function ProductPageClient({ slug }: { slug: string }) {
 
       {/* Ideal For */}
       <section className="relative bg-transparent py-10 md:py-16 overflow-hidden">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 z-10">
+        <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10">
           <div ref={idealFor.ref} className="text-center mb-8" style={{ opacity: idealFor.visible ? 1 : 0, transform: `translateY(${idealFor.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
             <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase px-4 py-1.5 rounded-full inline-block mb-3" style={{ color: accent, backgroundColor: `${accent}08` }}>Who It&apos;s For</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 mb-2 leading-tight">Ideal <span style={{ color: accent }}>For</span></h2>
@@ -217,7 +217,7 @@ export default function ProductPageClient({ slug }: { slug: string }) {
 
       {/* How to Use */}
       <section className="relative bg-transparent py-10 md:py-16 overflow-hidden">
-        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 z-10">
+        <div className="w-full max-w-4xl mx-auto px-5 sm:px-6 z-10">
           <div ref={howToUse.ref} className="text-center mb-8" style={{ opacity: howToUse.visible ? 1 : 0, transform: `translateY(${howToUse.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
             <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase px-4 py-1.5 rounded-full inline-block mb-3" style={{ color: accent, backgroundColor: `${accent}08` }}>Application Guide</span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 mb-2 leading-tight">How to <span style={{ color: accent }}>Use</span></h2>
@@ -236,7 +236,7 @@ export default function ProductPageClient({ slug }: { slug: string }) {
           <div className="absolute inset-0 pointer-events-none overflow-hidden">
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full blur-[120px]" style={{ backgroundColor: `${accent}04` }} />
           </div>
-          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 z-10 relative">
+          <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 relative">
             <div ref={caseStudies.ref} className="text-center mb-8" style={{ opacity: caseStudies.visible ? 1 : 0, transform: `translateY(${caseStudies.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
               <span className="text-[10px] sm:text-[11px] font-bold tracking-[0.25em] uppercase px-4 py-1.5 rounded-full inline-block mb-3" style={{ color: accent, backgroundColor: `${accent}08` }}>Real Results</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 mb-2 leading-tight">Before & <span style={{ color: accent }}>After</span></h2>
@@ -275,7 +275,7 @@ export default function ProductPageClient({ slug }: { slug: string }) {
 
       {/* Important Note */}
       <section className="relative bg-transparent py-10 md:py-16 overflow-hidden">
-        <div className="w-full max-w-3xl mx-auto px-4 sm:px-6 z-10">
+        <div className="w-full max-w-3xl mx-auto px-5 sm:px-6 z-10">
           <div ref={importantNote.ref} style={{ opacity: importantNote.visible ? 1 : 0, transform: `translateY(${importantNote.visible ? 0 : 40}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
             <div className="glass-card p-6 md:p-8 overflow-hidden">
               <div className="absolute top-0 left-8 right-8 h-[2px]" style={{ backgroundImage: `linear-gradient(to right, transparent, ${accent}40, transparent)` }} />
@@ -297,7 +297,7 @@ export default function ProductPageClient({ slug }: { slug: string }) {
 
       {/* CTA */}
       <section className="relative bg-transparent py-10 md:py-16 overflow-hidden">
-        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 z-10 relative">
+        <div className="w-full max-w-4xl mx-auto px-5 sm:px-6 z-10 relative">
           <div ref={bottomCta.ref} style={{ opacity: bottomCta.visible ? 1 : 0, transform: `translateY(${bottomCta.visible ? 0 : 60}px) scale(${bottomCta.visible ? 1 : 0.9})`, transition: "opacity 1.5s cubic-bezier(0.22,1,0.36,1), transform 1.5s cubic-bezier(0.22,1,0.36,1)" }}>
             <div className="glass-surface p-6 sm:p-8 md:p-10 lg:p-14 text-center overflow-hidden">
               <div className="absolute top-0 left-8 right-8 h-[2px]" style={{ backgroundImage: `linear-gradient(to right, transparent, ${accent}40, transparent)` }} />

@@ -82,7 +82,7 @@ export default function Footer() {
           transition: "opacity 0.7s ease, transform 0.7s ease",
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-10 md:py-12">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 py-10 md:py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
               <h3 className="text-lg md:text-xl font-bold text-white mb-1">
@@ -109,7 +109,7 @@ export default function Footer() {
       </div>
 
       {/* ── MAIN FOOTER ── */}
-      <div className="max-w-7xl mx-auto px-6 py-10 md:py-12">
+      <div className="max-w-7xl mx-auto px-5 sm:px-6 py-10 md:py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-7 lg:gap-6">
           {/* Column 1: Brand */}
           <div
@@ -122,7 +122,7 @@ export default function Footer() {
             <div className="flex items-center gap-2.5 mb-4">
               <div className="w-10 h-10 flex items-center justify-center">
                 <img
-                  src="https://huggingface.co/spaces/bilal23bhai/EVERCEUTICALS/resolve/main/images/logo.png?v=2"
+                  src="images/logo.png?v=2"
                   alt="EverCeutical Logo"
                   className="w-full h-full object-contain mix-blend-screen"
                   draggable={false}
@@ -278,8 +278,8 @@ export default function Footer() {
           transition: "opacity 0.7s ease 0.5s",
         }}
       >
-        <div className="max-w-7xl mx-auto px-6 py-6">
-          <div className="flex flex-wrap items-center justify-center gap-4 md:gap-8">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 py-6">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 md:gap-8">
             {trustBadges.map((badge, i) => (
               <div
                 key={i}
@@ -297,7 +297,7 @@ export default function Footer() {
 
       {/* ── LEGAL SECTION ── */}
       <div className="border-t border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-6 py-5">
+        <div className="max-w-7xl mx-auto px-5 sm:px-6 py-5">
           <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-[#6894b8]">
             <p>© 2026 EverCeutical. All Rights Reserved.</p>
             <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center">

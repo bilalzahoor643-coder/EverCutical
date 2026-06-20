@@ -14,12 +14,19 @@ export default function Home() {
       <Navbar />
       <main>
         <HeroSection />
+        <div className="h-4 md:h-6" />
         <WhatAreExosomesSection />
+        <div className="h-6 md:h-8" />
         <FeaturedProducts />
+        <div className="h-6 md:h-8" />
         <CategoryPreview />
+        <div className="h-4 md:h-6" />
         <ExosomeClassesSection />
+        <div className="h-4 md:h-6" />
         <BenefitsSection />
+        <div className="h-4 md:h-6" />
         <FAQSection />
+        <div className="h-4 md:h-6" />
         <BehindTheScienceSection />
         <Footer />
       </main>

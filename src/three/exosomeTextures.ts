@@ -7,15 +7,18 @@ let nucleusNormalMap: THREE.CanvasTexture | null = null
 let membraneBumpTexture: THREE.CanvasTexture | null = null
 let glowTexture: THREE.CanvasTexture | null = null
 
-/**
- * Ultra-dense granular bump texture — electron microscope quality.
- * 15000+ surface features: micro-bumps, pores, crevices, grain, wrinkles.
- */
+function isMobile(): boolean {
+  return typeof window !== "undefined" && window.innerWidth < 768
+}
+
 export function getNucleusBumpTexture(): THREE.CanvasTexture | null {
   if (typeof document === "undefined") return null
   if (nucleusBumpTexture) return nucleusBumpTexture
 
-  const size = 1024
+  const mobile = isMobile()
+  const size = mobile ? 512 : 1024
+  const scale = mobile ? 0.4 : 1.0
+
   const canvas = document.createElement("canvas")
   canvas.width = size
   canvas.height = size
@@ -25,11 +28,11 @@ export function getNucleusBumpTexture(): THREE.CanvasTexture | null {
   ctx.fillStyle = "#808080"
   ctx.fillRect(0, 0, size, size)
 
-  // Layer 1: Ultra-fine micro-grain (pixel-level noise)
-  for (let i = 0; i < 8000; i++) {
+  // Layer 1: Micro-grain
+  for (let i = 0; i < Math.floor(3000 * scale); i++) {
     const x = Math.random() * size
     const y = Math.random() * size
-    const r = 0.4 + Math.random() * 1.2
+    const r = 0.5 + Math.random() * 1.5
     const v = Math.random() > 0.5 ? 150 + Math.random() * 105 : 20 + Math.random() * 50
     const grad = ctx.createRadialGradient(x, y, 0, x, y, r)
     grad.addColorStop(0, `rgba(${v},${v},${v},0.9)`)
@@ -40,8 +43,8 @@ export function getNucleusBumpTexture(): THREE.CanvasTexture | null {
     ctx.fill()
   }
 
-  // Layer 2: Dense tiny bumps (pores / granules)
-  for (let i = 0; i < 6000; i++) {
+  // Layer 2: Bumps
+  for (let i = 0; i < Math.floor(2500 * scale); i++) {
     const x = Math.random() * size
     const y = Math.random() * size
     const r = 0.8 + Math.random() * 2.0
@@ -56,8 +59,8 @@ export function getNucleusBumpTexture(): THREE.CanvasTexture | null {
     ctx.fill()
   }
 
-  // Layer 3: Tiny pits / pores (dark holes)
-  for (let i = 0; i < 5000; i++) {
+  // Layer 3: Pits
+  for (let i = 0; i < Math.floor(2000 * scale); i++) {
     const x = Math.random() * size
     const y = Math.random() * size
     const r = 0.5 + Math.random() * 1.8
@@ -72,8 +75,8 @@ export function getNucleusBumpTexture(): THREE.CanvasTexture | null {
     ctx.fill()
   }
 
-  // Layer 4: Elongated wrinkles / membrane folds
-  for (let i = 0; i < 2000; i++) {
+  // Layer 4: Wrinkles
+  for (let i = 0; i < Math.floor(800 * scale); i++) {
     const x = Math.random() * size
     const y = Math.random() * size
     const angle = Math.random() * Math.PI
@@ -93,8 +96,8 @@ export function getNucleusBumpTexture(): THREE.CanvasTexture | null {
     ctx.restore()
   }
 
-  // Layer 5: Medium cellular bumps
-  for (let i = 0; i < 3000; i++) {
+  // Layer 5: Medium bumps
+  for (let i = 0; i < Math.floor(1200 * scale); i++) {
     const x = Math.random() * size
     const y = Math.random() * size
     const r = 1.5 + Math.random() * 3.5
@@ -102,38 +105,6 @@ export function getNucleusBumpTexture(): THREE.CanvasTexture | null {
     const grad = ctx.createRadialGradient(x, y, 0, x, y, r)
     grad.addColorStop(0, `rgba(${bright},${bright},${bright},0.78)`)
     grad.addColorStop(0.5, `rgba(${bright},${bright},${bright},0.3)`)
-    grad.addColorStop(1, "rgba(128,128,128,0)")
-    ctx.fillStyle = grad
-    ctx.beginPath()
-    ctx.arc(x, y, r, 0, Math.PI * 2)
-    ctx.fill()
-  }
-
-  // Layer 6: Deep crevices / organic lines
-  for (let i = 0; i < 2500; i++) {
-    const x = Math.random() * size
-    const y = Math.random() * size
-    const r = 1.2 + Math.random() * 3.0
-    const dark = 25 + Math.random() * 45
-    const grad = ctx.createRadialGradient(x, y, 0, x, y, r)
-    grad.addColorStop(0, `rgba(${dark},${dark},${dark},0.72)`)
-    grad.addColorStop(0.5, `rgba(${dark},${dark},${dark},0.25)`)
-    grad.addColorStop(1, "rgba(128,128,128,0)")
-    ctx.fillStyle = grad
-    ctx.beginPath()
-    ctx.arc(x, y, r, 0, Math.PI * 2)
-    ctx.fill()
-  }
-
-  // Layer 7: Larger organic clusters
-  for (let i = 0; i < 800; i++) {
-    const x = Math.random() * size
-    const y = Math.random() * size
-    const r = 4 + Math.random() * 10
-    const bright = 145 + Math.random() * 110
-    const grad = ctx.createRadialGradient(x, y, 0, x, y, r)
-    grad.addColorStop(0, `rgba(${bright},${bright},${bright},0.5)`)
-    grad.addColorStop(0.6, `rgba(${bright},${bright},${bright},0.15)`)
     grad.addColorStop(1, "rgba(128,128,128,0)")
     ctx.fillStyle = grad
     ctx.beginPath()
@@ -149,9 +120,6 @@ export function getNucleusBumpTexture(): THREE.CanvasTexture | null {
   return tex
 }
 
-/**
- * Normal map derived from bump for lighting detail.
- */
 export function getNucleusNormalMap(): THREE.CanvasTexture | null {
   if (typeof document === "undefined") return null
   if (nucleusNormalMap) return nucleusNormalMap
@@ -159,7 +127,10 @@ export function getNucleusNormalMap(): THREE.CanvasTexture | null {
   const bump = getNucleusBumpTexture()
   if (!bump) return null
 
-  const size = 1024
+  const mobile = isMobile()
+  const size = mobile ? 512 : 1024
+  const scale = mobile ? 0.4 : 1.0
+
   const canvas = document.createElement("canvas")
   canvas.width = size
   canvas.height = size
@@ -174,8 +145,9 @@ export function getNucleusNormalMap(): THREE.CanvasTexture | null {
   const normalData = ctx.createImageData(size, size)
   const strength = 2.0
 
-  for (let y = 0; y < size; y++) {
-    for (let x = 0; x < size; x++) {
+  const step = mobile ? 2 : 1
+  for (let y = 0; y < size; y += step) {
+    for (let x = 0; x < size; x += step) {
       const idx = (y * size + x) * 4
 
       const getHeight = (px: number, py: number) => {
@@ -197,10 +169,26 @@ export function getNucleusNormalMap(): THREE.CanvasTexture | null {
       const nz = 1.0
       const len = Math.sqrt(nx * nx + ny * ny + nz * nz)
 
-      normalData.data[idx] = Math.floor(((nx / len) * 0.5 + 0.5) * 255)
-      normalData.data[idx + 1] = Math.floor(((ny / len) * 0.5 + 0.5) * 255)
-      normalData.data[idx + 2] = Math.floor(((nz / len) * 0.5 + 0.5) * 255)
-      normalData.data[idx + 3] = 255
+      const r = Math.floor(((nx / len) * 0.5 + 0.5) * 255)
+      const g = Math.floor(((ny / len) * 0.5 + 0.5) * 255)
+      const b = Math.floor(((nz / len) * 0.5 + 0.5) * 255)
+
+      if (step > 1) {
+        for (let sy = 0; sy < step && y + sy < size; sy++) {
+          for (let sx = 0; sx < step && x + sx < size; sx++) {
+            const si = ((y + sy) * size + (x + sx)) * 4
+            normalData.data[si] = r
+            normalData.data[si + 1] = g
+            normalData.data[si + 2] = b
+            normalData.data[si + 3] = 255
+          }
+        }
+      } else {
+        normalData.data[idx] = r
+        normalData.data[idx + 1] = g
+        normalData.data[idx + 2] = b
+        normalData.data[idx + 3] = 255
+      }
     }
   }
 
@@ -214,14 +202,11 @@ export function getNucleusNormalMap(): THREE.CanvasTexture | null {
   return tex
 }
 
-/**
- * Soft glow sprite texture.
- */
 export function getGlowTexture(): THREE.CanvasTexture | null {
   if (typeof document === "undefined") return null
   if (glowTexture) return glowTexture
 
-  const size = 256
+  const size = 128
   const canvas = document.createElement("canvas")
   canvas.width = size
   canvas.height = size
@@ -242,15 +227,14 @@ export function getGlowTexture(): THREE.CanvasTexture | null {
   return tex
 }
 
-/**
- * Membrane bump texture — wider, softer organic wrinkles.
- * For the outer translucent membrane — lipid vesicle appearance.
- */
 export function getMembraneBumpTexture(): THREE.CanvasTexture | null {
   if (typeof document === "undefined") return null
   if (membraneBumpTexture) return membraneBumpTexture
 
-  const size = 1024
+  const mobile = isMobile()
+  const size = mobile ? 512 : 1024
+  const scale = mobile ? 0.4 : 1.0
+
   const canvas = document.createElement("canvas")
   canvas.width = size
   canvas.height = size
@@ -260,8 +244,8 @@ export function getMembraneBumpTexture(): THREE.CanvasTexture | null {
   ctx.fillStyle = "#808080"
   ctx.fillRect(0, 0, size, size)
 
-  // Wide organic wrinkles — lipid bilayer folds
-  for (let i = 0; i < 3000; i++) {
+  // Wide organic wrinkles
+  for (let i = 0; i < Math.floor(1200 * scale); i++) {
     const x = Math.random() * size
     const y = Math.random() * size
     const r = 3 + Math.random() * 10
@@ -277,7 +261,7 @@ export function getMembraneBumpTexture(): THREE.CanvasTexture | null {
   }
 
   // Membrane crevices
-  for (let i = 0; i < 2000; i++) {
+  for (let i = 0; i < Math.floor(800 * scale); i++) {
     const x = Math.random() * size
     const y = Math.random() * size
     const r = 2 + Math.random() * 8
@@ -292,8 +276,8 @@ export function getMembraneBumpTexture(): THREE.CanvasTexture | null {
     ctx.fill()
   }
 
-  // Fine membrane grain
-  for (let i = 0; i < 4000; i++) {
+  // Fine grain
+  for (let i = 0; i < Math.floor(1500 * scale); i++) {
     const x = Math.random() * size
     const y = Math.random() * size
     const r = 0.5 + Math.random() * 2.0

@@ -24,8 +24,8 @@ function useInView(threshold = 0.15) {
 
 const CARD_W = 220
 const CARD_H = 310
-const CARD_W_MOBILE = 170
-const CARD_H_MOBILE = 240
+const CARD_W_MOBILE = 200
+const CARD_H_MOBILE = 280
 const RADIUS = 420
 const AUTO_DEG = 90
 const AUTO_INTERVAL = 5000
@@ -150,11 +150,11 @@ export default function FeaturedProducts() {
   return (
     <section
       id="products"
-      className="relative flex flex-col items-center justify-center overflow-hidden pt-2 pb-6 md:pt-6 md:pb-12 z-10"
+      className="relative flex flex-col items-center justify-center overflow-hidden pt-4 pb-8 md:pt-6 md:pb-12 z-10"
     >
       {/* Section Header */}
       <div
-        className="text-center mb-5 px-4 sm:px-6 z-20 relative text-glow"
+        className="text-center mb-6 px-5 sm:px-6 z-20 relative text-glow"
       >
         <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">
           Our Best Sellers
