@@ -112,13 +112,13 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
 
   // LAYER 1: NEAR — large, covers ALL edges + corners
   {
-    const c = isMobile ? 2 : 6
+    const c = isMobile ? 3 : 6
     const r = isMobile ? 2 : 3
     const pts = scatter(-0.5, -5, c, r, 1.8, 1.5, 1.0, rand)
     for (const [x, y, z] of pts) {
       instances.push({
         baseX: x, baseY: y, baseZ: z,
-        scale: isMobile ? 0.7 + rand() * 0.15 : 1.0 + rand() * 0.35,
+        scale: isMobile ? 0.75 + rand() * 0.15 : 1.0 + rand() * 0.35,
         rotSpeedX: (0.03 + rand() * 0.04) * 0.7,
         rotSpeedY: (0.025 + rand() * 0.035) * 0.7,
         rotSpeedZ: (0.015 + rand() * 0.025) * 0.7,
@@ -138,13 +138,13 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
 
   // LAYER 2: HERO — dominant foreground
   {
-    const c = isMobile ? 3 : 6
-    const r = isMobile ? 2 : 4
+    const c = isMobile ? 4 : 6
+    const r = isMobile ? 3 : 4
     const pts = scatter(-3, -9, c, r, 1.7, 1.2, 0.8, rand)
     for (const [x, y, z] of pts) {
       instances.push({
         baseX: x, baseY: y, baseZ: z,
-        scale: isMobile ? 0.45 + rand() * 0.1 : 0.75 + rand() * 0.25,
+        scale: isMobile ? 0.5 + rand() * 0.12 : 0.75 + rand() * 0.25,
         rotSpeedX: 0.04 + rand() * 0.05,
         rotSpeedY: 0.03 + rand() * 0.04,
         rotSpeedZ: 0.02 + rand() * 0.03,
@@ -164,13 +164,13 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
 
   // LAYER 3: MID — medium, dense fill
   {
-    const c = isMobile ? 3 : 8
+    const c = isMobile ? 4 : 8
     const r = isMobile ? 3 : 5
     const pts = scatter(-8, -18, c, r, 1.5, 1.0, 0.7, rand)
     for (const [x, y, z] of pts) {
       instances.push({
         baseX: x, baseY: y, baseZ: z,
-        scale: isMobile ? 0.2 + rand() * 0.05 : 0.32 + rand() * 0.1,
+        scale: isMobile ? 0.22 + rand() * 0.06 : 0.32 + rand() * 0.1,
         rotSpeedX: 0.05 + rand() * 0.04,
         rotSpeedY: 0.04 + rand() * 0.03,
         rotSpeedZ: 0.025 + rand() * 0.02,
@@ -190,13 +190,13 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
 
   // LAYER 4: DEEP — small, behind
   {
-    const c = isMobile ? 3 : 10
+    const c = isMobile ? 5 : 10
     const r = isMobile ? 3 : 5
     const pts = scatter(-18, -35, c, r, 1.4, 0.7, 0.5, rand)
     for (const [x, y, z] of pts) {
       instances.push({
         baseX: x, baseY: y, baseZ: z,
-        scale: isMobile ? 0.1 + rand() * 0.03 : 0.18 + rand() * 0.07,
+        scale: isMobile ? 0.12 + rand() * 0.04 : 0.18 + rand() * 0.07,
         rotSpeedX: 0.055 + rand() * 0.035,
         rotSpeedY: 0.045 + rand() * 0.025,
         rotSpeedZ: 0.028 + rand() * 0.018,
@@ -214,15 +214,15 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
     }
   }
 
-  // LAYER 5: FAR BG — tiny cloud (skip on mobile for perf)
-  if (!isMobile) {
-    const c = 12
-    const r = 5
+  // LAYER 5: FAR BG — tiny cloud
+  {
+    const c = isMobile ? 5 : 12
+    const r = isMobile ? 3 : 5
     const pts = scatter(-35, -55, c, r, 1.3, 0.5, 0.35, rand)
     for (const [x, y, z] of pts) {
       instances.push({
         baseX: x, baseY: y, baseZ: z,
-        scale: 0.08 + rand() * 0.05,
+        scale: isMobile ? 0.06 + rand() * 0.04 : 0.08 + rand() * 0.05,
         rotSpeedX: 0.06 + rand() * 0.04,
         rotSpeedY: 0.05 + rand() * 0.03,
         rotSpeedZ: 0.03 + rand() * 0.02,
@@ -253,7 +253,7 @@ export default function ExosomeParticles() {
   const { viewport } = useThree()
 
   const isMobile = viewport.width < 768
-  const segments = isMobile ? 24 : 48
+  const segments = isMobile ? 32 : 48
 
   const noise = useMemo(() => new SimplexNoise(42), [])
 

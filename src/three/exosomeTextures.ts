@@ -16,8 +16,8 @@ export function getNucleusBumpTexture(): THREE.CanvasTexture | null {
   if (nucleusBumpTexture) return nucleusBumpTexture
 
   const mobile = isMobile()
-  const size = mobile ? 512 : 1024
-  const scale = mobile ? 0.4 : 1.0
+  const size = mobile ? 768 : 1024
+  const scale = mobile ? 0.6 : 1.0
 
   const canvas = document.createElement("canvas")
   canvas.width = size
@@ -128,8 +128,8 @@ export function getNucleusNormalMap(): THREE.CanvasTexture | null {
   if (!bump) return null
 
   const mobile = isMobile()
-  const size = mobile ? 512 : 1024
-  const scale = mobile ? 0.4 : 1.0
+  const size = mobile ? 768 : 1024
+  const scale = mobile ? 0.6 : 1.0
 
   const canvas = document.createElement("canvas")
   canvas.width = size
@@ -232,8 +232,8 @@ export function getMembraneBumpTexture(): THREE.CanvasTexture | null {
   if (membraneBumpTexture) return membraneBumpTexture
 
   const mobile = isMobile()
-  const size = mobile ? 512 : 1024
-  const scale = mobile ? 0.4 : 1.0
+  const size = mobile ? 768 : 1024
+  const scale = mobile ? 0.6 : 1.0
 
   const canvas = document.createElement("canvas")
   canvas.width = size
