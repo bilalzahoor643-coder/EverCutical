@@ -9,16 +9,25 @@ export function useInView(threshold = 0.15) {
   useEffect(() => {
     const el = ref.current
     if (!el) return
+
+    const isMobile = window.innerWidth < 768
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true)
         }
       },
-      { threshold, rootMargin: "0px 0px -30px 0px" }
+      { threshold: isMobile ? 0.01 : threshold, rootMargin: isMobile ? "200px 0px 0px 0px" : "0px 0px -30px 0px" }
     )
     obs.observe(el)
-    return () => obs.disconnect()
+
+    // Force visible after delay on mobile
+    const timer = isMobile ? setTimeout(() => setVisible(true), 1500) : setTimeout(() => setVisible(true), 4000)
+
+    return () => {
+      obs.disconnect()
+      clearTimeout(timer)
+    }
   }, [threshold])
 
   return { ref, visible }

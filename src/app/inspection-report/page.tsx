@@ -7,25 +7,24 @@ import Footer from "@/components/Footer"
 
 import { inspectionReport } from "@/data/siteData"
 
-function useInView() {
-  const ref = useRef<HTMLElement>(null)
+function useInView(threshold = 0.15, rootMargin?: string) {
+  const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
     const el = ref.current
     if (!el) return
-
+    const isMobile = window.innerWidth < 768
     const obs = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true)
-        }
+        if (entry.isIntersecting) setVisible(true)
       },
-      { threshold: 0, rootMargin: "0px 0px -30px 0px" }
+      { threshold: isMobile ? 0.01 : threshold, rootMargin: rootMargin ?? (isMobile ? "200px 0px 0px 0px" : "0px 0px -30px 0px") }
     )
     obs.observe(el)
-    return () => obs.disconnect()
-  }, [])
+    const timer = isMobile ? setTimeout(() => setVisible(true), 1500) : setTimeout(() => setVisible(true), 4000)
+    return () => { obs.disconnect(); clearTimeout(timer) }
+  }, [threshold, rootMargin])
 
   return { ref, visible }
 }

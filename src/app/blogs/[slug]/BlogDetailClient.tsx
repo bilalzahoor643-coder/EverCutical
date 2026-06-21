@@ -7,19 +7,25 @@ import Navbar from "@/components/Navbar"
 import Footer from "@/components/Footer"
 import { blogPosts, type ContentBlock } from "@/data/scrapedData"
 
-function useInView(threshold = 0.1) {
+function useInView(threshold = 0.15, rootMargin?: string) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
+
   useEffect(() => {
     const el = ref.current
     if (!el) return
+    const isMobile = window.innerWidth < 768
     const obs = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) setVisible(true) },
-      { threshold, rootMargin: "0px 0px -60px 0px" }
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true)
+      },
+      { threshold: isMobile ? 0.01 : threshold, rootMargin: rootMargin ?? (isMobile ? "200px 0px 0px 0px" : "0px 0px -30px 0px") }
     )
     obs.observe(el)
-    return () => obs.disconnect()
-  }, [threshold])
+    const timer = isMobile ? setTimeout(() => setVisible(true), 1500) : setTimeout(() => setVisible(true), 4000)
+    return () => { obs.disconnect(); clearTimeout(timer) }
+  }, [threshold, rootMargin])
+
   return { ref, visible }
 }
 
