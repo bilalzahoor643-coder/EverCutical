@@ -42,34 +42,33 @@ function SceneContent({
     const baseScale = isMobile ? 0.25 : isTablet ? 0.42 : 0.7
 
     // ── Organic idle drift (layered) ──
-    const idleX = Math.sin(t * 0.11 + 0.5) * 0.3 + Math.sin(t * 0.07 + 2.1) * 0.18 + Math.cos(t * 0.17 + 1.3) * 0.1
-    const idleY = Math.cos(t * 0.09 + 0.8) * 0.22 + Math.sin(t * 0.06 + 1.7) * 0.15 + Math.cos(t * 0.14 + 3.0) * 0.08
+    const idleX = Math.sin(t * 0.18 + 0.5) * 0.4 + Math.sin(t * 0.12 + 2.1) * 0.25 + Math.cos(t * 0.25 + 1.3) * 0.15
+    const idleY = Math.cos(t * 0.15 + 0.8) * 0.35 + Math.sin(t * 0.1 + 1.7) * 0.2 + Math.cos(t * 0.22 + 3.0) * 0.12
 
     // ── Mouse tracking - FAST & RESPONSIVE ──
-    const mouseSpeed = isMobile ? 0 : 0.18
-    mouseInertia.current.x += (mouse.x * 1.5 - mouseInertia.current.x) * mouseSpeed
-    mouseInertia.current.y += (mouse.y * 1.2 - mouseInertia.current.y) * mouseSpeed
+    const mouseSpeed = isMobile ? 0.08 : 0.25
+    mouseInertia.current.x += (mouse.x * 2.0 - mouseInertia.current.x) * mouseSpeed
+    mouseInertia.current.y += (mouse.y * 1.5 - mouseInertia.current.y) * mouseSpeed
 
     // ── Scroll: continuous zoom + position shift ──
-    // Zoom: scroll down = zoom in, scroll up = zoom out
     const scrollZoom = 1 + s * 0.5
     const scrollClamped = Math.max(0.7, Math.min(1.4, scrollZoom))
 
     // Scroll position drift
-    const scrollOffsetX = Math.sin(s * Math.PI * 3) * 0.2
-    const scrollOffsetY = s * 0.3
+    const scrollOffsetX = Math.sin(s * Math.PI * 3) * 0.25
+    const scrollOffsetY = s * 0.35
 
     // Combine
-    const mFactor = isMobile ? 0.3 : isTablet ? 0.55 : 1.0
+    const mFactor = isMobile ? 0.4 : isTablet ? 0.6 : 1.0
     const targetX = (idleX + mouseInertia.current.x + scrollOffsetX) * mFactor
     const targetY = (idleY + mouseInertia.current.y + scrollOffsetY) * mFactor
 
     // Breathing
-    const breathe = 1 + Math.sin(t * 0.45) * 0.015
+    const breathe = 1 + Math.sin(t * 0.7) * 0.02
     const targetScale = scrollClamped * breathe * baseScale
 
     // Smooth interpolation
-    const lerp = 0.06
+    const lerp = 0.08
     posSmooth.current.x += (targetX - posSmooth.current.x) * lerp
     posSmooth.current.y += (targetY - posSmooth.current.y) * lerp
     scaleSmooth.current += (targetScale - scaleSmooth.current) * 0.05

@@ -119,15 +119,15 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
       instances.push({
         baseX: x, baseY: y, baseZ: z,
         scale: isMobile ? 0.75 + rand() * 0.15 : 1.0 + rand() * 0.35,
-        rotSpeedX: (0.03 + rand() * 0.04) * 0.7,
-        rotSpeedY: (0.025 + rand() * 0.035) * 0.7,
-        rotSpeedZ: (0.015 + rand() * 0.025) * 0.7,
-        floatSpeedX: 0.25 + rand() * 0.15,
-        floatSpeedY: 0.2 + rand() * 0.12,
-        floatSpeedZ: 0.12 + rand() * 0.08,
-        floatAmpX: 0.3 + rand() * 0.2,
-        floatAmpY: 0.25 + rand() * 0.18,
-        floatAmpZ: 0.08 + rand() * 0.06,
+        rotSpeedX: (0.05 + rand() * 0.06) * 0.7,
+        rotSpeedY: (0.04 + rand() * 0.05) * 0.7,
+        rotSpeedZ: (0.025 + rand() * 0.04) * 0.7,
+        floatSpeedX: 0.4 + rand() * 0.25,
+        floatSpeedY: 0.35 + rand() * 0.2,
+        floatSpeedZ: 0.2 + rand() * 0.14,
+        floatAmpX: 0.4 + rand() * 0.3,
+        floatAmpY: 0.35 + rand() * 0.25,
+        floatAmpZ: 0.12 + rand() * 0.09,
         phaseX: rand() * Math.PI * 2,
         phaseY: rand() * Math.PI * 2,
         phaseZ: rand() * Math.PI * 2,
@@ -145,15 +145,15 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
       instances.push({
         baseX: x, baseY: y, baseZ: z,
         scale: isMobile ? 0.5 + rand() * 0.12 : 0.75 + rand() * 0.25,
-        rotSpeedX: 0.04 + rand() * 0.05,
-        rotSpeedY: 0.03 + rand() * 0.04,
-        rotSpeedZ: 0.02 + rand() * 0.03,
-        floatSpeedX: 0.3 + rand() * 0.2,
-        floatSpeedY: 0.25 + rand() * 0.15,
-        floatSpeedZ: 0.15 + rand() * 0.1,
-        floatAmpX: 0.3 + rand() * 0.2,
+        rotSpeedX: 0.06 + rand() * 0.08,
+        rotSpeedY: 0.05 + rand() * 0.06,
+        rotSpeedZ: 0.035 + rand() * 0.05,
+        floatSpeedX: 0.5 + rand() * 0.3,
+        floatSpeedY: 0.4 + rand() * 0.25,
+        floatSpeedZ: 0.25 + rand() * 0.18,
+        floatAmpX: 0.4 + rand() * 0.3,
         floatAmpY: 0.25 + rand() * 0.15,
-        floatAmpZ: 0.08 + rand() * 0.06,
+        floatAmpZ: 0.12 + rand() * 0.09,
         phaseX: rand() * Math.PI * 2,
         phaseY: rand() * Math.PI * 2,
         phaseZ: rand() * Math.PI * 2,
@@ -171,15 +171,15 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
       instances.push({
         baseX: x, baseY: y, baseZ: z,
         scale: isMobile ? 0.22 + rand() * 0.06 : 0.32 + rand() * 0.1,
-        rotSpeedX: 0.05 + rand() * 0.04,
-        rotSpeedY: 0.04 + rand() * 0.03,
-        rotSpeedZ: 0.025 + rand() * 0.02,
-        floatSpeedX: 0.25 + rand() * 0.15,
-        floatSpeedY: 0.2 + rand() * 0.12,
+        rotSpeedX: 0.08 + rand() * 0.06,
+        rotSpeedY: 0.06 + rand() * 0.05,
+        rotSpeedZ: 0.04 + rand() * 0.035,
+        floatSpeedX: 0.4 + rand() * 0.25,
+        floatSpeedY: 0.35 + rand() * 0.2,
         floatSpeedZ: 0.1 + rand() * 0.08,
-        floatAmpX: 0.35 + rand() * 0.2,
-        floatAmpY: 0.3 + rand() * 0.15,
-        floatAmpZ: 0.1 + rand() * 0.06,
+        floatAmpX: 0.45 + rand() * 0.3,
+        floatAmpY: 0.4 + rand() * 0.25,
+        floatAmpZ: 0.14 + rand() * 0.09,
         phaseX: rand() * Math.PI * 2,
         phaseY: rand() * Math.PI * 2,
         phaseZ: rand() * Math.PI * 2,
@@ -197,12 +197,12 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
       instances.push({
         baseX: x, baseY: y, baseZ: z,
         scale: isMobile ? 0.12 + rand() * 0.04 : 0.18 + rand() * 0.07,
-        rotSpeedX: 0.055 + rand() * 0.035,
-        rotSpeedY: 0.045 + rand() * 0.025,
-        rotSpeedZ: 0.028 + rand() * 0.018,
-        floatSpeedX: 0.22 + rand() * 0.12,
-        floatSpeedY: 0.18 + rand() * 0.1,
-        floatSpeedZ: 0.09 + rand() * 0.06,
+        rotSpeedX: 0.08 + rand() * 0.06,
+        rotSpeedY: 0.07 + rand() * 0.04,
+        rotSpeedZ: 0.045 + rand() * 0.03,
+        floatSpeedX: 0.35 + rand() * 0.2,
+        floatSpeedY: 0.3 + rand() * 0.18,
+        floatSpeedZ: 0.16 + rand() * 0.12,
         floatAmpX: 0.3 + rand() * 0.15,
         floatAmpY: 0.25 + rand() * 0.12,
         floatAmpZ: 0.08 + rand() * 0.05,
@@ -223,15 +223,15 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
       instances.push({
         baseX: x, baseY: y, baseZ: z,
         scale: isMobile ? 0.06 + rand() * 0.04 : 0.08 + rand() * 0.05,
-        rotSpeedX: 0.06 + rand() * 0.04,
-        rotSpeedY: 0.05 + rand() * 0.03,
-        rotSpeedZ: 0.03 + rand() * 0.02,
-        floatSpeedX: 0.2 + rand() * 0.12,
-        floatSpeedY: 0.15 + rand() * 0.1,
-        floatSpeedZ: 0.08 + rand() * 0.05,
-        floatAmpX: 0.25 + rand() * 0.12,
-        floatAmpY: 0.2 + rand() * 0.1,
-        floatAmpZ: 0.06 + rand() * 0.04,
+        rotSpeedX: 0.09 + rand() * 0.06,
+        rotSpeedY: 0.075 + rand() * 0.05,
+        rotSpeedZ: 0.05 + rand() * 0.035,
+        floatSpeedX: 0.35 + rand() * 0.2,
+        floatSpeedY: 0.25 + rand() * 0.15,
+        floatSpeedZ: 0.15 + rand() * 0.1,
+        floatAmpX: 0.35 + rand() * 0.2,
+        floatAmpY: 0.3 + rand() * 0.15,
+        floatAmpZ: 0.1 + rand() * 0.07,
         phaseX: rand() * Math.PI * 2,
         phaseY: rand() * Math.PI * 2,
         phaseZ: rand() * Math.PI * 2,
@@ -349,12 +349,12 @@ export default function ExosomeParticles() {
     if (!coreInstanceRef.current || !memInstanceRef.current || !groupRef.current) return
     const dt = Math.min(delta, 0.05)
     time.current += dt
-    const t = time.current * 2.0
+    const t = time.current * 3.0
 
-    const tx = mouseRef.current.x * 0.06
-    const ty = mouseRef.current.y * 0.04
-    groupRef.current.position.x += (tx - groupRef.current.position.x) * 0.3 * dt
-    groupRef.current.position.y += (ty - groupRef.current.position.y) * 0.3 * dt
+    const tx = mouseRef.current.x * 0.08
+    const ty = mouseRef.current.y * 0.06
+    groupRef.current.position.x += (tx - groupRef.current.position.x) * 0.5 * dt
+    groupRef.current.position.y += (ty - groupRef.current.position.y) * 0.5 * dt
 
     const coreMesh = coreInstanceRef.current
     const memMesh = memInstanceRef.current

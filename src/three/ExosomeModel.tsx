@@ -170,16 +170,16 @@ export default function ExosomeModel({
     const t = time.current
 
     // ── Emissive pulse ──
-    membraneMat.current.emissiveIntensity = 0.2 + Math.sin(t * 0.35) * 0.06
-    nucleusMat.current.emissiveIntensity = 0.45 + Math.sin(t * 0.45 + 0.5) * 0.1
+    membraneMat.current.emissiveIntensity = 0.2 + Math.sin(t * 0.5) * 0.08
+    nucleusMat.current.emissiveIntensity = 0.45 + Math.sin(t * 0.6 + 0.5) * 0.12
 
     // ── Organic movement ──
-    const w1 = Math.sin(t * 0.6) * 0.018
-    const w2 = Math.sin(t * 1.0 + 0.7) * 0.01
+    const w1 = Math.sin(t * 0.9) * 0.025
+    const w2 = Math.sin(t * 1.4 + 0.7) * 0.015
     const squash = w1 + w2
     const stretch = -squash * 0.7
-    const wobbleX = Math.sin(t * 0.8 + 2.5) * 0.006
-    const wobbleZ = Math.cos(t * 0.55 + 0.3) * 0.005
+    const wobbleX = Math.sin(t * 1.2 + 2.5) * 0.01
+    const wobbleZ = Math.cos(t * 0.8 + 0.3) * 0.008
 
     groupRef.current.scale.set(
       scale * (1 + stretch + wobbleX),
@@ -189,10 +189,10 @@ export default function ExosomeModel({
 
     groupRef.current.position.set(position[0], position[1], position[2])
 
-    // ── Slow rotation ──
-    groupRef.current.rotation.y += delta * (0.03 + Math.sin(t * 0.15) * 0.01)
-    groupRef.current.rotation.x = Math.sin(t * 0.08 + phase) * 0.03
-    groupRef.current.rotation.z = Math.cos(t * 0.06 + 1.0) * 0.02
+    // ── Faster rotation ──
+    groupRef.current.rotation.y += delta * (0.06 + Math.sin(t * 0.2) * 0.02)
+    groupRef.current.rotation.x = Math.sin(t * 0.12 + phase) * 0.04
+    groupRef.current.rotation.z = Math.cos(t * 0.1 + 1.0) * 0.03
 
     // ── Membrane vertex animation — subtle breathing displacement ──
     const membraneGeo = membraneGeoRef.current
