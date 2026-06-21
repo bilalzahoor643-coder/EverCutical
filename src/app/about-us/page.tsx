@@ -152,7 +152,7 @@ export default function AboutUsPage() {
           <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 text-glow">
             <div ref={mission.ref} className="text-center mb-8"
               style={{ opacity: mission.visible ? 1 : 0, transform: `translateY(${mission.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
-              <span className="text-[10px] text-[#3d6a82] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">Our Purpose</span>
+              <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">Our Purpose</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#38bdf8] mt-3 mb-2 leading-tight">
                 {aboutUs.mission.title.split(" & ")[0]} <span className="text-[#38bdf8]">&amp;</span> {aboutUs.mission.title.split(" & ")[1]}
               </h2>
@@ -193,7 +193,7 @@ export default function AboutUsPage() {
               }}>
                 <div className="relative glass-card rounded-2xl border border-white/[0.08] p-8 md:p-10 shadow-[0_8px_40px_rgba(0,0,0,0.3)] overflow-hidden">
                   <div className="absolute top-0 left-8 right-8 h-[2px] bg-gradient-to-r from-transparent via-[#5b7c91]/40 to-transparent" />
-                  <span className="inline-block text-[10px] text-[#3d6a82] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.1] px-4 py-1.5 rounded-full mb-5"
+                  <span className="inline-block text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.1] px-4 py-1.5 rounded-full mb-5"
                     style={{ opacity: about.visible ? 1 : 0, transform: `translateY(${about.visible ? 0 : 20}px)`, transition: "opacity 1s ease 0.4s, transform 1s ease 0.4s" }}>
                     Who We Are
                   </span>
@@ -229,7 +229,7 @@ export default function AboutUsPage() {
           <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 relative text-glow">
             <div ref={vesco.ref} className="text-center mb-8"
               style={{ opacity: vesco.visible ? 1 : 0, transform: `translateY(${vesco.visible ? 0 : 50}px) scale(${vesco.visible ? 1 : 0.9})`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
-              <span className="text-[10px] text-[#3d6a82] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">{aboutUs.vesco.subtitle}</span>
+              <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">{aboutUs.vesco.subtitle}</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#38bdf8] mt-3 mb-2 leading-tight">
                 {aboutUs.vesco.title.split(" by ")[0]} <span className="text-[#38bdf8]">by</span> {aboutUs.vesco.title.split(" by ")[1]}
               </h2>
@@ -276,7 +276,7 @@ export default function AboutUsPage() {
                 transform: facility.visible ? "translateX(0)" : "translateX(60px)",
                 transition: "opacity 1.4s cubic-bezier(0.22,1,0.36,1) 0.2s, transform 1.4s cubic-bezier(0.22,1,0.36,1) 0.2s",
               }}>
-                <span className="text-[10px] text-[#3d6a82] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block mb-5">
+                <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block mb-5">
                   Our Infrastructure
                 </span>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#38bdf8] mb-4 leading-tight">
@@ -316,7 +316,7 @@ export default function AboutUsPage() {
           <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 text-glow">
             <div ref={rd.ref} className="text-center mb-8"
               style={{ opacity: rd.visible ? 1 : 0, transform: `translateY(${rd.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
-              <span className="text-[10px] text-[#3d6a82] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">Our People</span>
+              <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">Our People</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#38bdf8] mt-3 mb-2 leading-tight">
                 {aboutUs.rd.title.split(" & ")[0]} <span className="text-[#38bdf8]">&amp;</span> {aboutUs.rd.title.split(" & ")[1]}
               </h2>
@@ -347,7 +347,7 @@ export default function AboutUsPage() {
                 transform: exosomes.visible ? "translateX(0)" : "translateX(-60px)",
                 transition: "opacity 1.4s cubic-bezier(0.22,1,0.36,1), transform 1.4s cubic-bezier(0.22,1,0.36,1)",
               }}>
-                <span className="text-[10px] text-[#3d6a82] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block mb-5">
+                <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block mb-5">
                   The Science
                 </span>
                 <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#38bdf8] mb-4 leading-tight">
@@ -392,7 +392,7 @@ export default function AboutUsPage() {
           <div className="w-full max-w-5xl mx-auto px-5 sm:px-6 z-10 text-glow">
             <div ref={quality.ref} className="text-center mb-8"
               style={{ opacity: quality.visible ? 1 : 0, transform: `translateY(${quality.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
-              <span className="text-[10px] text-[#3d6a82] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">Our Standards</span>
+              <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">Our Standards</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#38bdf8] mt-3 mb-2 leading-tight">
                 {aboutUs.quality.title.split(" & ")[0]} <span className="text-[#38bdf8]">&amp;</span> {aboutUs.quality.title.split(" & ")[1]}
               </h2>
@@ -463,7 +463,7 @@ export default function AboutUsPage() {
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4"
                     style={{ opacity: cta.visible ? 1 : 0, transform: `translateY(${cta.visible ? 0 : 20}px)`, transition: "opacity 1s ease 0.85s, transform 1s ease 0.85s" }}>
-                    <Link href="/contact" className="inline-flex items-center gap-2 bg-[#d9a441] text-[#38bdf8] text-sm font-bold px-6 md:px-8 py-3.5 rounded-full hover:bg-[#e6b34e] transition-all duration-300 shadow-[0_4px_20px_rgba(217,164,65,0.3)] hover:shadow-[0_8px_30px_rgba(217,164,65,0.4)]">
+                    <Link href="/contact" className="inline-flex items-center gap-2 bg-[#d9a441] text-[#0c1929] text-sm font-bold px-6 md:px-8 py-3.5 rounded-full hover:bg-[#e6b34e] transition-all duration-300 shadow-[0_4px_20px_rgba(217,164,65,0.3)] hover:shadow-[0_8px_30px_rgba(217,164,65,0.4)]">
                       Get in Touch
                       <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                     </Link>
@@ -560,17 +560,17 @@ function VescoCard({ capability, index, visible }: { capability: { title: string
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0) scale(1)" : `translateY(50px) scale(0.92)`,
         transition: `opacity 1.1s cubic-bezier(0.22,1,0.36,1) ${0.15 + index * 0.14}s, transform 1.1s cubic-bezier(0.22,1,0.36,1) ${0.15 + index * 0.14}s`,
-        background: hovered ? "linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(8,25,50,0.78) 100%)" : "rgba(8,25,50,0.78)",
+        background: hovered ? "linear-gradient(135deg, rgba(12,35,65,0.9) 0%, rgba(8,25,50,0.85) 100%)" : "rgba(8,25,50,0.78)",
         backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-        border: `1px solid ${hovered ? "rgba(91,124,145,0.15)" : "rgba(80,160,220,0.15)"}`,
-        boxShadow: hovered ? "0 12px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(91,124,145,0.08)" : "0 2px 12px rgba(0,0,0,0.03)",
+        border: `1px solid ${hovered ? "rgba(56,189,248,0.2)" : "rgba(80,160,220,0.15)"}`,
+        boxShadow: hovered ? "0 12px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(56,189,248,0.1)" : "0 2px 12px rgba(0,0,0,0.03)",
       }}>
       <div className="p-6">
         <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-4 transition-all duration-500"
-          style={{ backgroundColor: colors[index] + "10", transform: hovered ? "scale(1.15) rotate(-5deg)" : "scale(1) rotate(0deg)" }}>
+          style={{ backgroundColor: colors[index] + "15", transform: hovered ? "scale(1.15) rotate(-5deg)" : "scale(1) rotate(0deg)" }}>
           {icons[index]}
         </div>
-        <h4 className="text-[15px] font-bold text-[#38bdf8] mb-2">{capability.title}</h4>
+        <h4 className="text-[15px] font-bold text-white mb-2">{capability.title}</h4>
         <p className="text-[13px] text-white/60 leading-relaxed">{capability.desc}</p>
         <div className="absolute bottom-0 left-6 right-6 h-[1.5px] transition-all duration-500"
           style={{ background: hovered ? `linear-gradient(to right, transparent, ${colors[index]}30, transparent)` : "linear-gradient(to right, transparent, transparent, transparent)" }} />
@@ -598,17 +598,17 @@ function TeamCard({ member, index, visible }: { member: { role: string; desc: st
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0) scale(1)" : `translateY(50px) scale(0.92)`,
         transition: `opacity 1.1s cubic-bezier(0.22,1,0.36,1) ${0.15 + index * 0.14}s, transform 1.1s cubic-bezier(0.22,1,0.36,1) ${0.15 + index * 0.14}s`,
-        background: hovered ? "linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(8,25,50,0.78) 100%)" : "rgba(8,25,50,0.78)",
+        background: hovered ? "linear-gradient(135deg, rgba(12,35,65,0.9) 0%, rgba(8,25,50,0.85) 100%)" : "rgba(8,25,50,0.78)",
         backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)",
-        border: `1px solid ${hovered ? "rgba(91,124,145,0.15)" : "rgba(80,160,220,0.15)"}`,
-        boxShadow: hovered ? "0 12px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(91,124,145,0.08)" : "0 2px 12px rgba(0,0,0,0.03)",
+        border: `1px solid ${hovered ? "rgba(56,189,248,0.2)" : "rgba(80,160,220,0.15)"}`,
+        boxShadow: hovered ? "0 12px 40px rgba(0,0,0,0.3), 0 0 0 1px rgba(56,189,248,0.1)" : "0 2px 12px rgba(0,0,0,0.03)",
       }}>
       <div className="p-6 text-center">
         <div className="w-14 h-14 rounded-2xl bg-[#0ea5e9]/10 flex items-center justify-center mx-auto mb-4 transition-all duration-500"
           style={{ transform: hovered ? "scale(1.15) rotate(-5deg)" : "scale(1) rotate(0deg)" }}>
           {icons[index]}
         </div>
-        <h4 className="text-[15px] font-bold text-[#38bdf8] mb-2">{member.role}</h4>
+        <h4 className="text-[15px] font-bold text-white mb-2">{member.role}</h4>
         <p className="text-[13px] text-white/60 leading-relaxed">{member.desc}</p>
         <div className="absolute bottom-0 left-6 right-6 h-[1.5px] transition-all duration-500"
           style={{ background: hovered ? "linear-gradient(to right, transparent, rgba(91,124,145,0.3), transparent)" : "linear-gradient(to right, transparent, transparent, transparent)" }} />
