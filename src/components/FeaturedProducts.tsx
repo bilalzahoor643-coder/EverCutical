@@ -209,7 +209,7 @@ export default function FeaturedProducts() {
                   }}
                 />
                 <div className="relative w-full h-[38%] overflow-hidden bg-white/[0.04]">
-                  <img src={product.img} alt={product.fullName} className="w-full h-full object-cover" draggable={false} />
+                  <img src={product.img} alt={product.fullName} className="w-full h-full object-cover" draggable={false} loading="lazy" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0c1929] via-[#0c1929]/20 to-transparent" />
                 </div>
                 <div className={`relative ${isMobile ? 'px-2.5 pb-2.5 pt-1' : 'px-3 pb-3 pt-1'} flex flex-col h-[62%]`}>

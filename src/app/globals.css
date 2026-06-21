@@ -35,16 +35,11 @@ body {
 html, body {
   max-width: 100vw;
   overflow-x: hidden;
-  will-change: scroll-position;
 }
 
 canvas {
   will-change: transform;
   transform: translateZ(0);
-}
-
-.pointer-events-none {
-  contain: layout style;
 }
 
 html {
@@ -499,14 +494,21 @@ section[id] {
   }
 }
 
-/* Smooth section transitions */
-section {
-  position: relative;
+/* Glass surfaces - GPU accelerated */
+.glass-surface,
+.glass-surface-strong,
+.glass-card {
+  contain: layout style;
 }
 
 /* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
   .lenis {
     scroll-behavior: auto !important;
+  }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

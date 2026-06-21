@@ -6,7 +6,7 @@ import { LoadingProvider } from "@/components/LoadingContext"
 import LoadingScreen from "@/components/LoadingScreen"
 import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"] })
+const inter = Inter({ subsets: ["latin"], display: "swap" })
 
 export const metadata: Metadata = {
   title: "EverCeutical | Where Science Meets Cellular Innovation",
@@ -37,8 +37,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${inter.className} antialiased`}>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://img.youtube.com" />
+        <link rel="dns-prefetch" href="https://cdn.shopify.com" />
+      </head>
+      <body className={`${inter.className} antialiased`} style={{ background: "#0a2d5a" }}>
         <LoadingProvider>
           <LoadingScreen />
           <LenisProvider>

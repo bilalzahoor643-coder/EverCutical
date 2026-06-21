@@ -47,13 +47,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator - hidden on mobile, shown on desktop */}
-      <div className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-3 opacity-0 animate-[fadeUp_0.6s_0.8s_forwards]">
-        <span className="text-[11px] text-white/60 tracking-widest uppercase font-medium">Scroll</span>
-        <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
-          <div className="w-1.5 h-3 bg-white/60 rounded-full animate-[scrollBounce_1.5s_infinite]" />
-        </div>
-      </div>
     </section>
   )
 }

@@ -100,7 +100,7 @@ export default function ExosomeBackground() {
               depth: true,
             }}
             style={{ background: "transparent", width: "100%", height: "100%" }}
-            frameloop="always"
+            frameloop={isMobile ? "demand" : "always"}
             onCreated={({ gl }) => {
               gl.setClearColor(0x000000, 0)
               gl.toneMapping = THREE.ACESFilmicToneMapping

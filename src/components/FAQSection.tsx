@@ -177,6 +177,7 @@ export default function FAQSection() {
                 src="images/faq-doctor.jpg"
                 alt="Medical Professional"
                 className="absolute inset-0 w-full h-full object-cover object-top"
+                loading="lazy"
               />
 
               {/* Floating particles */}

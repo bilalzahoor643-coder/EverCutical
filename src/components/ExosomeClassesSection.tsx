@@ -406,7 +406,7 @@ export default function ExosomeClassesSection() {
                 }}
               >
                 <img src={node.icon} alt={node.name}
-                  className="w-[65%] h-[65%] object-contain" draggable={false} />
+                  className="w-[65%] h-[65%] object-contain" draggable={false} loading="lazy" />
               </div>
               <p className="mt-1.5 text-[9px] md:text-[11px] font-bold text-center leading-tight whitespace-nowrap text-white">
                 {node.name}
