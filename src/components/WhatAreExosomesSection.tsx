@@ -69,7 +69,7 @@ export default function WhatAreExosomesSection() {
                 {exosomeTechnology.hero.label}
               </span>
 
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-3 leading-tight">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#0f172a] mb-3 leading-tight">
                 {exosomeTechnology.hero.title}
               </h2>
 
@@ -77,7 +77,7 @@ export default function WhatAreExosomesSection() {
                 {exosomeTechnology.hero.subtitle}
               </p>
 
-              <p className="text-[#b0d0e8] text-sm md:text-[15px] leading-relaxed mb-5">
+              <p className="text-[#334155] text-sm md:text-[15px] leading-relaxed mb-5">
                 {exosomeTechnology.hero.description}
               </p>
 
@@ -86,15 +86,15 @@ export default function WhatAreExosomesSection() {
                 {statItems.map((s, i) => (
                   <div
                     key={i}
-                    className="flex items-center gap-2 bg-white/[0.08] backdrop-blur-sm rounded-full px-4 py-2 border border-white/[0.1]"
+                    className="flex items-center gap-2 bg-[#f8fafc] backdrop-blur-sm rounded-full px-4 py-2 border border-[#e2e8f0]"
                     style={{
                       opacity: hero.visible ? 1 : 0,
                       transform: hero.visible ? "translateY(0) scale(1)" : "translateY(25px) scale(0.8)",
                       transition: `opacity 0.9s cubic-bezier(0.16,1,0.3,1) ${0.3 + i * 0.1}s, transform 0.9s cubic-bezier(0.34,1.56,0.64,1) ${0.3 + i * 0.1}s`,
                     }}
                   >
-                    <span className="text-[13px] font-bold text-white">{s.value}</span>
-                    <span className="text-[11px] text-[#94b8d8]">{s.label}</span>
+                    <span className="text-[13px] font-bold text-[#0f172a]">{s.value}</span>
+                    <span className="text-[11px] text-[#64748b]">{s.label}</span>
                   </div>
                 ))}
               </div>
@@ -113,7 +113,7 @@ export default function WhatAreExosomesSection() {
           >
             <div className="relative w-full max-w-[460px] aspect-square">
               {/* Dark backdrop circle to separate from bg */}
-              <div className="absolute inset-[8%] rounded-full bg-[#041828]/60 blur-[2px]" />
+              <div className="absolute inset-[8%] rounded-full bg-[#0f172a]/60 blur-[2px]" />
               {/* Glow backdrop */}
               <div className="absolute inset-[12%] rounded-full bg-[#38bdf8]/[0.08] blur-[40px]" />
 
@@ -357,7 +357,7 @@ export default function WhatAreExosomesSection() {
             <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.1] px-4 py-1.5 rounded-full border border-[#0ea5e9]/20">
               Platform Capabilities
             </span>
-            <h3 className="text-xl md:text-2xl font-bold text-white mt-4">
+            <h3 className="text-xl md:text-2xl font-bold text-[#0f172a] mt-4">
               Advanced Exosome Technology
             </h3>
           </div>
@@ -366,11 +366,11 @@ export default function WhatAreExosomesSection() {
             {features.map((f, i) => (
               <div
                 key={i}
-                className="group relative glass-card rounded-xl p-6"
+                className="group relative glass-card rounded-xl p-6 bg-white border border-[#e2e8f0]"
                 style={{
                   opacity: cards.visible ? 1 : 0,
                   transform: cards.visible ? "translateY(0) scale(1)" : "translateY(40px) scale(0.85)",
-                  transition: `opacity 1.0s cubic-bezier(0.16,1,0.3,1) ${0.08 + i * 0.1}s, transform 1.0s cubic-bezier(0.34,1.56,0.64,1) ${0.08 + i * 0.1}s, background 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease`,
+                  transition: `opacity 1.0s cubic-bezier(0.16,1,0.3,1) ${0.08 + i * 0.1}s, transform 1.0s cubic-bezier(0.34,1.56,0.64,1) ${0.08 + i * 0.1}s, background 0.5s ease, border-color 0.5s ease`,
                 }}
               >
                 {/* Icon */}
@@ -378,11 +378,11 @@ export default function WhatAreExosomesSection() {
                   {f.icon}
                 </div>
 
-                <h4 className="text-[15px] font-bold text-white mb-2">
+                <h4 className="text-[15px] font-bold text-[#0f172a] mb-2">
                   {f.title}
                 </h4>
 
-                <p className="text-[13px] text-[#94b8d8] leading-relaxed">
+                <p className="text-[13px] text-[#334155] leading-relaxed">
                   {f.desc}
                 </p>
 
@@ -405,7 +405,7 @@ export default function WhatAreExosomesSection() {
         >
           <a
             href="/research-technology"
-            className="inline-flex items-center gap-2 bg-[#0ea5e9] text-white text-sm font-semibold px-7 py-3.5 rounded-full hover:bg-[#0284c7] transition-all duration-300 shadow-[0_4px_20px_rgba(14,165,233,0.3)] hover:shadow-[0_6px_30px_rgba(14,165,233,0.4)]"
+            className="inline-flex items-center gap-2 bg-[#0ea5e9] text-white text-sm font-semibold px-7 py-3.5 rounded-full hover:bg-[#0284c7] transition-all duration-300"
           >
             Explore Research & Technology
             <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">

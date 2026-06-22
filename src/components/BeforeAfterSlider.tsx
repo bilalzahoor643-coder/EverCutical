@@ -98,14 +98,14 @@ export default function BeforeAfterSlider({
 
   if (!isSplit && isComposite) {
     return (
-      <div className="relative w-full max-w-2xl mx-auto rounded-2xl aspect-[4/3] bg-gray-100 animate-pulse" />
+      <div className="relative w-full max-w-2xl mx-auto rounded-2xl aspect-[4/3] bg-[#f1f5f9] animate-pulse" />
     )
   }
 
   return (
     <div
       ref={containerRef}
-      className="relative w-full max-w-2xl mx-auto rounded-2xl overflow-hidden select-none shadow-[0_8px_40px_rgba(0,0,0,0.15)]"
+      className="relative w-full max-w-2xl mx-auto rounded-2xl overflow-hidden select-none"
       style={{ cursor: "ew-resize", touchAction: "none" }}
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
@@ -139,11 +139,11 @@ export default function BeforeAfterSlider({
         >
           <div
             className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 w-[3px] bg-white"
-            style={{ boxShadow: "0 0 10px rgba(0,0,0,0.5)" }}
+            style={{ boxShadow: "none" }}
           />
           {/* Handle */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white shadow-[0_2px_16px_rgba(0,0,0,0.35)] flex items-center justify-center pointer-events-auto cursor-ew-resize">
-            <svg className="w-5 h-5 text-gray-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white flex items-center justify-center pointer-events-auto cursor-ew-resize">
+            <svg className="w-5 h-5 text-[#334155]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 19l7-7-7-7" />
             </svg>
@@ -152,7 +152,7 @@ export default function BeforeAfterSlider({
 
         {/* Before Label */}
         <div className="absolute top-4 left-4 z-10">
-          <span className="px-4 py-2 rounded-lg bg-black/70 backdrop-blur-sm text-white text-xs font-bold tracking-wider uppercase shadow-lg">
+          <span className="px-4 py-2 rounded-lg bg-black/70 backdrop-blur-sm text-white text-xs font-bold tracking-wider uppercase">
             {beforeLabel}
           </span>
         </div>
@@ -162,7 +162,7 @@ export default function BeforeAfterSlider({
           className="absolute top-4 right-4 z-10 transition-opacity duration-300"
           style={{ opacity: position > 15 ? 1 : 0 }}
         >
-          <span className="px-4 py-2 rounded-lg bg-[#1e3a5f]/90 backdrop-blur-sm text-white text-xs font-bold tracking-wider uppercase shadow-lg">
+          <span className="px-4 py-2 rounded-lg bg-[#0f172a]/90 backdrop-blur-sm text-white text-xs font-bold tracking-wider uppercase">
             {afterLabel}
           </span>
         </div>

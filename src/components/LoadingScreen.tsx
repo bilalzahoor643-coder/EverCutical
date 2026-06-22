@@ -21,12 +21,12 @@ export default function LoadingScreen() {
     }
   }, [allReady, mounted])
 
-  // Force hide after 2.5 seconds
+  // Force hide after 1.5 seconds
   useEffect(() => {
     const forceHide = setTimeout(() => {
       setFading(true)
       setTimeout(() => setVisible(false), 300)
-    }, 2500)
+    }, 1500)
     return () => clearTimeout(forceHide)
   }, [])
 
@@ -36,7 +36,7 @@ export default function LoadingScreen() {
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center"
       style={{
-        background: "rgba(10,45,90,0.9)",
+        background: "rgba(255,255,255,0.95)",
         transition: "opacity 0.3s ease",
         opacity: fading ? 0 : 1,
         pointerEvents: fading ? "none" : "auto",

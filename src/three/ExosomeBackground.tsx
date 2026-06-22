@@ -43,7 +43,7 @@ export default function ExosomeBackground() {
     // Delay canvas init to not block first paint
     const timer = setTimeout(() => {
       setCanvasReady(true)
-    }, 200)
+    }, 50)
     return () => clearTimeout(timer)
   }, [])
 
@@ -51,19 +51,19 @@ export default function ExosomeBackground() {
 
   return (
     <>
-      {/* Blue fluid gradient background - instant, no 3D needed */}
+      {/* White fluid gradient background - instant, no 3D needed */}
       <div
         className="fixed inset-0 pointer-events-none"
         style={{
           zIndex: 0,
           background: `
             radial-gradient(ellipse 130% 110% at 50% 40%,
-              #2c8fd6 0%,
-              #2378c2 22%,
-              #1c63ab 42%,
-              #154f90 62%,
-              #0f3d74 82%,
-              #0a2d5a 100%
+              #ffffff 0%,
+              #f8fafc 22%,
+              #f1f5f9 42%,
+              #e2e8f0 62%,
+              #f1f5f9 82%,
+              #ffffff 100%
             )
           `,
         }}
@@ -75,10 +75,10 @@ export default function ExosomeBackground() {
         style={{
           zIndex: 0,
           background: `
-            radial-gradient(ellipse 70% 55% at 35% 32%, rgba(90,180,240,0.22) 0%, transparent 60%),
-            radial-gradient(ellipse 55% 45% at 65% 50%, rgba(60,150,220,0.16) 0%, transparent 55%),
-            radial-gradient(ellipse 45% 35% at 50% 22%, rgba(110,190,250,0.14) 0%, transparent 50%),
-            radial-gradient(ellipse 40% 30% at 25% 68%, rgba(40,130,200,0.1) 0%, transparent 45%)
+            radial-gradient(ellipse 70% 55% at 35% 32%, rgba(200,230,255,0.15) 0%, transparent 60%),
+            radial-gradient(ellipse 55% 45% at 65% 50%, rgba(180,220,250,0.1) 0%, transparent 55%),
+            radial-gradient(ellipse 45% 35% at 50% 22%, rgba(210,240,255,0.08) 0%, transparent 50%),
+            radial-gradient(ellipse 40% 30% at 25% 68%, rgba(170,210,245,0.06) 0%, transparent 45%)
           `,
         }}
       />

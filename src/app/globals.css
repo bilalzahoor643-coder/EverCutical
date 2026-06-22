@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0a2d5a;
-  --bg-surface: rgba(8,25,50,0.82);
-  --bg-surface-hover: rgba(12,35,65,0.88);
-  --text: #e8f2fc;
-  --text-heading: #ffffff;
-  --text-body: #c0daf0;
-  --text-muted: #8ab4d8;
+  --bg: #ffffff;
+  --bg-surface: rgba(255,255,255,0.82);
+  --bg-surface-hover: rgba(245,245,245,0.88);
+  --text: #334155;
+  --text-heading: #0f172a;
+  --text-body: #334155;
+  --text-muted: #64748b;
   --accent: #38bdf8;
   --accent-light: #60d0ff;
   --accent-glow: rgba(56,189,248,0.3);
@@ -15,9 +15,9 @@
   --scientific-cyan: #40d8f0;
   --ice-blue: #c8eaff;
   --soft-teal: #a0f0d8;
-  --glass-bg: rgba(8,25,50,0.78);
-  --glass-border: rgba(80,160,220,0.18);
-  --glass-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  --glass-bg: rgba(255,255,255,0.78);
+  --glass-border: rgba(200,200,200,0.18);
+  --glass-shadow: none;
 }
 
 * {
@@ -26,7 +26,7 @@
 }
 
 body {
-  background: #0a2d5a;
+  background: #ffffff;
   color: var(--text);
   overflow-x: hidden;
   min-width: 0;
@@ -43,14 +43,16 @@ canvas {
 }
 
 html {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: auto;
 }
 
 ::-webkit-scrollbar {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(8,25,50,0.7);
+  background: rgba(240,240,240,0.7);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--accent);
@@ -58,7 +60,7 @@ html {
 }
 * {
   scrollbar-width: thin;
-  scrollbar-color: var(--accent) rgba(8,25,50,0.7);
+  scrollbar-color: var(--accent) rgba(240,240,240,0.7);
 }
 
 .backdrop-blur-md {
@@ -151,7 +153,7 @@ html.lenis {
   height: auto;
 }
 .lenis.lenis-smooth {
-  scroll-behavior: auto;
+  scroll-behavior: smooth;
 }
 .lenis.lenis-smooth [data-lenis-prevent] {
   overscroll-behavior: contain;
@@ -204,8 +206,8 @@ html.lenis {
   100% { background-position: 200% 0; }
 }
 @keyframes pulseGlow {
-  0%, 100% { box-shadow: 0 0 20px rgba(56,189,248,0.15); }
-  50% { box-shadow: 0 0 40px rgba(56,189,248,0.3); }
+  0%, 100% { box-shadow: none; }
+  50% { box-shadow: none; }
 }
 @keyframes orbitSlow {
   from { transform: rotate(0deg) translateX(6px) rotate(0deg); }
@@ -220,51 +222,47 @@ html.lenis {
 
 /* ═══ TEXT READABILITY OVER 3D BACKGROUND ═══ */
 .text-glow {
-  text-shadow: 0 1px 6px rgba(0,15,40,0.9), 0 0 16px rgba(56,189,248,0.25);
+  text-shadow: none;
 }
 .text-glow-strong {
-  text-shadow: 0 1px 8px rgba(0,15,40,0.95), 0 0 20px rgba(56,189,248,0.35), 0 0 40px rgba(56,189,248,0.15);
+  text-shadow: none;
 }
 
 /* ═══ GLASSMORPHISM — Premium blue biotech panels ═══ */
 /* Stronger opacity for readability over bright 3D exosome background */
 .glass-surface {
-  background: rgba(8,25,50,0.82);
+  background: rgba(255,255,255,0.82);
   backdrop-filter: blur(28px);
   -webkit-backdrop-filter: blur(28px);
-  border: 1px solid rgba(80,160,220,0.18);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.35), inset 0 1px 0 rgba(255,255,255,0.06);
+  border: 1px solid rgba(200,200,200,0.18);
 }
 .glass-surface-strong {
-  background: rgba(6,20,42,0.88);
+  background: rgba(250,250,250,0.88);
   backdrop-filter: blur(32px);
   -webkit-backdrop-filter: blur(32px);
-  border: 1px solid rgba(80,160,220,0.22);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.08);
+  border: 1px solid rgba(200,200,200,0.22);
 }
 .glass-card {
-  background: rgba(8,25,50,0.78);
+  background: rgba(255,255,255,0.78);
   backdrop-filter: blur(22px);
   -webkit-backdrop-filter: blur(22px);
-  border: 1px solid rgba(80,160,220,0.15);
-  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  border: 1px solid rgba(200,200,200,0.15);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .glass-card:hover {
-  background: rgba(12,35,65,0.85);
-  border-color: rgba(80,160,220,0.3);
-  box-shadow: 0 8px 40px rgba(56,189,248,0.15), 0 0 2px rgba(80,160,220,0.25), inset 0 1px 0 rgba(255,255,255,0.08);
+  background: rgba(245,245,245,0.85);
+  border-color: rgba(200,200,200,0.3);
   transform: translateY(-2px);
 }
 
 /* ═══ SECTION BACKDROP — full-width frosted band behind content ═══ */
 .section-backdrop {
-  background: rgba(6,18,36,0.45);
+  background: rgba(250,250,250,0.45);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
 }
 .section-backdrop-strong {
-  background: rgba(6,18,36,0.6);
+  background: rgba(245,245,245,0.6);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -499,6 +497,33 @@ section[id] {
 .glass-surface-strong,
 .glass-card {
   contain: layout style;
+}
+
+/* Scroll performance optimizations */
+.gpu-accelerated,
+.glass-surface,
+.glass-card,
+.will-change-transform,
+.will-change-opacity {
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+html {
+  overscroll-behavior: auto;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: auto;
+}
+
+section {
+  will-change: auto;
 }
 
 /* Reduce motion for users who prefer it */

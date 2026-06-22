@@ -58,9 +58,9 @@ function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) {
               <AnimatedBlock key={i} index={idx}>
                 <Tag
                   id={block.text?.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+$/, "")}
-                  className={`font-bold text-white leading-snug scroll-mt-28 ${
+                  className={`font-bold text-[#0f172a] leading-snug scroll-mt-28 ${
                     block.level === 2
-                      ? "text-2xl md:text-[28px] mt-14 mb-6 pb-4 border-b border-white/[0.08]"
+                      ? "text-2xl md:text-[28px] mt-14 mb-6 pb-4 border-b border-[#e2e8f0]"
                       : block.level === 3
                       ? "text-xl md:text-[22px] mt-10 mb-5"
                       : "text-lg mt-8 mb-4"
@@ -75,7 +75,7 @@ function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) {
             const idx = blockIndex++
             return (
               <AnimatedBlock key={i} index={idx}>
-                <p className="text-white/60 text-[15px] md:text-[16px] leading-[1.9]">
+                <p className="text-[#334155] text-[15px] md:text-[16px] leading-[1.9]">
                   {block.text}
                 </p>
               </AnimatedBlock>
@@ -87,7 +87,7 @@ function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) {
               <AnimatedBlock key={i} index={idx}>
                 <ul className="space-y-3.5 py-2">
                   {block.items?.map((item, j) => (
-                    <li key={j} className="flex items-start gap-3.5 text-white/60 text-[15px] md:text-[16px] leading-[1.8]">
+                    <li key={j} className="flex items-start gap-3.5 text-[#334155] text-[15px] md:text-[16px] leading-[1.8]">
                       <span className="mt-2.5 w-2 h-2 rounded-full bg-[#0ea5e9] shrink-0" />
                       <span>{item}</span>
                     </li>
@@ -100,7 +100,7 @@ function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) {
             const idx = blockIndex++
             return (
               <AnimatedBlock key={i} index={idx}>
-                <figure className="my-10 rounded-2xl overflow-hidden shadow-xl shadow-[#0ea5e9]/8 border border-white/[0.08]">
+                <figure className="my-10 rounded-2xl overflow-hidden border border-[#e2e8f0]">
                   <img
                     src={block.src}
                     alt={block.alt || ""}
@@ -115,12 +115,12 @@ function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) {
             const idx = blockIndex++
             return (
               <AnimatedBlock key={i} index={idx}>
-                <div className="my-10 overflow-x-auto rounded-xl border border-white/[0.08] shadow-md shadow-[#0ea5e9]/[0.03]">
+                <div className="my-10 overflow-x-auto rounded-xl border border-[#e2e8f0]">
                   <table className="w-full text-sm">
                     <thead>
-                      <tr className="bg-white/[0.04]">
+                      <tr className="bg-[#f8fafc]">
                         {block.headers?.map((h, j) => (
-                          <th key={j} className="px-3 py-2 sm:px-6 sm:py-4 text-left text-white font-semibold tracking-wide text-[13px]">
+                          <th key={j} className="px-3 py-2 sm:px-6 sm:py-4 text-left text-[#0f172a] font-semibold tracking-wide text-[13px]">
                             {h}
                           </th>
                         ))}
@@ -128,9 +128,9 @@ function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) {
                     </thead>
                     <tbody>
                       {block.rows?.map((row, j) => (
-                        <tr key={j} className={`${j % 2 === 0 ? "bg-white/[0.02]" : "bg-white/[0.04]"} hover:bg-white/[0.06] transition-colors duration-200`}>
+                        <tr key={j} className={`${j % 2 === 0 ? "bg-white" : "bg-[#f8fafc]"} hover:bg-[#f1f5f9] transition-colors duration-200`}>
                           {row.map((cell, k) => (
-                            <td key={k} className="px-3 py-2 sm:px-6 sm:py-4 text-white/70 border-t border-white/[0.08] text-[14px]">
+                            <td key={k} className="px-3 py-2 sm:px-6 sm:py-4 text-[#334155] border-t border-[#e2e8f0] text-[14px]">
                               {cell}
                             </td>
                           ))}
@@ -147,7 +147,7 @@ function ContentRenderer({ blocks }: { blocks: ContentBlock[] }) {
             return (
               <AnimatedBlock key={i} index={idx}>
                 <blockquote className="my-8 pl-7 border-l-4 border-[#38bdf8] bg-gradient-to-r from-[#38bdf8]/[0.06] to-transparent rounded-r-2xl py-6 pr-7">
-                  <p className="text-white text-[15px] md:text-[16px] leading-[1.85] italic font-medium">
+                  <p className="text-[#0f172a] text-[15px] md:text-[16px] leading-[1.85] italic font-medium">
                     &ldquo;{block.text}&rdquo;
                   </p>
                 </blockquote>
@@ -183,8 +183,8 @@ function TableOfContents({ blocks }: { blocks: ContentBlock[] }) {
 
   return (
     <nav className="hidden xl:block w-64 shrink-0">
-      <div className="sticky top-28 rounded-2xl glass-card p-6">
-        <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#38bdf8] mb-5 pb-3 border-b border-white/[0.08]">
+      <div className="sticky top-28 rounded-2xl bg-[#f8fafc] border border-[#e2e8f0] p-6">
+        <h4 className="text-[11px] font-bold tracking-[0.2em] uppercase text-[#38bdf8] mb-5 pb-3 border-b border-[#e2e8f0]">
           Table of Contents
         </h4>
         <ul className="space-y-3">
@@ -192,7 +192,7 @@ function TableOfContents({ blocks }: { blocks: ContentBlock[] }) {
             <li key={i}>
               <a
                 href={`#${h.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/-+$/, "")}`}
-                className="text-[13px] text-white/50 hover:text-white transition-colors duration-200 leading-snug block py-0.5 hover:pl-1 transition-all"
+                className="text-[13px] text-[#64748b] hover:text-[#0f172a] transition-colors duration-200 leading-snug block py-0.5 hover:pl-1 transition-all"
               >
                 {h}
               </a>
@@ -222,7 +222,7 @@ function RelatedArticles({ currentSlug }: { currentSlug: string }) {
           <span className="inline-block text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full mb-4">
             Continue Reading
           </span>
-          <h2 className="text-2xl md:text-3xl font-bold text-white">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#0f172a]">
             Related <span className="text-[#38bdf8]">Articles</span>
           </h2>
         </div>
@@ -232,7 +232,7 @@ function RelatedArticles({ currentSlug }: { currentSlug: string }) {
             <Link
               key={post.id}
               href={`/blogs/${post.slug}`}
-              className="group relative rounded-2xl overflow-hidden glass-card hover:shadow-2xl hover:shadow-[#0ea5e9]/10 transition-all duration-500 hover:-translate-y-1"
+              className="group relative rounded-2xl overflow-hidden glass-card transition-all duration-500 hover:-translate-y-1"
               style={{
                 opacity: visible ? 1 : 0,
                 transform: `translateY(${visible ? 0 : 50}px)`,
@@ -248,7 +248,7 @@ function RelatedArticles({ currentSlug }: { currentSlug: string }) {
                     loading="lazy"
                   />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-[#0ea5e9]/10 to-[#0c1929]/10 flex items-center justify-center">
+                  <div className="w-full h-full bg-gradient-to-br from-[#0ea5e9]/10 to-[#f1f5f9]/10 flex items-center justify-center">
                     <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="1.5">
                       <path d="M12 2L2 7l10 5 10-5-10-5z" />
                       <path d="M2 17l10 5 10-5" />
@@ -261,10 +261,10 @@ function RelatedArticles({ currentSlug }: { currentSlug: string }) {
               <div className="p-5 sm:p-6">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-[10px] sm:text-[11px] font-bold tracking-wider uppercase text-[#38bdf8]">{post.category}</span>
-                  <span className="text-white/30">·</span>
-                  <span className="text-[10px] sm:text-[11px] text-white/40">{post.readTime}</span>
+                  <span className="text-[#94a3b8]">·</span>
+                  <span className="text-[10px] sm:text-[11px] text-[#94a3b8]">{post.readTime}</span>
                 </div>
-                <h3 className="text-[15px] font-bold text-white leading-snug line-clamp-2 group-hover:text-[#38bdf8] transition-colors duration-300">
+                <h3 className="text-[15px] font-bold text-[#0f172a] leading-snug line-clamp-2 group-hover:text-[#38bdf8] transition-colors duration-300">
                   {post.title}
                 </h3>
               </div>
@@ -314,10 +314,10 @@ export default function BlogContent({ params }: { params: Promise<{ slug: string
               transition: "opacity 1s cubic-bezier(0.22,1,0.36,1), transform 1s cubic-bezier(0.22,1,0.36,1)",
             }}
           >
-            <nav className="flex items-center gap-2 text-xs text-white/40 mb-8">
-              <Link href="/" className="hover:text-white transition-colors">Home</Link>
+            <nav className="flex items-center gap-2 text-xs text-[#94a3b8] mb-8">
+              <Link href="/" className="hover:text-[#0f172a] transition-colors">Home</Link>
               <span>/</span>
-              <Link href="/blogs" className="hover:text-white transition-colors">Blog</Link>
+              <Link href="/blogs" className="hover:text-[#0f172a] transition-colors">Blog</Link>
               <span>/</span>
               <span className="text-[#38bdf8] truncate max-w-[200px]">{post.title}</span>
             </nav>
@@ -332,29 +332,29 @@ export default function BlogContent({ params }: { params: Promise<{ slug: string
               >
                 {post.category}
               </span>
-              <span className="text-xs text-white/40">{post.date}</span>
-              <span className="text-white/30">·</span>
-              <span className="text-xs text-white/40">{post.readTime}</span>
+              <span className="text-xs text-[#94a3b8]">{post.date}</span>
+              <span className="text-[#94a3b8]">·</span>
+              <span className="text-xs text-[#94a3b8]">{post.readTime}</span>
             </div>
 
-            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-bold text-white leading-[1.2] mb-7 max-w-3xl">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[44px] font-bold text-[#0f172a] leading-[1.2] mb-7 max-w-3xl">
               {post.title}
             </h1>
 
             <div className="flex items-center gap-4 mb-10">
-              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#0ea5e9] to-[#38bdf8] flex items-center justify-center text-white text-sm font-bold shadow-lg shadow-[#0ea5e9]/20">
+              <div className="w-11 h-11 rounded-full bg-gradient-to-br from-[#0ea5e9] to-[#38bdf8] flex items-center justify-center text-white text-sm font-bold">
                 EC
               </div>
               <div>
-                <div className="text-sm font-semibold text-white">{post.author || "EverCeutical"}</div>
-                <div className="text-xs text-white/40">{post.date}</div>
+                <div className="text-sm font-semibold text-[#0f172a]">{post.author || "EverCeutical"}</div>
+                <div className="text-xs text-[#94a3b8]">{post.date}</div>
               </div>
             </div>
           </div>
 
           {post.image && (
             <div
-              className="relative rounded-3xl overflow-hidden shadow-2xl shadow-[#0ea5e9]/10"
+              className="relative rounded-3xl overflow-hidden"
               style={{
                 opacity: hero.visible ? 1 : 0,
                 transform: `translateY(${hero.visible ? 0 : 40}px) scale(${hero.visible ? 1 : 0.98})`,
@@ -366,7 +366,7 @@ export default function BlogContent({ params }: { params: Promise<{ slug: string
                 alt={post.title}
                 className="w-full h-64 md:h-80 lg:h-[440px] object-cover"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#0c1929]/40 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#f1f5f9]/40 via-transparent to-transparent" />
             </div>
           )}
         </div>
@@ -397,7 +397,7 @@ export default function BlogContent({ params }: { params: Promise<{ slug: string
               Back to Blog
             </Link>
             <div className="flex items-center gap-2.5">
-              <span className="text-xs text-white/40 mr-1 font-medium">Share</span>
+              <span className="text-xs text-[#94a3b8] mr-1 font-medium">Share</span>
               {[
                 { name: "Facebook", path: "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" },
                 { name: "Twitter", path: "M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" },
@@ -405,7 +405,7 @@ export default function BlogContent({ params }: { params: Promise<{ slug: string
               ].map((platform) => (
                 <button
                   key={platform.name}
-                  className="w-9 h-9 rounded-full bg-white/[0.06] flex items-center justify-center text-[#38bdf8] hover:bg-[#0ea5e9] hover:text-white transition-all duration-300 hover:scale-110"
+                  className="w-9 h-9 rounded-full bg-[#f8fafc] flex items-center justify-center text-[#38bdf8] hover:bg-[#0ea5e9] hover:text-white transition-all duration-300 hover:scale-110"
                   aria-label={`Share on ${platform.name}`}
                 >
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -428,7 +428,7 @@ export default function BlogContent({ params }: { params: Promise<{ slug: string
             ref={cta.ref}
             className="relative rounded-3xl p-8 sm:p-10 md:p-14 text-center overflow-hidden"
             style={{
-              background: "linear-gradient(135deg, #0ea5e9 0%, #0c1929 100%)",
+              background: "linear-gradient(135deg, #0ea5e9 0%, #0f172a 100%)",
               opacity: cta.visible ? 1 : 0,
               transform: `translateY(${cta.visible ? 0 : 40}px) scale(${cta.visible ? 1 : 0.97})`,
               transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)",
@@ -440,13 +440,13 @@ export default function BlogContent({ params }: { params: Promise<{ slug: string
             </div>
             <div className="relative z-10">
               <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-                Interested in <span className="text-[#d9a441]">Exosome Therapy</span>?
+                Interested in <span className="text-[#38bdf8]">Exosome Therapy</span>?
               </h2>
               <p className="text-white/70 text-sm md:text-base max-w-lg mx-auto mb-8 leading-relaxed">
                 Explore our range of advanced exosome formulations designed for professional clinical use.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/products" className="px-9 py-4 rounded-full bg-[#d9a441] text-[#0c1929] text-sm font-bold hover:bg-[#e6b34e] transition-all duration-300 shadow-lg shadow-[#d9a441]/30 hover:scale-105">
+                <Link href="/products" className="px-9 py-4 rounded-full bg-[#0ea5e9] text-white text-sm font-bold hover:bg-[#0284c7] transition-all duration-300 hover:scale-105">
                   View Products
                 </Link>
                 <Link href="/contact" className="px-9 py-4 rounded-full border border-white/30 text-white text-sm font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105">

@@ -78,16 +78,14 @@ function VideoCard({
       <div
         className="glass-card relative rounded-[20px] overflow-hidden transition-all duration-500"
         style={{
-          background: hovered ? "rgba(255,255,255,0.08)" : "rgba(255,255,255,0.04)",
+          background: hovered ? "rgba(255,255,255,1)" : "rgba(249,250,251,1)",
           backdropFilter: "blur(20px)",
-          border: `1px solid ${hovered ? "rgba(56,189,248,0.25)" : "rgba(255,255,255,0.08)"}`,
-          boxShadow: hovered
-            ? "0 20px 60px rgba(14,165,233,0.14), 0 0 0 1px rgba(56,189,248,0.08)"
-            : "0 4px 24px rgba(0,0,0,0.2)",
+          border: `1px solid ${hovered ? "rgba(56,189,248,0.25)" : "rgba(229,231,235,1)"}`,
+          boxShadow: "none",
           transform: hovered ? "translateY(-6px)" : "translateY(0)",
         }}
       >
-        <div className="relative w-full aspect-video bg-[#0a1628] overflow-hidden">
+        <div className="relative w-full aspect-video bg-[#f1f5f9] overflow-hidden">
           {!playing ? (
             <div className="relative w-full h-full">
               <img
@@ -101,11 +99,11 @@ function VideoCard({
               <div className="absolute inset-0 bg-black/30" />
 
               <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-                <div className="flex items-center gap-2 bg-white/[0.06] backdrop-blur-sm rounded-full px-4 py-1.5 border border-white/[0.08]">
+                <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm rounded-full px-4 py-1.5 border border-[#e2e8f0]">
                   <svg className="w-3 h-3 text-[#38bdf8]" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
-                  <span className="text-[10px] text-white/70 font-medium tracking-wider uppercase">{data.badge}</span>
+                  <span className="text-[10px] text-[#334155] font-medium tracking-wider uppercase">{data.badge}</span>
                 </div>
               </div>
 
@@ -114,18 +112,18 @@ function VideoCard({
                 className="absolute inset-0 flex items-center justify-center group/play"
               >
                 <div
-                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/[0.06] backdrop-blur-sm flex items-center justify-center transition-all duration-500 group-hover/play:scale-110 group-hover/play:shadow-[0_0_40px_rgba(56,189,248,0.3)]"
+                  className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white/[0.06] backdrop-blur-sm flex items-center justify-center transition-all duration-500 group-hover/play:scale-110"
                   style={{
-                    boxShadow: "0 8px 40px rgba(0,0,0,0.4)",
+                    boxShadow: "none",
                   }}
                 >
-                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-7 h-7 sm:w-8 sm:h-8 text-[#0f172a] ml-1" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M8 5v14l11-7z" />
                   </svg>
                 </div>
               </button>
 
-              <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#0a1628] to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#f1f5f9] to-transparent" />
             </div>
           ) : (
             <iframe
@@ -140,11 +138,11 @@ function VideoCard({
         </div>
 
         <div className="p-5 sm:p-6 md:p-7">
-          <h3 className="text-base sm:text-lg md:text-xl font-bold text-white mb-2 leading-snug">
+          <h3 className="text-base sm:text-lg md:text-xl font-bold text-[#0f172a] mb-2 leading-snug">
             {data.title}
           </h3>
 
-          <p className="text-[12px] sm:text-[13px] text-[#b0d0e8] leading-relaxed mb-4">
+          <p className="text-[12px] sm:text-[13px] text-[#334155] leading-relaxed mb-4">
             {data.desc}
           </p>
 
@@ -153,7 +151,7 @@ function VideoCard({
               href={data.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-[12px] sm:text-[13px] font-semibold text-[#38bdf8] hover:text-white transition-colors group/link"
+              className="inline-flex items-center gap-2 text-[12px] sm:text-[13px] font-semibold text-[#38bdf8] hover:text-[#0f172a] transition-colors group/link"
             >
               {data.buttonLabel}
               <svg className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -164,7 +162,7 @@ function VideoCard({
             {playing && (
               <button
                 onClick={() => setPlaying(false)}
-                className="flex items-center gap-1.5 text-[11px] text-[#94b8d8] hover:text-white transition-colors"
+                className="flex items-center gap-1.5 text-[11px] text-[#64748b] hover:text-[#0f172a] transition-colors"
               >
                 <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M6 4h4v16H6zM14 4h4v16h-4z" />
@@ -210,7 +208,7 @@ export default function BehindTheScienceSection() {
       <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 relative">
         <div
           ref={header.ref}
-          className="text-center mb-5 sm:mb-7 text-glow"
+          className="text-center mb-5 sm:mb-7"
           style={{
             opacity: header.visible ? 1 : 0,
             transform: `translateY(${header.visible ? 0 : 40}px)`,
@@ -220,12 +218,12 @@ export default function BehindTheScienceSection() {
           <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">
             Behind The Science
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-5 mb-4 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#0f172a] mt-5 mb-4 leading-tight">
             Inside the World of{" "}
             <span className="text-[#38bdf8]">Advanced Exosome</span>{" "}
             Technology
           </h2>
-          <p className="text-[#b0d0e8] text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+          <p className="text-[#334155] text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
             Discover the science, innovation, and manufacturing excellence behind
             EverCeutical&apos;s next-generation exosome platform through exclusive behind-the-scenes content.
           </p>

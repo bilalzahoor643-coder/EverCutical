@@ -28,7 +28,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ?           "bg-[#061224]/80 backdrop-blur-xl border-b border-white/[0.08] shadow-[0_4px_30px_rgba(0,0,0,0.4)]"
+           ?           "bg-white/80 backdrop-blur-xl border-b border-[#e2e8f0]/50"
           : "bg-transparent"
       }`}
     >
@@ -41,15 +41,15 @@ export default function Navbar() {
                 <img
                   src="images/logo.png?v=2"
                   alt="EverCeutical Logo"
-                  className="w-full h-full object-contain mix-blend-screen"
+                  className="w-full h-full object-contain"
                   draggable={false}
                 />
               </div>
               <div className="flex flex-col">
-                <span className="text-[13px] sm:text-sm md:text-base font-bold tracking-tight text-white">
+                <span className="text-[13px] sm:text-sm md:text-base font-bold tracking-tight text-[#0f172a]">
                   Ever<span className="text-[#38bdf8]">Ceutical</span>
                 </span>
-                <span className="hidden sm:block text-[9px] md:text-[10px] text-sky-300/60 font-medium tracking-wider uppercase -mt-[1px]">
+                <span className="hidden sm:block text-[9px] md:text-[10px] text-[#64748b] font-medium tracking-wider uppercase -mt-[1px]">
                   Leaders in Exosome Innovation
                 </span>
               </div>
@@ -71,7 +71,7 @@ export default function Navbar() {
                     <Link
                       href={link.href}
                       className={`relative text-xs font-semibold tracking-wide transition-all duration-300 group inline-block py-0.5 ${
-                        isActive ? "text-[#38bdf8]" : "text-white/70 hover:text-white"
+                        isActive ? "text-[#38bdf8]" : "text-[#334155] hover:text-[#0f172a]"
                       }`}
                     >
                       {link.label}
@@ -92,7 +92,7 @@ export default function Navbar() {
             <div className="hidden md:block">
               <Link
                 href="/contact"
-                className="group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0ea5e9] text-white text-xs font-semibold transition-all duration-300 hover:bg-[#0284c7] hover:shadow-lg hover:shadow-[#0ea5e9]/30 hover:scale-[1.03]"
+                className="group inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0ea5e9] text-white text-xs font-semibold transition-all duration-300 hover:bg-[#0284c7] hover:scale-[1.03]"
               >
                 Get In Touch
                 <span className="w-4 h-4 rounded-full bg-white/20 flex items-center justify-center group-hover:bg-white/30 transition-colors">
@@ -106,13 +106,13 @@ export default function Navbar() {
             {/* Hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden relative w-8 h-8 flex items-center justify-center rounded-lg hover:bg-white/10 transition-colors"
+              className="lg:hidden relative w-8 h-8 flex items-center justify-center rounded-lg hover:bg-[#f1f5f9] transition-colors"
               aria-label="Toggle menu"
             >
               <div className="flex flex-col gap-[3.5px]">
-                <motion.span animate={mobileOpen ? { rotate: 45, y: 4.5 } : {}} className="block w-[18px] h-[1.5px] bg-white/70 rounded-full origin-center" />
-                <motion.span animate={mobileOpen ? { opacity: 0 } : {}} className="block w-[18px] h-[1.5px] bg-white/70 rounded-full" />
-                <motion.span animate={mobileOpen ? { rotate: -45, y: -4.5 } : {}} className="block w-[18px] h-[1.5px] bg-white/70 rounded-full origin-center" />
+                <motion.span animate={mobileOpen ? { rotate: 45, y: 4.5 } : {}} className="block w-[18px] h-[1.5px] bg-[#334155] rounded-full origin-center" />
+                <motion.span animate={mobileOpen ? { opacity: 0 } : {}} className="block w-[18px] h-[1.5px] bg-[#334155] rounded-full" />
+                <motion.span animate={mobileOpen ? { rotate: -45, y: -4.5 } : {}} className="block w-[18px] h-[1.5px] bg-[#334155] rounded-full origin-center" />
               </div>
             </button>
           </div>
@@ -127,14 +127,14 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
-            className="lg:hidden mt-0 bg-[#061224]/95 backdrop-blur-xl border-t border-white/[0.08] shadow-lg overflow-hidden"
+            className="lg:hidden mt-0 bg-white/95 backdrop-blur-xl border-t border-[#e2e8f0]/50 overflow-hidden"
           >
             <div className="px-5 sm:px-6 py-4 space-y-0.5">
               {navLinks.map((link, i) => {
                 const isActive = pathname === link.href
                 return (
                   <motion.div key={link.href} initial={{ opacity: 0, x: -12 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.03 * i, duration: 0.2 }}>
-                    <Link href={link.href} onClick={() => setMobileOpen(false)} className={`block text-sm py-3 px-3.5 rounded-lg transition-all duration-200 font-medium ${isActive ? "text-[#38bdf8] bg-[#38bdf8]/10" : "text-white/70 hover:text-white hover:bg-white/5"}`}>
+                    <Link href={link.href} onClick={() => setMobileOpen(false)} className={`block text-sm py-3 px-3.5 rounded-lg transition-all duration-200 font-medium ${isActive ? "text-[#38bdf8] bg-[#38bdf8]/10" : "text-[#334155] hover:text-[#0f172a] hover:bg-[#f8fafc]"}`}>
                       {link.label}
                     </Link>
                   </motion.div>

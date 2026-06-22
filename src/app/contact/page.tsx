@@ -97,7 +97,7 @@ function ContactInfoCard({ icon, label, value, index, visible }: { icon: React.R
         </div>
         <div className="flex-1 min-w-0">
           <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-[#38bdf8] mb-1">{label}</p>
-          <p className="text-sm text-white font-medium leading-relaxed">{value}</p>
+          <p className="text-sm text-[#0f172a] font-medium leading-relaxed">{value}</p>
         </div>
       </div>
       <div className="absolute bottom-0 left-6 right-6 h-[1.5px] transition-all duration-500"
@@ -113,17 +113,17 @@ function FaqItem({ item, index, visible }: { item: { question: string; answer: s
     <div
       className="group relative rounded-2xl overflow-hidden glass-card"
       style={{
-        boxShadow: open ? "0 12px 40px rgba(0,0,0,0.3)" : "0 4px 16px rgba(0,0,0,0.15)",
+        boxShadow: "none",
         opacity: visible ? 1 : 0,
         transform: `translateY(${visible ? 0 : 40}px) scale(${visible ? 1 : 0.95})`,
-        transition: `opacity 1.1s cubic-bezier(0.22,1,0.36,1) ${0.15 + index * 0.12}s, transform 1.1s cubic-bezier(0.22,1,0.36,1) ${0.15 + index * 0.12}s, box-shadow 0.4s ease`,
+        transition: `opacity 1.1s cubic-bezier(0.22,1,0.36,1) ${0.15 + index * 0.12}s, transform 1.1s cubic-bezier(0.22,1,0.36,1) ${0.15 + index * 0.12}s`,
       }}
     >
       <button
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between p-6 text-left cursor-pointer"
       >
-        <span className="text-sm font-semibold text-white pr-4 leading-relaxed">{item.question}</span>
+        <span className="text-sm font-semibold text-[#0f172a] pr-4 leading-relaxed">{item.question}</span>
         <div className={`w-8 h-8 rounded-full bg-[#0ea5e9]/10 flex items-center justify-center shrink-0 transition-all duration-400 ${open ? "rotate-180 bg-[#0ea5e9]/20" : ""}`}>
           <svg className="w-4 h-4 text-[#38bdf8]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -139,7 +139,7 @@ function FaqItem({ item, index, visible }: { item: { question: string; answer: s
         }}
       >
         <div className="px-6 pb-6 pt-0">
-          <p className="text-sm text-white/60 leading-relaxed">{item.answer}</p>
+          <p className="text-sm text-[#334155] leading-relaxed">{item.answer}</p>
         </div>
       </div>
       <div className="absolute bottom-0 left-6 right-6 h-[1.5px] transition-all duration-500"
@@ -165,10 +165,10 @@ function SocialCard({ platform, url, icon, color, index, visible }: { platform: 
         backdropFilter: "blur(20px)",
         WebkitBackdropFilter: "blur(20px)",
         border: `1px solid ${hovered ? color + "40" : "rgba(255,255,255,0.08)"}`,
-        boxShadow: hovered ? `0 16px 48px ${color}20, 0 0 0 1px ${color}10` : "0 6px 24px rgba(0,0,0,0.2)",
+        boxShadow: "none",
         opacity: visible ? 1 : 0,
         transform: `translateY(${visible ? 0 : 50}px) scale(${visible ? 1 : 0.9})`,
-        transition: `opacity 1.2s cubic-bezier(0.22,1,0.36,1) ${0.2 + index * 0.18}s, transform 1.2s cubic-bezier(0.22,1,0.36,1) ${0.2 + index * 0.18}s, background 0.5s ease, border-color 0.5s ease, box-shadow 0.5s ease`,
+        transition: `opacity 1.2s cubic-bezier(0.22,1,0.36,1) ${0.2 + index * 0.18}s, transform 1.2s cubic-bezier(0.22,1,0.36,1) ${0.2 + index * 0.18}s, background 0.5s ease, border-color 0.5s ease`,
       }}
     >
       <a
@@ -184,10 +184,10 @@ function SocialCard({ platform, url, icon, color, index, visible }: { platform: 
           }}>
           {icon}
         </div>
-        <h3 className="text-lg font-bold text-white mb-2 transition-colors duration-300" style={{ color: hovered ? color : undefined }}>
+        <h3 className="text-lg font-bold text-[#0f172a] mb-2 transition-colors duration-300" style={{ color: hovered ? color : undefined }}>
           {platform}
         </h3>
-        <p className="text-xs text-white/40 font-medium">Follow us on {platform}</p>
+        <p className="text-xs text-[#64748b] font-medium">Follow us on {platform}</p>
       </a>
       <div className="absolute bottom-0 left-8 right-8 h-[2px] transition-all duration-500"
         style={{ background: hovered ? `linear-gradient(to right, transparent, ${color}80, transparent)` : "linear-gradient(to right, transparent, transparent, transparent)" }} />
@@ -238,22 +238,22 @@ export default function ContactPage() {
                 EverCeutical Support
               </span>
             </div>
-            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6"
+            <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-[#0f172a] leading-tight mb-6"
               style={{ opacity: hero.visible ? 1 : 0, transform: `translateY(${hero.visible ? 0 : 40}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1) 0.3s, transform 1.3s cubic-bezier(0.22,1,0.36,1) 0.3s" }}>
               Get in <span className="text-[#38bdf8]">Touch</span>
             </h1>
-            <p className="text-white/60 text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-10"
+            <p className="text-[#334155] text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-10"
               style={{ opacity: hero.visible ? 1 : 0, transform: `translateY(${hero.visible ? 0 : 25}px)`, transition: "opacity 1.2s cubic-bezier(0.22,1,0.36,1) 0.5s, transform 1.2s cubic-bezier(0.22,1,0.36,1) 0.5s" }}>
               Have questions about our exosome therapy products or want to explore partnership opportunities?
               We&apos;re here to help you find the right solution for your practice.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4"
               style={{ opacity: hero.visible ? 1 : 0, transform: `translateY(${hero.visible ? 0 : 20}px)`, transition: "opacity 1.2s cubic-bezier(0.22,1,0.36,1) 0.7s, transform 1.2s cubic-bezier(0.22,1,0.36,1) 0.7s" }}>
-              <a href="#contact-form" className="inline-flex items-center px-6 md:px-8 py-3.5 rounded-full bg-[#0ea5e9] text-white text-sm font-semibold hover:bg-[#0284c7] transition-all duration-300 shadow-[0_4px_20px_rgba(14,165,233,0.25)] hover:shadow-[0_8px_30px_rgba(14,165,233,0.35)]">
+              <a href="#contact-form" className="inline-flex items-center px-6 md:px-8 py-3.5 rounded-full bg-[#0ea5e9] text-white text-sm font-semibold hover:bg-[#0284c7] transition-all duration-300">
                 Send a Message
                 <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" /></svg>
               </a>
-              <a href="#faq" className="inline-flex items-center px-6 md:px-8 py-3.5 rounded-full border border-white/20 text-white/80 text-sm font-semibold hover:border-[#0ea5e9]/30 hover:text-[#38bdf8] transition-all duration-300">
+              <a href="#faq" className="inline-flex items-center px-6 md:px-8 py-3.5 rounded-full border border-[#cbd5e1] text-[#334155] text-sm font-semibold hover:border-[#0ea5e9]/30 hover:text-[#38bdf8] transition-all duration-300">
                 View FAQ
               </a>
             </div>
@@ -261,9 +261,9 @@ export default function ContactPage() {
 
           <div className="hidden md:flex absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
             style={{ opacity: hero.visible ? 1 : 0, transition: "opacity 0.8s ease 1s" }}>
-            <span className="text-[10px] text-white/50 tracking-widest uppercase">Scroll</span>
-            <div className="w-5 h-8 border-2 border-white/30 rounded-full flex justify-center pt-1.5">
-              <div className="w-1 h-2 bg-white/40 rounded-full animate-[scrollBounce_1.5s_infinite]" />
+            <span className="text-[10px] text-[#94a3b8] tracking-widest uppercase">Scroll</span>
+            <div className="w-5 h-8 border-2 border-[#cbd5e1] rounded-full flex justify-center pt-1.5">
+              <div className="w-1 h-2 bg-[#94a3b8] rounded-full animate-[scrollBounce_1.5s_infinite]" />
             </div>
           </div>
         </section>
@@ -275,14 +275,14 @@ export default function ContactPage() {
             <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] rounded-full bg-[#38bdf8]/[0.02] blur-3xl" />
           </div>
 
-          <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 text-glow">
+          <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10">
             <div ref={formSection.ref} className="text-center mb-8"
               style={{ opacity: formSection.visible ? 1 : 0, transform: `translateY(${formSection.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
               <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">Contact Us</span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 mb-2 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0f172a] mt-3 mb-2 leading-tight">
                 Send Us a <span className="text-[#38bdf8]">Message</span>
               </h2>
-              <p className="text-white/60 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+              <p className="text-[#334155] text-sm md:text-base max-w-xl mx-auto leading-relaxed">
                 Reach out for product inquiries, wholesale orders, or partnership opportunities.
                 Our team typically responds within 24 hours.
               </p>
@@ -304,7 +304,7 @@ export default function ContactPage() {
                         placeholder="Your Name"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-5 py-3.5 rounded-xl bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[#0ea5e9]/40 focus:ring-2 focus:ring-[#0ea5e9]/10 transition-all duration-300"
+                        className="w-full px-5 py-3.5 rounded-xl bg-white border border-[#e2e8f0] text-sm text-[#0f172a] placeholder:text-[#94a3b8] focus:outline-none focus:border-[#0ea5e9]/40 focus:ring-2 focus:ring-[#0ea5e9]/10 transition-all duration-300"
                       />
                     </div>
                     <div>
@@ -314,7 +314,7 @@ export default function ContactPage() {
                         placeholder="Email Address"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-5 py-3.5 rounded-xl bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[#0ea5e9]/40 focus:ring-2 focus:ring-[#0ea5e9]/10 transition-all duration-300"
+                        className="w-full px-5 py-3.5 rounded-xl bg-white border border-[#e2e8f0] text-sm text-[#0f172a] placeholder:text-[#94a3b8] focus:outline-none focus:border-[#0ea5e9]/40 focus:ring-2 focus:ring-[#0ea5e9]/10 transition-all duration-300"
                       />
                     </div>
                     <div>
@@ -324,7 +324,7 @@ export default function ContactPage() {
                         placeholder="Phone Number"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        className="w-full px-5 py-3.5 rounded-xl bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[#0ea5e9]/40 focus:ring-2 focus:ring-[#0ea5e9]/10 transition-all duration-300"
+                        className="w-full px-5 py-3.5 rounded-xl bg-white border border-[#e2e8f0] text-sm text-[#0f172a] placeholder:text-[#94a3b8] focus:outline-none focus:border-[#0ea5e9]/40 focus:ring-2 focus:ring-[#0ea5e9]/10 transition-all duration-300"
                       />
                     </div>
                     <div>
@@ -334,10 +334,10 @@ export default function ContactPage() {
                         rows={5}
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full px-5 py-3.5 rounded-xl bg-white/[0.06] backdrop-blur-sm border border-white/[0.08] text-sm text-white placeholder:text-white/30 focus:outline-none focus:border-[#0ea5e9]/40 focus:ring-2 focus:ring-[#0ea5e9]/10 transition-all duration-300 resize-none"
+                        className="w-full px-5 py-3.5 rounded-xl bg-white border border-[#e2e8f0] text-sm text-[#0f172a] placeholder:text-[#94a3b8] focus:outline-none focus:border-[#0ea5e9]/40 focus:ring-2 focus:ring-[#0ea5e9]/10 transition-all duration-300 resize-none"
                       />
                     </div>
-                    <button type="submit" className="w-full px-6 py-3.5 rounded-xl bg-[#0ea5e9] text-white text-sm font-semibold hover:bg-[#0284c7] transition-all duration-300 shadow-[0_4px_20px_rgba(14,165,233,0.25)] hover:shadow-[0_8px_30px_rgba(14,165,233,0.35)]">
+                    <button type="submit" className="w-full px-6 py-3.5 rounded-xl bg-[#0ea5e9] text-white text-sm font-semibold hover:bg-[#0284c7] transition-all duration-300">
                       Send Message
                     </button>
                   </form>
@@ -397,14 +397,14 @@ export default function ContactPage() {
             <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[700px] h-[700px] rounded-full bg-[#0ea5e9]/[0.02] blur-[120px]" />
           </div>
 
-          <div className="w-full max-w-4xl mx-auto px-5 sm:px-6 z-10 text-glow">
+          <div className="w-full max-w-4xl mx-auto px-5 sm:px-6 z-10">
             <div ref={faqSection.ref} className="text-center mb-8"
               style={{ opacity: faqSection.visible ? 1 : 0, transform: `translateY(${faqSection.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
               <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">Got Questions?</span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 mb-2 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0f172a] mt-3 mb-2 leading-tight">
                 Frequently Asked <span className="text-[#38bdf8]">Questions</span>
               </h2>
-              <p className="text-white/60 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+              <p className="text-[#334155] text-sm md:text-base max-w-xl mx-auto leading-relaxed">
                 Find quick answers to common questions about our exosome therapy products,
                 ordering process, and clinical applications.
               </p>
@@ -425,14 +425,14 @@ export default function ContactPage() {
             <div className="absolute -bottom-20 right-1/4 w-[350px] h-[350px] rounded-full bg-[#38bdf8]/[0.02] blur-3xl" />
           </div>
 
-          <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 text-glow">
+          <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10">
             <div ref={locationSection.ref} className="text-center mb-8"
               style={{ opacity: locationSection.visible ? 1 : 0, transform: `translateY(${locationSection.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
               <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">Our Office</span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 mb-2 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0f172a] mt-3 mb-2 leading-tight">
                 Find <span className="text-[#38bdf8]">Us</span>
               </h2>
-              <p className="text-white/60 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+              <p className="text-[#334155] text-sm md:text-base max-w-xl mx-auto leading-relaxed">
                 Visit our headquarters in Seoul, South Korea — the heart of exosome biotechnology innovation.
               </p>
             </div>
@@ -444,7 +444,7 @@ export default function ContactPage() {
                 transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1) 0.2s, transform 1.3s cubic-bezier(0.22,1,0.36,1) 0.2s",
               }}>
                 <div className="glass-card rounded-2xl p-7 md:p-9">
-                  <h3 className="text-xl font-bold text-white mb-6">Headquarters</h3>
+                  <h3 className="text-xl font-bold text-[#0f172a] mb-6">Headquarters</h3>
                   <div className="space-y-5">
                     <div className="flex items-start gap-4">
                       <div className="w-10 h-10 rounded-lg bg-[#0ea5e9]/10 flex items-center justify-center shrink-0">
@@ -455,7 +455,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="text-[10px] font-bold tracking-wider uppercase text-[#38bdf8] mb-1">Address</p>
-                        <p className="text-sm text-white/80 leading-relaxed">{contactInfo.address}</p>
+                         <p className="text-sm text-[#334155] leading-relaxed">{contactInfo.address}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
@@ -467,7 +467,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="text-[10px] font-bold tracking-wider uppercase text-[#38bdf8] mb-1">Email</p>
-                        <p className="text-sm text-white/80">{contactInfo.email}</p>
+                        <p className="text-sm text-[#334155]">{contactInfo.email}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
@@ -479,7 +479,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="text-[10px] font-bold tracking-wider uppercase text-[#38bdf8] mb-1">Business Hours</p>
-                        <p className="text-sm text-white/80">{contactInfo.businessHours}</p>
+                        <p className="text-sm text-[#334155]">{contactInfo.businessHours}</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-4">
@@ -490,7 +490,7 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <p className="text-[10px] font-bold tracking-wider uppercase text-[#38bdf8] mb-1">Phone</p>
-                        <p className="text-sm text-white/80">{contactInfo.phone}</p>
+                        <p className="text-sm text-[#334155]">{contactInfo.phone}</p>
                       </div>
                     </div>
                   </div>
@@ -527,14 +527,14 @@ export default function ContactPage() {
             <div className="absolute bottom-1/3 left-0 w-[350px] h-[350px] rounded-full bg-[#38bdf8]/[0.02] blur-3xl" />
           </div>
 
-          <div className="w-full max-w-5xl mx-auto px-5 sm:px-6 z-10 text-glow">
+          <div className="w-full max-w-5xl mx-auto px-5 sm:px-6 z-10">
             <div ref={socialSection.ref} className="text-center mb-8"
               style={{ opacity: socialSection.visible ? 1 : 0, transform: `translateY(${socialSection.visible ? 0 : 50}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1), transform 1.3s cubic-bezier(0.22,1,0.36,1)" }}>
               <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">Stay Connected</span>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-3 mb-2 leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0f172a] mt-3 mb-2 leading-tight">
                 Follow <span className="text-[#38bdf8]">EverCeutical</span>
               </h2>
-              <p className="text-white/60 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+              <p className="text-[#334155] text-sm md:text-base max-w-xl mx-auto leading-relaxed">
                 Stay up to date with the latest exosome research, product launches, and clinical insights across our social channels.
               </p>
             </div>
@@ -596,7 +596,7 @@ export default function ContactPage() {
         <section className="relative bg-transparent py-10 md:py-14 overflow-hidden">
           <div className="w-full max-w-3xl mx-auto px-5 sm:px-6">
             <div ref={newsletterSection.ref}
-              className="relative rounded-3xl p-7 md:p-10 lg:p-14 text-center overflow-hidden glass-surface"
+              className="relative rounded-3xl p-7 md:p-10 lg:p-14 text-center overflow-hidden bg-[#f8fafc] border border-[#e2e8f0]"
               style={{
                 opacity: newsletterSection.visible ? 1 : 0,
                 transform: `translateY(${newsletterSection.visible ? 0 : 40}px) scale(${newsletterSection.visible ? 1 : 0.95})`,
@@ -612,10 +612,10 @@ export default function ContactPage() {
                     <polyline points="22,6 12,13 2,6" />
                   </svg>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#0f172a] mb-3">
                   Stay Informed
                 </h2>
-                <p className="text-white/50 text-sm mb-8 max-w-md mx-auto">
+                <p className="text-[#334155] text-sm mb-8 max-w-md mx-auto">
                   Get the latest exosome research and clinical insights delivered to your inbox.
                 </p>
                 <form onSubmit={handleNewsletterSubmit} className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
@@ -625,11 +625,11 @@ export default function ContactPage() {
                     onChange={(e) => setNewsletterEmail(e.target.value)}
                     placeholder="Enter your email"
                     required
-                    className="w-full sm:flex-1 px-5 py-3 rounded-full text-sm text-white placeholder:text-white/30 outline-none focus:ring-2 focus:ring-[#0ea5e9]/30 transition-all duration-300 bg-white/[0.06] border border-white/[0.08]"
+                    className="w-full sm:flex-1 px-5 py-3 rounded-full text-sm text-[#0f172a] placeholder:text-[#94a3b8] outline-none focus:ring-2 focus:ring-[#0ea5e9]/30 transition-all duration-300 bg-white border border-[#e2e8f0]"
                   />
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-8 py-3 rounded-full bg-[#0ea5e9] text-white text-sm font-semibold hover:bg-[#0284c7] transition-all duration-300 shadow-lg shadow-[#0ea5e9]/20 hover:shadow-[#0284c7]/30 hover:scale-105"
+                    className="w-full sm:w-auto px-8 py-3 rounded-full bg-[#0ea5e9] text-white text-sm font-semibold hover:bg-[#0284c7] transition-all duration-300 hover:scale-105"
                   >
                     Subscribe
                   </button>
@@ -666,14 +666,14 @@ export default function ContactPage() {
                     Partner With Us
                   </span>
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 leading-tight">
-                    Ready to Transform <span className="text-[#0c1929]">Your Practice</span>?
+                    Ready to Transform <span className="text-[#38bdf8]">Your Practice</span>?
                   </h2>
                   <p className="text-white/80 text-sm md:text-base max-w-lg mx-auto leading-relaxed mb-5">
                     Join leading clinics worldwide in offering cutting-edge exosome therapy.
                     Discover how EverCeutical can elevate your practice.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <Link href="/about-us" className="px-8 py-3.5 rounded-full bg-[#0c1929] text-white text-sm font-bold hover:bg-[#0f2033] transition-all duration-300 shadow-lg shadow-[#0c1929]/30 hover:scale-105">
+                    <Link href="/about-us" className="px-8 py-3.5 rounded-full bg-[#0ea5e9] text-white text-sm font-bold hover:bg-[#0284c7] transition-all duration-300 hover:scale-105">
                       About Us
                     </Link>
                     <Link href="/research-technology" className="px-8 py-3.5 rounded-full border border-white/30 text-white text-sm font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105">

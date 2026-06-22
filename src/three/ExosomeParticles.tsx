@@ -253,7 +253,7 @@ export default function ExosomeParticles() {
   const { viewport } = useThree()
 
   const isMobile = viewport.width < 768
-  const segments = isMobile ? 32 : 48
+  const segments = isMobile ? 24 : 32
 
   const noise = useMemo(() => new SimplexNoise(42), [])
 

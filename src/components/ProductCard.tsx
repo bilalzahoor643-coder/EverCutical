@@ -10,7 +10,7 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   return (
     <Link href={product.href} className="group block">
-      <div className="relative glass-card rounded-2xl overflow-hidden shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] transition-all duration-500 sm:hover:-translate-y-1">
+      <div className="relative glass-card rounded-2xl overflow-hidden transition-all duration-500 sm:hover:-translate-y-1">
         {/* Category Badge */}
         <div className="absolute top-3 left-3 z-10">
           <span
@@ -26,13 +26,13 @@ export default function ProductCard({ product }: ProductCardProps) {
 
         {/* Size Badge */}
         <div className="absolute top-3 right-3 z-10">
-          <span className="text-[10px] font-semibold bg-white/[0.08] text-white/60 px-2 py-1 rounded-full">
+          <span className="text-[10px] font-semibold bg-[#f1f5f9] text-[#64748b] px-2 py-1 rounded-full">
             {product.size}
           </span>
         </div>
 
         {/* Product Image */}
-        <div className="relative w-full h-48 overflow-hidden bg-white/[0.03]">
+        <div className="relative w-full h-48 overflow-hidden bg-[#f8fafc]">
           <img
             src={product.img}
             alt={product.fullName}
@@ -40,15 +40,15 @@ export default function ProductCard({ product }: ProductCardProps) {
             draggable={false}
             loading="lazy"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0c1929] via-transparent to-transparent opacity-60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#f1f5f9] via-transparent to-transparent opacity-60" />
         </div>
 
         {/* Product Info */}
         <div className="p-4">
-          <h3 className="text-sm font-bold text-white mb-1 line-clamp-1 group-hover:text-[#38bdf8] transition-colors">
+          <h3 className="text-sm font-bold text-[#0f172a] mb-1 line-clamp-1 group-hover:text-[#38bdf8] transition-colors">
             {product.fullName}
           </h3>
-          <p className="text-xs text-white/50 mb-3 line-clamp-2 leading-relaxed">
+          <p className="text-xs text-[#64748b] mb-3 line-clamp-2 leading-relaxed">
             {product.desc}
           </p>
 
@@ -65,17 +65,17 @@ export default function ProductCard({ product }: ProductCardProps) {
                 >
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                 </svg>
-                <span className="text-[11px] text-white/60 line-clamp-1">{benefit}</span>
+                <span className="text-[11px] text-[#64748b] line-clamp-1">{benefit}</span>
               </div>
             ))}
           </div>
 
           {/* CTA Button */}
           <div
-            className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-white text-xs font-semibold transition-all duration-300 group-hover:shadow-lg"
+            className="flex items-center justify-center gap-2 w-full py-2.5 rounded-xl text-white text-xs font-semibold transition-all duration-300"
             style={{
               background: `linear-gradient(135deg, ${product.accentColor}, ${product.accentColor}cc)`,
-              boxShadow: `0 4px 12px ${product.accentColor}20`,
+              boxShadow: "none",
             }}
           >
             View Details

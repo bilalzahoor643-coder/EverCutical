@@ -983,31 +983,31 @@ export const exosomeClasses: ExosomeClass[] = [
     name: "hUC-MSC Exosomes",
     tagline: "Umbilical Cord-Derived",
     icon: "https://huggingface.co/spaces/bilal23bhai/EVERCEUTICALS/resolve/main/images/class-huc-msc.png",
-    color: "#5b9bd5",
+    color: "#0ea5e9",
   },
   {
     name: "Fibroblast Exosomes",
     tagline: "Skin Cell-Derived",
     icon: "https://huggingface.co/spaces/bilal23bhai/EVERCEUTICALS/resolve/main/images/class-fibroblast.png",
-    color: "#7ab8a0",
+    color: "#38bdf8",
   },
   {
     name: "Adipose Exosomes",
     tagline: "Fat Tissue-Derived",
     icon: "https://huggingface.co/spaces/bilal23bhai/EVERCEUTICALS/resolve/main/images/class-adipose.png",
-    color: "#a088c4",
+    color: "#0284c7",
   },
   {
     name: "LECO Exosomes",
     tagline: "Lab-Engineered",
     icon: "https://huggingface.co/spaces/bilal23bhai/EVERCEUTICALS/resolve/main/images/class-leco.png",
-    color: "#d4915e",
+    color: "#0369a1",
   },
   {
     name: "Plant Exosomes",
     tagline: "Botanical-Derived",
     icon: "https://huggingface.co/spaces/bilal23bhai/EVERCEUTICALS/resolve/main/images/class-plant.png",
-    color: "#6aab8e",
+    color: "#0ea5e9",
   },
 ]
 

@@ -39,21 +39,21 @@ const categories: CategoryInfo[] = [
     name: "EXOGENESIS",
     label: "EXOGENESIS",
     description: "Scalp & Vital exosome treatments with advanced peptide formulas",
-    color: "#4a8ba8",
+    color: "#0ea5e9",
     icon: "🧬",
   },
   {
     name: "WHARTEXA",
     label: "WHARTEXA",
     description: "High-concentration exosome formulations for maximum impact",
-    color: "#8a5b9e",
+    color: "#0284c7",
     icon: "⚡",
   },
   {
     name: "HYALIQUE-X",
     label: "HYALIQUE-X",
     description: "Dermal fillers, boosters & skin rejuvenation systems",
-    color: "#c9a84a",
+    color: "#0369a1",
     icon: "✨",
   },
 ]
@@ -82,10 +82,10 @@ export default function CategoryPreview() {
           <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#38bdf8]/[0.08] px-4 py-1.5 rounded-full inline-block">
             Browse by Category
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mt-3 mb-2 leading-tight">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0f172a] mt-3 mb-2 leading-tight">
             Our <span className="text-[#38bdf8]">Product Lines</span>
           </h2>
-          <p className="text-[#b0d0e8] text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-[#334155] text-sm md:text-base max-w-xl mx-auto leading-relaxed">
             Explore our range of specialized exosome formulations tailored for different therapeutic needs.
           </p>
         </div>
@@ -103,7 +103,7 @@ export default function CategoryPreview() {
                 transition: `opacity 0.6s cubic-bezier(0.16,1,0.3,1) ${0.15 + index * 0.1}s, transform 0.6s cubic-bezier(0.16,1,0.3,1) ${0.15 + index * 0.1}s`,
               }}
             >
-              <div className="relative glass-card rounded-2xl p-8 hover:shadow-[0_12px_40px_rgba(0,0,0,0.3)] transition-all duration-500 hover:-translate-y-1 text-center">
+              <div className="relative glass-card rounded-2xl p-8 transition-all duration-500 hover:-translate-y-1 text-center">
                 {/* Icon */}
                 <div
                   className="w-16 h-16 mx-auto mb-5 rounded-2xl flex items-center justify-center text-3xl"
@@ -121,7 +121,7 @@ export default function CategoryPreview() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-sm text-[#94b8d8] mb-4 leading-relaxed">
+                <p className="text-sm text-[#64748b] mb-4 leading-relaxed">
                   {category.description}
                 </p>
 

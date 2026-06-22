@@ -193,7 +193,7 @@ export default function ProductsSection() {
       {/* Section Header */}
       <div
         ref={headerInView.ref}
-        className="text-center mb-8 px-4 sm:px-6 z-10 text-glow"
+        className="text-center mb-8 px-4 sm:px-6 z-10"
         style={{
           opacity: headerInView.visible ? 1 : 0,
           transform: headerInView.visible ? "translateY(0) scale(1)" : "translateY(30px) scale(0.95)",
@@ -201,13 +201,13 @@ export default function ProductsSection() {
           transition: "opacity 1.2s cubic-bezier(0.16,1,0.3,1), transform 1.2s cubic-bezier(0.16,1,0.3,1), filter 1.2s cubic-bezier(0.16,1,0.3,1)",
         }}
       >
-        <span className="text-[10px] text-[#3d6a82] font-bold tracking-[0.25em] uppercase bg-[#5b7c91]/[0.08] px-4 py-1.5 rounded-full inline-block">
+        <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">
           Our Products
         </span>
-        <h2 className="text-3xl md:text-4xl font-bold text-[#1e3a5f] mt-5 mb-3 leading-tight">
-          Exosome <span className="text-[#5b7c91]">Therapy</span> Kits
+        <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] mt-5 mb-3 leading-tight">
+          Exosome <span className="text-[#38bdf8]">Therapy</span> Kits
         </h2>
-        <p className="text-gray-600 text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+        <p className="text-[#334155] text-sm md:text-base max-w-xl mx-auto leading-relaxed">
           Clinically engineered exosome formulations designed for targeted regenerative and aesthetic applications.
         </p>
       </div>
@@ -273,10 +273,7 @@ export default function ProductsSection() {
               <div
                 className="relative w-full h-full rounded-2xl overflow-hidden bg-white"
                 style={{
-                  boxShadow: isFront
-                    ? "0 25px 60px " + product.accentColor + "22, 0 0 40px " + product.accentColor + "0a"
-                    : "0 10px 30px rgba(0,0,0,0.05)",
-                  transition: dragRef.current.active ? "none" : "box-shadow 0.8s ease",
+                  boxShadow: "none",
                 }}
               >
                 <div
@@ -287,7 +284,7 @@ export default function ProductsSection() {
                   }}
                 />
 
-                <div className="relative w-full h-[38%] overflow-hidden bg-gray-100">
+                <div className="relative w-full h-[38%] overflow-hidden bg-[#f1f5f9]">
                   <img
                     src={product.img}
                     alt={product.fullName}
@@ -309,7 +306,7 @@ export default function ProductsSection() {
                     {product.fullName}
                   </h4>
 
-                  <p className="text-[9px] text-gray-600 mt-1 leading-relaxed line-clamp-2">
+                  <p className="text-[9px] text-[#334155] mt-1 leading-relaxed line-clamp-2">
                     {product.desc}
                   </p>
 
@@ -332,7 +329,7 @@ export default function ProductsSection() {
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className="text-[8px] text-gray-600 leading-snug line-clamp-1">{b}</span>
+                        <span className="text-[8px] text-[#334155] leading-snug line-clamp-1">{b}</span>
                       </div>
                     ))}
                   </div>
@@ -344,7 +341,7 @@ export default function ProductsSection() {
                     >
                       {product.peptides.length} Peptides
                     </span>
-                    <span className="text-[8px] px-2 py-[3px] rounded-full bg-gray-100 text-gray-600 font-medium">
+                    <span className="text-[8px] px-2 py-[3px] rounded-full bg-[#f1f5f9] text-[#334155] font-medium">
                       {product.kitContent.length} Components
                     </span>
                   </div>
@@ -356,7 +353,7 @@ export default function ProductsSection() {
                       className="mt-2.5 flex items-center justify-center gap-2 w-full py-2 rounded-lg text-white text-[11px] font-semibold"
                       style={{
                         background: "linear-gradient(135deg, " + product.accentColor + ", " + product.accentColor + "bb)",
-                        boxShadow: "0 4px 12px " + product.accentColor + "25",
+                        boxShadow: "none",
                       }}
                     >
                       View More
@@ -374,8 +371,8 @@ export default function ProductsSection() {
 
       {/* Mobile swipe hint */}
       {bp === "mobile" && (
-        <div className="mt-4 text-center text-glow">
-          <p className="text-[10px] text-gray-400 tracking-widest uppercase flex items-center justify-center gap-2">
+        <div className="mt-4 text-center">
+          <p className="text-[10px] text-[#94a3b8] tracking-widest uppercase flex items-center justify-center gap-2">
             <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
             </svg>

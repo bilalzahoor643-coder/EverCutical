@@ -66,7 +66,7 @@ export default function Footer() {
       ref={footerRef.ref}
       className="relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, rgba(8,15,28,0.85) 0%, rgba(6,12,22,0.92) 50%, rgba(4,8,16,0.97) 100%)",
+        background: "linear-gradient(180deg, rgba(248,250,252,0.95) 0%, rgba(241,245,249,0.98) 50%, rgba(248,250,252,1) 100%)",
       }}
     >
       {/* Subtle glow patterns */}
@@ -77,7 +77,7 @@ export default function Footer() {
 
       {/* ── NEWSLETTER SECTION ── */}
       <div
-        className="border-b border-white/[0.06]"
+        className="border-b border-[#e2e8f0]"
         style={{
           opacity: footerRef.visible ? 1 : 0,
           transform: `translateY(${footerRef.visible ? 0 : 20}px)`,
@@ -87,10 +87,10 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-5 sm:px-6 py-10 md:py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div>
-              <h3 className="text-lg md:text-xl font-bold text-white mb-1">
+              <h3 className="text-lg md:text-xl font-bold text-[#0f172a] mb-1">
                 Stay Updated With Scientific Innovations
               </h3>
-              <p className="text-[13px] text-[#7eaac8]">
+              <p className="text-[13px] text-[#334155]">
                 Subscribe to receive the latest news on exosome research and technology.
               </p>
             </div>
@@ -100,7 +100,7 @@ export default function Footer() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Enter your email address"
-                className="flex-1 sm:w-72 px-4 py-2.5 rounded-xl bg-white/[0.06] backdrop-blur-sm border border-white/[0.1] text-[13px] text-white placeholder:text-[#6894b8] focus:outline-none focus:border-[#0ea5e9]/40 transition-colors"
+                className="flex-1 sm:w-72 px-4 py-2.5 rounded-xl bg-white border border-[#e2e8f0] text-[13px] text-[#0f172a] placeholder:text-[#94a3b8] focus:outline-none focus:border-[#0ea5e9]/40 transition-colors"
               />
               <button className="px-6 py-2.5 rounded-xl bg-[#0ea5e9] text-white text-[13px] font-semibold hover:bg-[#0284c7] transition-colors shrink-0">
                 Subscribe
@@ -126,18 +126,18 @@ export default function Footer() {
                 <img
                   src="images/logo.png?v=2"
                   alt="EverCeutical Logo"
-                  className="w-full h-full object-contain mix-blend-screen"
+                  className="w-full h-full object-contain"
                   draggable={false}
                 />
               </div>
               <div>
-                <span className="text-base font-bold text-white">
+                <span className="text-base font-bold text-[#0f172a]">
                   Ever<span className="text-[#38bdf8]">Ceutical</span>
                 </span>
               </div>
             </div>
 
-            <p className="text-[13px] text-[#7eaac8] leading-relaxed mb-5">
+            <p className="text-[13px] text-[#334155] leading-relaxed mb-5">
               Advancing regenerative science through next-generation exosome technology,
               research-driven innovation, and clinical-quality biotechnology solutions.
             </p>
@@ -149,7 +149,7 @@ export default function Footer() {
                   key={s.name}
                   href={s.href}
                   aria-label={s.name}
-                  className="w-9 h-9 rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center text-[#94b8d8] hover:bg-[#0ea5e9] hover:text-white hover:border-[#0ea5e9] hover:shadow-[0_4px_16px_rgba(14,165,233,0.3)] transition-all duration-300 hover:scale-105"
+                  className="w-9 h-9 rounded-lg bg-[#f8fafc] border border-[#e2e8f0] flex items-center justify-center text-[#64748b] hover:bg-[#0ea5e9] hover:text-white hover:border-[#0ea5e9] transition-all duration-300 hover:scale-105"
                   style={{
                     opacity: footerRef.visible ? 1 : 0,
                     transform: `scale(${footerRef.visible ? 1 : 0.5})`,
@@ -172,13 +172,13 @@ export default function Footer() {
               transition: "opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s",
             }}
           >
-            <h4 className="text-[13px] font-bold text-white mb-4 tracking-wide">Quick Links</h4>
+            <h4 className="text-[13px] font-bold text-[#0f172a] mb-4 tracking-wide">Quick Links</h4>
             <ul className="space-y-2.5">
               {quickLinks.map((link, i) => (
                 <li key={i}>
                   <a
                     href={link.href}
-                    className="text-[13px] text-[#7eaac8] hover:text-[#38bdf8] transition-colors duration-300 inline-flex items-center gap-1.5 group"
+                    className="text-[13px] text-[#334155] hover:text-[#38bdf8] transition-colors duration-300 inline-flex items-center gap-1.5 group"
                   >
                     <span className="w-1 h-1 rounded-full bg-[#0ea5e9]/40 group-hover:bg-[#38bdf8] transition-colors duration-300" />
                     {link.label}
@@ -196,11 +196,11 @@ export default function Footer() {
               transition: "opacity 0.6s ease 0.3s, transform 0.6s ease 0.3s",
             }}
           >
-            <h4 className="text-[13px] font-bold text-white mb-4 tracking-wide">Technology</h4>
+            <h4 className="text-[13px] font-bold text-[#0f172a] mb-4 tracking-wide">Technology</h4>
             <ul className="space-y-2.5">
               {techLinks.map((item, i) => (
                 <li key={i}>
-                  <span className="text-[13px] text-[#7eaac8] inline-flex items-center gap-1.5 group cursor-default">
+                  <span className="text-[13px] text-[#334155] inline-flex items-center gap-1.5 group cursor-default">
                     <span className="w-1 h-1 rounded-full bg-[#0ea5e9]/40 group-hover:bg-[#38bdf8] transition-colors duration-300" />
                     {item}
                   </span>
@@ -217,7 +217,7 @@ export default function Footer() {
               transition: "opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s",
             }}
           >
-            <h4 className="text-[13px] font-bold text-white mb-4 tracking-wide">Contact Information</h4>
+            <h4 className="text-[13px] font-bold text-[#0f172a] mb-4 tracking-wide">Contact Information</h4>
             <div className="space-y-3.5">
               <div className="flex items-start gap-2.5">
                 <div className="w-7 h-7 rounded-md bg-[#0ea5e9]/10 flex items-center justify-center shrink-0 mt-0.5">
@@ -227,8 +227,8 @@ export default function Footer() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[12px] text-[#6894b8]">Location</p>
-                  <p className="text-[13px] text-[#b0d0e8]">Seoul, South Korea</p>
+                  <p className="text-[12px] text-[#64748b]">Location</p>
+                  <p className="text-[13px] text-[#334155]">Seoul, South Korea</p>
                 </div>
               </div>
 
@@ -239,8 +239,8 @@ export default function Footer() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[12px] text-[#6894b8]">Email</p>
-                  <p className="text-[13px] text-[#b0d0e8]">everceutical@gmail.com</p>
+                  <p className="text-[12px] text-[#64748b]">Email</p>
+                  <p className="text-[13px] text-[#334155]">everceutical@gmail.com</p>
                 </div>
               </div>
 
@@ -251,8 +251,8 @@ export default function Footer() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[12px] text-[#6894b8]">Phone</p>
-                  <p className="text-[13px] text-[#b0d0e8]">+82 (0) 2-1234-5678</p>
+                  <p className="text-[12px] text-[#64748b]">Phone</p>
+                  <p className="text-[13px] text-[#334155]">+82 (0) 2-1234-5678</p>
                 </div>
               </div>
 
@@ -263,8 +263,8 @@ export default function Footer() {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-[12px] text-[#6894b8]">Business Hours</p>
-                  <p className="text-[13px] text-[#b0d0e8]">Mon – Fri, 9:00 AM – 6:00 PM KST</p>
+                  <p className="text-[12px] text-[#64748b]">Business Hours</p>
+                  <p className="text-[13px] text-[#334155]">Mon – Fri, 9:00 AM – 6:00 PM KST</p>
                 </div>
               </div>
             </div>
@@ -274,7 +274,7 @@ export default function Footer() {
 
       {/* ── TRUST BAR ── */}
       <div
-        className="border-t border-white/[0.06]"
+        className="border-t border-[#e2e8f0]"
         style={{
           opacity: footerRef.visible ? 1 : 0,
           transition: "opacity 0.7s ease 0.5s",
@@ -298,15 +298,15 @@ export default function Footer() {
       </div>
 
       {/* ── LEGAL SECTION ── */}
-      <div className="border-t border-white/[0.06]">
+      <div className="border-t border-[#e2e8f0]">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 py-5">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-[#6894b8]">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-[11px] text-[#94a3b8]">
             <p>© 2026 EverCeutical. All Rights Reserved.</p>
             <div className="flex items-center gap-3 sm:gap-4 flex-wrap justify-center">
               <a href="#" className="py-1 hover:text-[#38bdf8] transition-colors">Privacy Policy</a>
-              <span className="text-white/15">|</span>
+              <span className="text-[#334155]">|</span>
               <a href="#" className="py-1 hover:text-[#38bdf8] transition-colors">Terms &amp; Conditions</a>
-              <span className="text-white/15">|</span>
+              <span className="text-[#334155]">|</span>
               <a href="#" className="py-1 hover:text-[#38bdf8] transition-colors">Cookie Policy</a>
             </div>
           </div>

@@ -67,10 +67,10 @@ export default function ProductsPage() {
             <span className="text-[10px] sm:text-[11px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">
               Our Products
             </span>
-            <h1 className="text-3xl md:text-5xl font-bold text-white mt-3 mb-2 leading-tight">
+            <h1 className="text-3xl md:text-5xl font-bold text-[#0f172a] mt-3 mb-2 leading-tight">
               Advanced Exosome <span className="text-[#38bdf8]">Solutions</span>
             </h1>
-            <p className="text-white/60 text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
+            <p className="text-[#334155] text-sm md:text-base max-w-2xl mx-auto leading-relaxed">
               Explore our complete range of clinically engineered exosome formulations designed for targeted regenerative and aesthetic applications.
             </p>
           </div>
@@ -78,7 +78,7 @@ export default function ProductsPage() {
       </section>
 
       {/* Stats Bar */}
-      <section ref={statsRef.ref} className="py-6 sm:py-8 px-5 sm:px-6 glass-card border-y border-white/[0.08]">
+      <section ref={statsRef.ref} className="py-6 sm:py-8 px-5 sm:px-6 bg-[#f8fafc] border-y border-[#e2e8f0]">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {stats.map((stat, i) => (
@@ -92,7 +92,7 @@ export default function ProductsPage() {
                 }}
               >
                 <div className="text-xl md:text-2xl font-bold text-[#38bdf8]">{stat.value}</div>
-                <div className="text-[11px] sm:text-xs text-white/50 font-medium mt-0.5">{stat.label}</div>
+                <div className="text-[11px] sm:text-xs text-[#64748b] font-medium mt-0.5">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -112,9 +112,9 @@ export default function ProductsPage() {
             }}
           >
             <div className="flex items-center justify-between mb-6">
-              <h2 className="text-xl md:text-2xl font-bold text-white">
+              <h2 className="text-xl md:text-2xl font-bold text-[#0f172a]">
                 All Products
-                <span className="text-sm font-normal text-white/40 ml-2">({filteredProducts.length})</span>
+                <span className="text-sm font-normal text-[#64748b] ml-2">({filteredProducts.length})</span>
               </h2>
             </div>
             <div className="flex flex-wrap gap-2">
@@ -124,8 +124,8 @@ export default function ProductsPage() {
                   onClick={() => setActiveCategory(cat.value)}
                   className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 border ${
                     activeCategory === cat.value
-                      ? "bg-[#0ea5e9] text-white border-[#0ea5e9] shadow-md shadow-[#0ea5e9]/20"
-                      : "bg-white/[0.06] text-white/60 border-white/[0.08] hover:border-[#38bdf8]/30 hover:text-[#38bdf8]"
+                      ? "bg-[#0ea5e9] text-white border-[#0ea5e9]"
+                      : "bg-[#f8fafc] text-[#334155] border-[#e2e8f0] hover:border-[#38bdf8]/30 hover:text-[#38bdf8]"
                   }`}
                 >
                   {cat.name}
@@ -152,14 +152,14 @@ export default function ProductsPage() {
 
           {filteredProducts.length === 0 && (
             <div className="text-center py-20">
-              <p className="text-white/40 text-sm">No products found in this category.</p>
+              <p className="text-[#94a3b8] text-sm">No products found in this category.</p>
             </div>
           )}
         </div>
       </section>
 
       {/* CTA Section */}
-      <section ref={ctaRef.ref} className="py-10 px-5 sm:px-6 glass-card border-t border-white/[0.08]">
+      <section ref={ctaRef.ref} className="py-10 px-5 sm:px-6 bg-[#f8fafc] border-t border-[#e2e8f0]">
         <div
           className="max-w-4xl mx-auto text-center"
           style={{
@@ -168,16 +168,16 @@ export default function ProductsPage() {
             transition: "opacity 0.8s ease, transform 0.8s ease",
           }}
         >
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+          <h2 className="text-2xl md:text-3xl font-bold text-[#0f172a] mb-3">
             Need Help Choosing?
           </h2>
-          <p className="text-white/50 text-sm md:text-base max-w-xl mx-auto mb-6">
+          <p className="text-[#334155] text-sm md:text-base max-w-xl mx-auto mb-6">
             Our team of experts is ready to help you find the right exosome formulation for your needs.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0ea5e9] text-white text-sm font-semibold hover:bg-[#0284c7] transition-all duration-300 hover:shadow-lg hover:shadow-[#0ea5e9]/20"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#0ea5e9] text-white text-sm font-semibold hover:bg-[#0284c7] transition-all duration-300"
             >
               Contact Us
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -186,7 +186,7 @@ export default function ProductsPage() {
             </Link>
             <Link
               href="/about-us"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-white/[0.08] text-white/60 text-sm font-semibold hover:border-[#38bdf8]/30 hover:text-[#38bdf8] transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#e2e8f0] text-[#334155] text-sm font-semibold hover:border-[#38bdf8]/30 hover:text-[#38bdf8] transition-all duration-300"
             >
               Learn About Us
             </Link>

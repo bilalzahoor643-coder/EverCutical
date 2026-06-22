@@ -136,14 +136,14 @@ export default function FeaturedProducts() {
       id="products"
       className="relative flex flex-col items-center justify-center overflow-hidden pt-4 pb-8 md:pt-6 md:pb-12 z-10"
     >
-      <div className="text-center mb-5 md:mb-6 px-5 sm:px-6 z-20 relative text-glow">
+      <div className="text-center mb-5 md:mb-6 px-5 sm:px-6 z-20 relative">
         <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full inline-block">
           Our Best Sellers
         </span>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mt-4 mb-2 leading-tight">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#0f172a] mt-4 mb-2 leading-tight">
           Products
         </h2>
-        <p className="text-[#94b8d8] text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
+        <p className="text-[#64748b] text-xs sm:text-sm max-w-md mx-auto leading-relaxed">
           High-purity exosome formulations trusted by professionals worldwide.
         </p>
       </div>
@@ -195,10 +195,7 @@ export default function FeaturedProducts() {
               <div
                 className="glass-card relative w-full h-full rounded-2xl overflow-hidden"
                 style={{
-                  boxShadow: isFront
-                    ? `0 ${isMobile ? 12 : 25}px ${isMobile ? 30 : 60}px ${product.accentColor}22`
-                    : "0 10px 30px rgba(0,0,0,0.05)",
-                  transition: dragRef.current.active ? "none" : "box-shadow 0.6s ease",
+                  boxShadow: "none",
                 }}
               >
                 <div
@@ -208,9 +205,9 @@ export default function FeaturedProducts() {
                     transition: dragRef.current.active ? "none" : "border 0.6s ease",
                   }}
                 />
-                <div className="relative w-full h-[38%] overflow-hidden bg-white/[0.04]">
+                <div className="relative w-full h-[38%] overflow-hidden bg-[#f8fafc]">
                   <img src={product.img} alt={product.fullName} className="w-full h-full object-cover" draggable={false} loading="lazy" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0c1929] via-[#0c1929]/20 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#f1f5f9] via-[#f1f5f9]/20 to-transparent" />
                 </div>
                 <div className={`relative ${isMobile ? 'px-2.5 pb-2.5 pt-1' : 'px-3 pb-3 pt-1'} flex flex-col h-[62%]`}>
                   <span
@@ -222,20 +219,20 @@ export default function FeaturedProducts() {
                   <h4
                     className={`${isMobile ? 'text-[10px]' : 'text-[13px]'} font-bold leading-snug`}
                     style={{
-                      color: isFront ? "#f1f5f9" : "#64748b",
+                       color: isFront ? "#111827" : "#64748b",
                       transition: dragRef.current.active ? "none" : "color 0.6s ease",
                     }}
                   >
                     {product.fullName}
                   </h4>
-                  <p className={`${isMobile ? 'text-[8px] mt-0.5 line-clamp-2' : 'text-[11px] mt-1 line-clamp-2'} text-[#94b8d8] leading-relaxed`}>{product.desc}</p>
+                  <p className={`${isMobile ? 'text-[8px] mt-0.5 line-clamp-2' : 'text-[11px] mt-1 line-clamp-2'} text-[#64748b] leading-relaxed`}>{product.desc}</p>
                   <div className={`${isMobile ? 'mt-1 space-y-0' : 'mt-2 space-y-1'}`}>
                     {product.benefits.slice(0, isMobile ? 2 : 3).map((b, j) => (
                       <div key={j} className="flex items-start gap-1" style={{ opacity: isFront ? 1 : 0.5 }}>
                         <svg className={`${isMobile ? 'w-1.5 h-1.5 mt-[1px]' : 'w-2.5 h-2.5 mt-[2px]'} shrink-0`} style={{ color: product.accentColor }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
                         </svg>
-                        <span className={`${isMobile ? 'text-[7px] line-clamp-1' : 'text-[10px] line-clamp-1'} text-[#94b8d8] leading-snug`}>{b}</span>
+                        <span className={`${isMobile ? 'text-[7px] line-clamp-1' : 'text-[10px] line-clamp-1'} text-[#64748b] leading-snug`}>{b}</span>
                       </div>
                     ))}
                   </div>
@@ -243,7 +240,7 @@ export default function FeaturedProducts() {
                     <span className={`${isMobile ? 'text-[7px] px-1.5 py-[2px]' : 'text-[10px] px-2 py-[3px]'} rounded-full font-medium`} style={{ background: product.accentColor + "12", color: product.accentColor }}>
                       {product.peptides.length} Peptides
                     </span>
-                    <span className={`${isMobile ? 'text-[7px] px-1.5 py-[2px]' : 'text-[10px] px-2 py-[3px]'} rounded-full bg-white/[0.06] text-[#94b8d8] font-medium`}>
+                    <span className={`${isMobile ? 'text-[7px] px-1.5 py-[2px]' : 'text-[10px] px-2 py-[3px]'} rounded-full bg-[#f1f5f9] text-[#64748b] font-medium`}>
                       {product.size}
                     </span>
                   </div>
@@ -254,7 +251,7 @@ export default function FeaturedProducts() {
                       className={`${isMobile ? 'mt-1.5 py-1.5 text-[9px]' : 'mt-2.5 py-2 text-[11px]'} flex items-center justify-center gap-1.5 w-full rounded-lg text-white font-semibold`}
                       style={{
                         background: `linear-gradient(135deg, ${product.accentColor}, ${product.accentColor}bb)`,
-                        boxShadow: `0 4px 12px ${product.accentColor}25`,
+                        boxShadow: "none",
                       }}
                     >
                       View More
@@ -272,7 +269,7 @@ export default function FeaturedProducts() {
 
       {isMobile && (
         <div className="mt-3 text-center">
-          <p className="text-[9px] text-[#7eaac8] tracking-widest uppercase flex items-center justify-center gap-1.5">
+          <p className="text-[9px] text-[#64748b] tracking-widest uppercase flex items-center justify-center gap-1.5">
             <svg className="w-2.5 h-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
             </svg>
@@ -284,7 +281,7 @@ export default function FeaturedProducts() {
       <div className="mt-5 text-center z-10">
         <Link
           href="/products"
-          className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] text-white text-sm font-semibold transition-all duration-300 hover:shadow-lg hover:shadow-[#0ea5e9]/20 hover:scale-[1.02]"
+          className="group inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#0ea5e9] to-[#0284c7] text-white text-sm font-semibold transition-all duration-300 hover:scale-[1.02]"
         >
           View All Products
           <svg className="w-4 h-4 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

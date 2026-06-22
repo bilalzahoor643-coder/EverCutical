@@ -76,14 +76,14 @@ export default function ExosomeClassesSection() {
       className="relative flex flex-col items-center justify-center bg-transparent py-10 md:py-12 overflow-x-hidden"
     >
       {/* Title */}
-      <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 text-center mb-6 md:mb-7 z-10 text-glow">
-        <span className="text-xs text-[#38bdf8] font-semibold tracking-[0.2em] uppercase bg-white/[0.06] px-4 py-1.5 rounded-full">
+      <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 text-center mb-6 md:mb-7 z-10">
+        <span className="text-xs text-[#38bdf8] font-semibold tracking-[0.2em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full">
           Our Science
         </span>
-        <h2 className="text-3xl md:text-4xl font-bold text-white mt-4 mb-2 leading-tight">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] mt-4 mb-2 leading-tight">
           Exosome <span className="text-[#38bdf8]">Classes</span>
         </h2>
-        <p className="text-[#b0d0e8] text-sm md:text-base max-w-xl mx-auto">
+        <p className="text-[#334155] text-sm md:text-base max-w-xl mx-auto">
           Scientifically Sourced Exosome Types for Advanced Therapeutic &amp; Aesthetic Use
         </p>
       </div>
@@ -102,10 +102,10 @@ export default function ExosomeClassesSection() {
             {/* Gradient for collision spread (warm blend) */}
             <linearGradient id="grad-spread" gradientUnits="userSpaceOnUse"
               x1={cx - outerR} y1={cy} x2={cx + outerR} y2={cy}>
-              <stop offset="0%" stopColor="#f39c12" />
-              <stop offset="33%" stopColor="#e74c3c" />
-              <stop offset="66%" stopColor="#9b59b6" />
-              <stop offset="100%" stopColor="#f39c12" />
+              <stop offset="0%" stopColor="#38bdf8" />
+              <stop offset="33%" stopColor="#0ea5e9" />
+              <stop offset="66%" stopColor="#0284c7" />
+              <stop offset="100%" stopColor="#38bdf8" />
             </linearGradient>
 
             {/* Gradient for connector lines (single line, node color → lighter) */}
@@ -140,7 +140,7 @@ export default function ExosomeClassesSection() {
 
           {/* ── Fill 1: DEEP BLUE — sweeps from right (0°) ── */}
           <circle cx={cx} cy={cy} r={outerR + 6} fill="none"
-            stroke="#1a5276" strokeWidth={3} strokeLinecap="round"
+            stroke="#0284c7" strokeWidth={3} strokeLinecap="round"
             strokeDasharray={`${2 * Math.PI * (outerR + 6)}`}
             style={{
               ["--circ" as string]: `${2 * Math.PI * (outerR + 6)}`,
@@ -155,7 +155,7 @@ export default function ExosomeClassesSection() {
 
           {/* ── Fill 2: CRIMSON — sweeps from left (180°) ── */}
           <circle cx={cx} cy={cy} r={outerR + 6} fill="none"
-            stroke="#c0392b" strokeWidth={3} strokeLinecap="round"
+            stroke="#0ea5e9" strokeWidth={3} strokeLinecap="round"
             strokeDasharray={`${2 * Math.PI * (outerR + 6)}`}
             style={{
               ["--circ" as string]: `${2 * Math.PI * (outerR + 6)}`,
@@ -170,7 +170,7 @@ export default function ExosomeClassesSection() {
 
           {/* ── Fill 3: EMERALD — sweeps from bottom (90°) ── */}
           <circle cx={cx} cy={cy} r={outerR + 6} fill="none"
-            stroke="#1e8449" strokeWidth={3} strokeLinecap="round"
+            stroke="#0ea5e9" strokeWidth={3} strokeLinecap="round"
             strokeDasharray={`${2 * Math.PI * (outerR + 6)}`}
             style={{
               ["--circ" as string]: `${2 * Math.PI * (outerR + 6)}`,
@@ -185,7 +185,7 @@ export default function ExosomeClassesSection() {
 
           {/* ── Flash 1: ORANGE — collides with Fill 1 ── */}
           <circle cx={cx} cy={cy} r={outerR + 6} fill="none"
-            stroke="#e67e22" strokeWidth={3.5} strokeLinecap="round"
+            stroke="#0284c7" strokeWidth={3.5} strokeLinecap="round"
             strokeDasharray={`${2 * Math.PI * (outerR + 6)}`}
             style={{
               ["--circ" as string]: `${2 * Math.PI * (outerR + 6)}`,
@@ -215,7 +215,7 @@ export default function ExosomeClassesSection() {
 
           {/* ── Flash 3: MAGENTA — collides with Fill 3 ── */}
           <circle cx={cx} cy={cy} r={outerR + 6} fill="none"
-            stroke="#8e44ad" strokeWidth={3.5} strokeLinecap="round"
+            stroke="#0369a1" strokeWidth={3.5} strokeLinecap="round"
             strokeDasharray={`${2 * Math.PI * (outerR + 6)}`}
             style={{
               ["--circ" as string]: `${2 * Math.PI * (outerR + 6)}`,
@@ -245,17 +245,17 @@ export default function ExosomeClassesSection() {
 
           {/* Subtle glow */}
           <circle cx={cx} cy={cy} r={outerR + 6} fill="none"
-            stroke="#1a5276" strokeWidth={8} filter="url(#glow)"
+            stroke="#0284c7" strokeWidth={8} filter="url(#glow)"
             opacity={show ? 0.06 : 0} style={{ transition: "opacity 1s ease" }} />
 
           {/* Middle ring - faint */}
           <circle cx={cx} cy={cy} r={center * 0.55} fill="none"
-            stroke="#c5d3e0" strokeWidth={1} strokeDasharray="5 8"
+            stroke="#38bdf8" strokeWidth={1} strokeDasharray="5 8"
             opacity={show ? 0.35 : 0} style={{ transition: "opacity 0.8s ease 0.3s" }} />
 
           {/* Center circle - exosome boundary */}
           <circle cx={cx} cy={cy} r={CENTER_CIRCLE_R} fill="none"
-            stroke="#5b9bd5" strokeWidth={1.5} strokeDasharray="3 4"
+            stroke="#0ea5e9" strokeWidth={1.5} strokeDasharray="3 4"
             opacity={show ? 0.4 : 0} style={{ transition: "opacity 0.8s ease 0.4s" }} />
 
           {/* ====== SINGLE CONNECTOR LINES (not double) ====== */}
@@ -397,21 +397,21 @@ export default function ExosomeClassesSection() {
               }}
             >
               <div
-                className="rounded-full bg-white/[0.06] flex items-center justify-center overflow-hidden border-2 shadow-lg"
+                className="rounded-full bg-white flex items-center justify-center overflow-hidden border-2"
                 style={{
                   width: nodeR * 2,
                   height: nodeR * 2,
                   borderColor: node.color + "40",
-                  boxShadow: `0 6px 24px ${node.color}15`,
+                  boxShadow: "none",
                 }}
               >
                 <img src={node.icon} alt={node.name}
                   className="w-[65%] h-[65%] object-contain" draggable={false} loading="lazy" />
               </div>
-              <p className="mt-1.5 text-[9px] md:text-[11px] font-bold text-center leading-tight whitespace-nowrap text-white">
+              <p className="mt-1.5 text-[9px] md:text-[11px] font-bold text-center leading-tight whitespace-nowrap text-[#0f172a]">
                 {node.name}
               </p>
-              <p className="hidden md:block text-[8px] md:text-[9px] text-[#b0d0e8] text-center mt-0.5">
+              <p className="hidden md:block text-[8px] md:text-[9px] text-[#334155] text-center mt-0.5">
                 {node.tagline}
               </p>
             </div>
@@ -450,13 +450,13 @@ export default function ExosomeClassesSection() {
       </div>
 
       {/* Bottom text */}
-      <div className="mt-6 md:mt-7 max-w-2xl mx-auto text-center z-10 px-5 sm:px-6 text-glow"
+      <div className="mt-6 md:mt-7 max-w-2xl mx-auto text-center z-10 px-5 sm:px-6"
         style={{ opacity: show ? 1 : 0, transform: `translateY(${show ? 0 : 15}px)`,
           transition: "opacity 0.8s ease 1s, transform 0.8s ease 1s" }}>
-        <h3 className="text-lg md:text-xl font-bold text-white mb-2">
+        <h3 className="text-lg md:text-xl font-bold text-[#0f172a] mb-2">
           Next-Generation Regenerative Technology
         </h3>
-        <p className="text-[#b0d0e8] text-sm leading-relaxed">
+        <p className="text-[#334155] text-sm leading-relaxed">
           Each exosome class is uniquely derived from specialized cell sources,
           engineered for targeted therapeutic and aesthetic applications.
         </p>

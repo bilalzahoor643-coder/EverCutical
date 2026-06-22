@@ -13,7 +13,7 @@ export default function HeroSection() {
         </div>
 
         <h1
-          className="text-[28px] sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4 opacity-0 animate-[fadeUp_0.6s_0.3s_forwards] text-glow-strong"
+          className="text-[28px] sm:text-4xl md:text-6xl lg:text-7xl font-bold text-[#0f172a] leading-tight mb-4 opacity-0 animate-[fadeUp_0.6s_0.3s_forwards]"
         >
           Where Science Meets
           <br />
@@ -21,7 +21,7 @@ export default function HeroSection() {
         </h1>
 
         <p
-          className="text-[#b0d0e8] text-[13px] sm:text-sm md:text-base max-w-xl mx-auto leading-relaxed mb-8 sm:mb-8 opacity-0 animate-[fadeUp_0.6s_0.4s_forwards]"
+          className="text-[#334155] text-[13px] sm:text-sm md:text-base max-w-xl mx-auto leading-relaxed mb-8 sm:mb-8 opacity-0 animate-[fadeUp_0.6s_0.4s_forwards]"
         >
           EverCeutical is a Korea-based leader in exosome research and manufacturing,
           delivering high-purity, clinically engineered exosome solutions for
@@ -31,7 +31,7 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 opacity-0 animate-[fadeUp_0.6s_0.5s_forwards]">
           <a
             href="#products"
-            className="inline-flex items-center px-7 py-3 rounded-lg bg-[#0ea5e9] text-white text-sm font-semibold hover:bg-[#0284c7] transition-all duration-300 shadow-lg shadow-[#0ea5e9]/30 hover:shadow-[#0ea5e9]/40"
+            className="inline-flex items-center px-7 py-3 rounded-lg bg-[#0ea5e9] text-white text-sm font-semibold hover:bg-[#0284c7] transition-all duration-300"
           >
             Explore Products
             <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -40,7 +40,7 @@ export default function HeroSection() {
           </a>
           <a
             href="#learn"
-            className="inline-flex items-center px-7 py-3 rounded-lg border border-white/25 text-white/90 text-sm font-semibold hover:border-[#38bdf8]/50 hover:text-[#38bdf8] transition-all duration-300 bg-white/[0.08] backdrop-blur-sm"
+            className="inline-flex items-center px-7 py-3 rounded-lg border border-[#cbd5e1] text-[#334155] text-sm font-semibold hover:border-[#38bdf8]/50 hover:text-[#38bdf8] transition-all duration-300 bg-white/50 backdrop-blur-sm"
           >
             Learn More
           </a>

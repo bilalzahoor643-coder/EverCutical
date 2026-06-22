@@ -28,7 +28,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   maximumScale: 5,
   userScalable: true,
-  themeColor: "#0c1929",
+  themeColor: "#ffffff",
 }
 
 export default function RootLayout({
@@ -44,7 +44,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://img.youtube.com" />
         <link rel="dns-prefetch" href="https://cdn.shopify.com" />
       </head>
-      <body className={`${inter.className} antialiased`} style={{ background: "#0a2d5a" }}>
+      <body className={`${inter.className} antialiased`} style={{ background: "#ffffff" }}>
         <LoadingProvider>
           <LoadingScreen />
           <LenisProvider>

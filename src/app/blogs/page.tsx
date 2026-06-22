@@ -82,9 +82,9 @@ const categories = ["All", "Research", "Science", "Technology", "Clinical"]
 
 const categoryColors: Record<string, string> = {
   Research: "#38bdf8",
-  Science: "#1e8449",
-  Technology: "#a78bfa",
-  Clinical: "#d4915e",
+  Science: "#0ea5e9",
+  Technology: "#0284c7",
+  Clinical: "#0369a1",
 }
 
 const whyReadCards = [
@@ -103,21 +103,21 @@ const whyReadCards = [
     title: "Clinical Applications",
     desc: "Learn how exosome therapies are being applied in real clinical settings for skin rejuvenation and hair restoration.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#1e8449" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
       </svg>
     ),
-    color: "#1e8449",
+    color: "#0ea5e9",
   },
   {
     title: "Industry Firsts",
     desc: "Stay ahead with coverage of breakthroughs in exosome counting, lyophilization, and next-gen formulations.",
     icon: (
-      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
       </svg>
     ),
-    color: "#a78bfa",
+    color: "#0284c7",
   },
 ]
 
@@ -134,8 +134,8 @@ const categoryDetails: Record<string, { icon: React.ReactNode; desc: string; cou
   },
   Science: {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1e8449" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M10 2v7.527a2 2 0 01-.211.896L4.72 20.55a1 1 0 00.9 1.45h12.76a1 1 0 00.9-1.45l-5.069-10.127A2 2 0 0114 9.527V2" />
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0ea5e9" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M10 2v7.527a2 2 0 01-.211.896L4.72 20.55a1 1 0 00.9 1.45h12.76a1 1 0 00.9-1.45l-5.069-10.127A2 2 0 0114 9.527V2" />
         <path d="M8.5 2h7" />
         <path d="M7 16h10" />
       </svg>
@@ -145,8 +145,8 @@ const categoryDetails: Record<string, { icon: React.ReactNode; desc: string; cou
   },
   Technology: {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#a78bfa" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0284c7" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
         <line x1="8" y1="21" x2="16" y2="21" />
         <line x1="12" y1="17" x2="12" y2="21" />
       </svg>
@@ -156,8 +156,8 @@ const categoryDetails: Record<string, { icon: React.ReactNode; desc: string; cou
   },
   Clinical: {
     icon: (
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#d4915e" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" />
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0369a1" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M16 4h2a2 2 0 012 2v14a2 2 0 01-2 2H6a2 2 0 01-2-2V6a2 2 0 012-2h2" />
         <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
         <path d="M9 14l2 2 4-4" />
       </svg>
@@ -234,16 +234,16 @@ function BlogCard({ post, index, visible }: { post: BlogPost; index: number; vis
         {/* Content */}
         <div className="p-6">
           <div className="flex items-center gap-2 mb-3">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(107,114,128,1)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <circle cx="12" cy="12" r="10" />
               <polyline points="12 6 12 12 16 14" />
             </svg>
-            <span className="text-xs text-white/50 font-medium">{post.readTime}</span>
+            <span className="text-xs text-[#64748b] font-medium">{post.readTime}</span>
           </div>
-          <h3 className="text-lg font-bold text-white mb-3 leading-snug line-clamp-2 group-hover:text-[#38bdf8] transition-colors duration-300">
+          <h3 className="text-lg font-bold text-[#0f172a] mb-3 leading-snug line-clamp-2 group-hover:text-[#38bdf8] transition-colors duration-300">
             {post.title}
           </h3>
-          <p className="text-sm text-white/50 leading-relaxed line-clamp-3 mb-4">
+          <p className="text-sm text-[#64748b] leading-relaxed line-clamp-3 mb-4">
             {post.excerpt}
           </p>
           <div className="flex items-center text-[#38bdf8] text-sm font-semibold group-hover:gap-3 gap-2 transition-all duration-300">
@@ -260,7 +260,7 @@ function BlogCard({ post, index, visible }: { post: BlogPost; index: number; vis
       <div
         className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
         style={{
-          boxShadow: `0 12px 40px ${categoryColors[post.category] || "#38bdf8"}20, 0 0 0 1px ${categoryColors[post.category] || "#38bdf8"}15`,
+          boxShadow: "none",
         }}
       />
     </div>
@@ -303,7 +303,7 @@ function FeaturedCard({ post, visible }: { post: BlogPost; visible: boolean }) {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-black/20 lg:block hidden" />
           {/* Featured badge */}
           <div className="absolute top-5 left-5 px-4 py-2 rounded-full text-[10px] sm:text-[11px] font-bold tracking-[0.2em] uppercase text-white"
-            style={{ background: "linear-gradient(135deg, #d9a441, #c4933a)" }}>
+            style={{ background: "linear-gradient(135deg, #0ea5e9, #0284c7)" }}>
             Latest Research
           </div>
         </div>
@@ -320,12 +320,12 @@ function FeaturedCard({ post, visible }: { post: BlogPost; visible: boolean }) {
             >
               {post.category}
             </span>
-            <span className="text-xs text-white/50">{post.date}</span>
+            <span className="text-xs text-[#64748b]">{post.date}</span>
           </div>
-          <h2 className="text-2xl lg:text-3xl font-bold text-white mb-4 leading-tight group-hover:text-[#38bdf8] transition-colors duration-300">
+          <h2 className="text-2xl lg:text-3xl font-bold text-[#0f172a] mb-4 leading-tight group-hover:text-[#38bdf8] transition-colors duration-300">
             {post.title}
           </h2>
-          <p className="text-white/50 text-sm leading-relaxed mb-6">
+          <p className="text-[#64748b] text-sm leading-relaxed mb-6">
             {post.excerpt}
           </p>
           <div className="flex items-center gap-6">
@@ -336,7 +336,7 @@ function FeaturedCard({ post, visible }: { post: BlogPost; visible: boolean }) {
                 <polyline points="12 5 19 12 12 19" />
               </svg>
             </div>
-            <div className="flex items-center gap-1.5 text-white/50 text-xs">
+            <div className="flex items-center gap-1.5 text-[#64748b] text-xs">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="12" r="10" />
                 <polyline points="12 6 12 12 16 14" />
@@ -397,17 +397,17 @@ export default function BlogsPage() {
                   EverCeutical Insights
                 </span>
               </div>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4"
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#0f172a] leading-tight mb-4"
                 style={{ opacity: hero.visible ? 1 : 0, transform: `translateY(${hero.visible ? 0 : 40}px)`, transition: "opacity 1.3s cubic-bezier(0.22,1,0.36,1) 0.3s, transform 1.3s cubic-bezier(0.22,1,0.36,1) 0.3s" }}>
                 News <span className="text-[#38bdf8]">&amp;</span> <br className="hidden sm:block" />Research Blog
               </h1>
-              <p className="text-white/60 text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-7"
+              <p className="text-[#334155] text-sm md:text-base max-w-2xl mx-auto leading-relaxed mb-7"
                 style={{ opacity: hero.visible ? 1 : 0, transform: `translateY(${hero.visible ? 0 : 25}px)`, transition: "opacity 1.2s cubic-bezier(0.22,1,0.36,1) 0.5s, transform 1.2s cubic-bezier(0.22,1,0.36,1) 0.5s" }}>
                 Stay updated with the latest breakthroughs in exosome therapy, clinical research, and regenerative medicine from the EverCeutical team.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4"
                 style={{ opacity: hero.visible ? 1 : 0, transform: `translateY(${hero.visible ? 0 : 20}px)`, transition: "opacity 1.2s cubic-bezier(0.22,1,0.36,1) 0.7s, transform 1.2s cubic-bezier(0.22,1,0.36,1) 0.7s" }}>
-                <a href="#articles" className="px-8 py-3.5 rounded-full bg-[#0ea5e9] text-white text-sm font-semibold hover:bg-[#0284c7] transition-all duration-300 shadow-lg shadow-[#0ea5e9]/20 hover:shadow-[#0ea5e9]/30 hover:scale-105">
+                <a href="#articles" className="px-8 py-3.5 rounded-full bg-[#0ea5e9] text-white text-sm font-semibold hover:bg-[#0284c7] transition-all duration-300 hover:scale-105">
                   Browse Articles
                 </a>
                 <Link href="/research-technology" className="px-8 py-3.5 rounded-full border border-[#38bdf8]/20 text-[#38bdf8] text-sm font-semibold hover:bg-[#0ea5e9] hover:text-white transition-all duration-300 hover:scale-105">
@@ -427,7 +427,7 @@ export default function BlogsPage() {
                 <span className="inline-block text-[10px] sm:text-[11px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full mb-3">
                   Why EverCeutical
                 </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-white">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#0f172a]">
                   Why Read <span className="text-[#38bdf8]">Our Blog</span>
                 </h2>
               </div>
@@ -453,17 +453,17 @@ export default function BlogsPage() {
                     >
                       {card.icon}
                     </div>
-                    <h3 className="text-base font-bold text-white mb-2">
+                    <h3 className="text-base font-bold text-[#0f172a] mb-2">
                       {card.title}
                     </h3>
-                    <p className="text-sm text-white/50 leading-relaxed">
+                    <p className="text-sm text-[#64748b] leading-relaxed">
                       {card.desc}
                     </p>
                     {/* Hover glow */}
                     <div
                       className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                       style={{
-                        boxShadow: `0 8px 32px ${card.color}15, 0 0 0 1px ${card.color}12`,
+                        boxShadow: "none",
                       }}
                     />
                   </div>
@@ -491,7 +491,7 @@ export default function BlogsPage() {
                 <span className="inline-block text-[10px] sm:text-[11px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full mb-3">
                   Browse Topics
                 </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-white">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#0f172a]">
                   Explore by <span className="text-[#38bdf8]">Category</span>
                 </h2>
               </div>
@@ -532,12 +532,12 @@ export default function BlogsPage() {
                     </div>
 
                     {/* Name */}
-                    <h3 className="text-sm font-bold text-white mb-1.5">
+                    <h3 className="text-sm font-bold text-[#0f172a] mb-1.5">
                       {name}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-xs text-white/50 leading-relaxed line-clamp-2">
+                    <p className="text-xs text-[#64748b] leading-relaxed line-clamp-2">
                       {info.desc}
                     </p>
 
@@ -558,7 +558,7 @@ export default function BlogsPage() {
                     <div
                       className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                       style={{
-                        boxShadow: `0 8px 32px ${categoryColors[name]}15, 0 0 0 1px ${categoryColors[name]}12`,
+                        boxShadow: "none",
                       }}
                     />
                   </button>
@@ -578,7 +578,7 @@ export default function BlogsPage() {
               <span className="inline-block text-[10px] sm:text-[11px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.08] px-4 py-1.5 rounded-full mb-3">
                 All Articles
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] mb-4">
                 Explore Our <span className="text-[#38bdf8]">Research</span>
               </h2>
 
@@ -592,15 +592,12 @@ export default function BlogsPage() {
                     style={{
                       background: activeCategory === cat
                         ? "linear-gradient(135deg, #0ea5e9, #0284c7)"
-                        : "rgba(12,25,41,0.55)",
-                      color: activeCategory === cat ? "#ffffff" : "rgba(255,255,255,0.6)",
+                        : "rgba(241,245,249,1)",
+                      color: activeCategory === cat ? "#ffffff" : "#64748b",
                       border: activeCategory === cat
                         ? "1px solid transparent"
-                        : "1px solid rgba(255,255,255,0.1)",
-                      backdropFilter: "blur(8px)",
-                      boxShadow: activeCategory === cat
-                        ? "0 4px 16px rgba(14,165,233,0.3)"
-                        : "none",
+                        : "1px solid rgba(229,231,235,1)",
+                      boxShadow: "none",
                     }}
                   >
                     {cat}
@@ -617,7 +614,7 @@ export default function BlogsPage() {
             </div>
 
             {filteredPosts.length === 0 && (
-              <div className="text-center py-16 text-white/50 text-sm">
+              <div className="text-center py-16 text-[#64748b] text-sm">
                 No articles found in this category.
               </div>
             )}
@@ -628,7 +625,7 @@ export default function BlogsPage() {
         <section className="relative py-10 md:py-14">
           <div className="max-w-3xl mx-auto px-6">
             <div ref={newsletter.ref}
-              className="glass-surface relative rounded-3xl p-7 md:p-10 lg:p-14 text-center overflow-hidden"
+              className="relative rounded-3xl p-7 md:p-10 lg:p-14 text-center overflow-hidden bg-[#f8fafc] border border-[#e2e8f0]"
               style={{
                 opacity: newsletter.visible ? 1 : 0,
                 transform: `translateY(${newsletter.visible ? 0 : 40}px) scale(${newsletter.visible ? 1 : 0.95})`,
@@ -645,10 +642,10 @@ export default function BlogsPage() {
                     <polyline points="22,6 12,13 2,6" />
                   </svg>
                 </div>
-                <h2 className="text-2xl md:text-3xl font-bold text-white mb-3">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#0f172a] mb-3">
                   Stay Informed
                 </h2>
-                <p className="text-white/60 text-sm mb-8 max-w-md mx-auto">
+                <p className="text-[#334155] text-sm mb-8 max-w-md mx-auto">
                   Get the latest exosome research and clinical insights delivered to your inbox.
                 </p>
                 <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
@@ -658,15 +655,11 @@ export default function BlogsPage() {
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="Enter your email"
                     required
-                    className="w-full sm:flex-1 px-5 py-3 rounded-full text-sm text-white placeholder-white/40 outline-none focus:ring-2 focus:ring-[#0ea5e9]/30 transition-all duration-300"
-                    style={{
-                      background: "rgba(12,25,41,0.6)",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                    }}
+                    className="w-full sm:flex-1 px-5 py-3 rounded-full text-sm text-[#0f172a] placeholder:text-[#94a3b8] outline-none focus:ring-2 focus:ring-[#0ea5e9]/30 transition-all duration-300 bg-white border border-[#e2e8f0]"
                   />
                   <button
                     type="submit"
-                    className="w-full sm:w-auto px-8 py-3 rounded-full bg-[#0ea5e9] text-white text-sm font-semibold hover:bg-[#0284c7] transition-all duration-300 shadow-lg shadow-[#0ea5e9]/20 hover:shadow-[#0ea5e9]/30 hover:scale-105"
+                    className="w-full sm:w-auto px-8 py-3 rounded-full bg-[#0ea5e9] text-white text-sm font-semibold hover:bg-[#0284c7] transition-all duration-300 hover:scale-105"
                   >
                     Subscribe
                   </button>
@@ -680,7 +673,7 @@ export default function BlogsPage() {
         <section className="relative py-8 md:py-10">
           <div className="max-w-5xl mx-auto px-6">
             <div ref={stats.ref}
-              className="glass-surface relative rounded-3xl overflow-hidden"
+              className="relative rounded-3xl overflow-hidden bg-[#f8fafc] border border-[#e2e8f0]"
               style={{
                 opacity: stats.visible ? 1 : 0,
                 transform: `translateY(${stats.visible ? 0 : 40}px) scale(${stats.visible ? 1 : 0.95})`,
@@ -689,9 +682,9 @@ export default function BlogsPage() {
               <div className="grid grid-cols-2 md:grid-cols-4">
                 {[
                   { value: "7+", label: "Published Articles", color: "#38bdf8" },
-                  { value: "4", label: "Research Categories", color: "#1e8449" },
-                  { value: "10B+", label: "Exosomes Studied", color: "#a78bfa" },
-                  { value: "99.9%", label: "Purity Standard", color: "#d4915e" },
+                  { value: "4", label: "Research Categories", color: "#0ea5e9" },
+                  { value: "10B+", label: "Exosomes Studied", color: "#0284c7" },
+                  { value: "99.9%", label: "Purity Standard", color: "#0369a1" },
                 ].map((stat, i) => (
                   <div
                     key={stat.label}
@@ -704,7 +697,7 @@ export default function BlogsPage() {
                   >
                     {/* Divider (not on first) */}
                     {i > 0 && (
-                      <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-px h-10 bg-white/10" />
+                      <div className="hidden md:block absolute left-0 top-1/2 -translate-y-1/2 w-px h-10 bg-[#e2e8f0]" />
                     )}
                     <div
                       className="text-2xl md:text-3xl lg:text-4xl font-bold mb-1"
@@ -712,7 +705,7 @@ export default function BlogsPage() {
                     >
                       {stat.value}
                     </div>
-                    <div className="text-xs text-white/50 font-medium tracking-wide">
+                    <div className="text-xs text-[#64748b] font-medium tracking-wide">
                       {stat.label}
                     </div>
                   </div>
@@ -750,13 +743,13 @@ export default function BlogsPage() {
                     Explore Products
                   </span>
                   <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-white mb-2 leading-tight">
-                    Ready to Experience <span className="text-[#d9a441]">Advanced</span> Exosomes?
+                    Ready to Experience <span className="text-[#38bdf8]">Advanced</span> Exosomes?
                   </h2>
                   <p className="text-white/70 text-sm md:text-base max-w-lg mx-auto leading-relaxed mb-5">
                     Discover our range of advanced exosome formulations designed for professional clinical use in regenerative medicine.
                   </p>
                   <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <Link href="/products" className="px-8 py-3.5 rounded-full bg-[#d9a441] text-[#0c1929] text-sm font-bold hover:bg-[#e6b34e] transition-all duration-300 shadow-lg shadow-[#d9a441]/30 hover:scale-105">
+                    <Link href="/products" className="px-8 py-3.5 rounded-full bg-[#0ea5e9] text-white text-sm font-bold hover:bg-[#0284c7] transition-all duration-300 hover:scale-105">
                       View Products
                     </Link>
                     <Link href="/contact" className="px-8 py-3.5 rounded-full border border-white/30 text-white text-sm font-semibold hover:bg-white/10 transition-all duration-300 hover:scale-105">

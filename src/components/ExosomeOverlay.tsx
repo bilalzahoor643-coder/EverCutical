@@ -3,11 +3,11 @@
 import { useState, useEffect, useRef, useCallback } from "react"
 
 const nodes = [
-  { angle: -90, color: "#4a90b8" },
-  { angle: -18, color: "#6b8f71" },
-  { angle: 54, color: "#8b6f8e" },
-  { angle: 126, color: "#c49a3c" },
-  { angle: 198, color: "#5a8a6a" },
+  { angle: -90, color: "#0ea5e9" },
+  { angle: -18, color: "#38bdf8" },
+  { angle: 54, color: "#0284c7" },
+  { angle: 126, color: "#0369a1" },
+  { angle: 198, color: "#0ea5e9" },
 ]
 
 export default function ExosomeOverlay() {
@@ -83,10 +83,10 @@ export default function ExosomeOverlay() {
           )
         })}
         <text x={cx} y={cy - 1} textAnchor="middle" dominantBaseline="middle"
-          fill="#3a5a72" fontSize={6} fontWeight={700} letterSpacing={1}
+          fill="#0f172a" fontSize={6} fontWeight={700} letterSpacing={1}
           fontFamily="system-ui, sans-serif">EXOSOME</text>
         <text x={cx} y={cy + 7} textAnchor="middle" dominantBaseline="middle"
-          fill="#7a9aaa" fontSize={4} fontFamily="system-ui, sans-serif">Classes</text>
+          fill="#38bdf8" fontSize={4} fontFamily="system-ui, sans-serif">Classes</text>
       </svg>
     </div>
   )

@@ -40,15 +40,11 @@ function FaqCard({ item, index, visible }: { item: { q: string; a: string }; ind
     >
       <div
         className={`glass-card relative rounded-2xl overflow-hidden cursor-pointer transition-all duration-500 ${
-          hovered || open ? "bg-white/[0.08]" : "bg-white/[0.04]"
+          hovered || open ? "bg-white" : "bg-[#f8fafc]"
         }`}
         style={{
-          border: `1px solid ${open ? "rgba(56,189,248,0.2)" : hovered ? "rgba(255,255,255,0.1)" : "rgba(255,255,255,0.06)"}`,
-          boxShadow: open
-            ? "0 8px 32px rgba(14,165,233,0.1), 0 0 0 1px rgba(56,189,248,0.08)"
-            : hovered
-            ? "0 4px 20px rgba(14,165,233,0.05)"
-            : "0 1px 6px rgba(0,0,0,0.1)",
+          border: `1px solid ${open ? "rgba(56,189,248,0.2)" : hovered ? "rgba(209,213,219,0.5)" : "rgba(229,231,235,1)"}`,
+          boxShadow: "none",
         }}
         onClick={() => setOpen(!open)}
         onMouseEnter={() => setHovered(true)}
@@ -64,7 +60,7 @@ function FaqCard({ item, index, visible }: { item: { q: string; a: string }; ind
                 : hovered
                 ? "rgba(56,189,248,0.12)"
                 : "rgba(56,189,248,0.06)",
-              boxShadow: open ? "0 4px 16px rgba(14,165,233,0.25)" : "none",
+              boxShadow: "none",
             }}
           >
             <span
@@ -79,7 +75,7 @@ function FaqCard({ item, index, visible }: { item: { q: string; a: string }; ind
             <div className="flex items-center justify-between gap-2">
               <h4
                 className="text-[13px] font-bold leading-snug transition-colors duration-300"
-                style={{ color: open ? "#38bdf8" : "#e2e8f0" }}
+                style={{ color: open ? "#38bdf8" : "#0f172a" }}
               >
                 {item.q}
               </h4>
@@ -106,7 +102,7 @@ function FaqCard({ item, index, visible }: { item: { q: string; a: string }; ind
                 marginTop: open ? "10px" : "0",
               }}
             >
-              <p className="text-[12px] text-[#b0d0e8] leading-[1.7] border-t border-white/[0.08] pt-2.5">
+              <p className="text-[12px] text-[#334155] leading-[1.7] border-t border-[#e2e8f0] pt-2.5">
                 {item.a}
               </p>
             </div>
@@ -133,7 +129,7 @@ export default function FAQSection() {
         <div className="absolute bottom-1/4 left-0 w-[400px] h-[400px] rounded-full bg-[#38bdf8]/[0.02] blur-[80px]" />
       </div>
 
-      <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 relative text-glow">
+      <div className="w-full max-w-7xl mx-auto px-5 sm:px-6 z-10 relative">
         {/* ── HEADER ── */}
         <div
           ref={header.ref}
@@ -147,13 +143,13 @@ export default function FAQSection() {
           <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.1] px-4 py-1.5 rounded-full inline-block">
             Knowledge Center
           </span>
-          <h2 className="text-3xl md:text-4xl font-bold text-white mt-5 mb-3 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] mt-5 mb-3 leading-tight">
             Frequently Asked Questions
           </h2>
           <p className="text-[#38bdf8] text-sm md:text-base font-medium mb-4">
             Everything You Need to Know About Exosome Technology
           </p>
-          <p className="text-[#b0d0e8] text-sm max-w-xl mx-auto leading-relaxed hidden md:block">
+          <p className="text-[#334155] text-sm max-w-xl mx-auto leading-relaxed hidden md:block">
             Explore answers to the most common questions about exosomes, regenerative science,
             clinical applications, and treatment expectations.
           </p>
@@ -206,17 +202,17 @@ export default function FAQSection() {
               </svg>
 
               {/* Bottom gradient */}
-              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0c1929]/40 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-[#0f172a]/40 to-transparent" />
 
               {/* Blue overlay tint */}
               <div className="absolute inset-0 bg-[#0ea5e9]/[0.04]" />
             </div>
 
             {/* Floating badge */}
-            <div className="absolute bottom-4 right-4 md:-bottom-4 md:-right-4 glass-card bg-white/[0.08] backdrop-blur-xl rounded-2xl border border-white/[0.08] px-5 py-3 shadow-[0_8px_30px_rgba(14,165,233,0.1)]">
-              <p className="text-[10px] text-[#b0d0e8] font-medium">Trusted by</p>
-              <p className="text-lg font-bold text-white">500+</p>
-              <p className="text-[10px] text-[#b0d0e8]">Clinics Worldwide</p>
+            <div className="absolute bottom-4 right-4 md:-bottom-4 md:-right-4 glass-card bg-white backdrop-blur-xl rounded-2xl border border-[#e2e8f0] px-5 py-3">
+              <p className="text-[10px] text-[#334155] font-medium">Trusted by</p>
+              <p className="text-lg font-bold text-[#0f172a]">500+</p>
+              <p className="text-[10px] text-[#334155]">Clinics Worldwide</p>
             </div>
           </div>
 

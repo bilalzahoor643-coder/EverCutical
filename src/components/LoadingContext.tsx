@@ -23,7 +23,7 @@ export function LoadingProvider({ children }: { children: ReactNode }) {
   const handleSetContentReady = useCallback((v: boolean) => setContentReady(v), [])
 
   useEffect(() => {
-    const timer = setTimeout(() => setContentReady(true), 1000)
+    const timer = setTimeout(() => setContentReady(true), 500)
     return () => clearTimeout(timer)
   }, [])
 

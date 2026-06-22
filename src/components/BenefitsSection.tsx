@@ -52,8 +52,8 @@ function CategoryLabel({ label, sub, visible }: { label: string; sub: string; vi
     >
       <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-[#38bdf8]/30 to-[#38bdf8]/10" />
       <div className="text-center shrink-0">
-        <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#94b8d8] mb-1">{sub}</p>
-        <h3 className="text-lg md:text-xl font-bold text-white">{label}</h3>
+        <p className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#64748b] mb-1">{sub}</p>
+        <h3 className="text-lg md:text-xl font-bold text-[#0f172a]">{label}</h3>
       </div>
       <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-[#38bdf8]/30 to-[#38bdf8]/10" />
     </div>
@@ -87,15 +87,11 @@ const BenefitCard = (function () {
           className="rounded-2xl transition-all duration-500"
           style={{
             background: hovered
-              ? `linear-gradient(135deg, rgba(255,255,255,0.06) 0%, ${benefit.color}12 100%)`
-              : "rgba(255,255,255,0.04)",
+              ? `linear-gradient(135deg, rgba(255,255,255,0.9) 0%, ${benefit.color}12 100%)`
+              : "rgba(249,250,251,0.9)",
             backdropFilter: "blur(12px)",
-            border: `1px solid ${expanded ? benefit.color + "30" : hovered ? benefit.color + "25" : "rgba(255,255,255,0.08)"}`,
-            boxShadow: expanded
-              ? `0 12px 40px ${benefit.color}20, 0 0 0 1px ${benefit.color}15`
-              : hovered
-              ? `0 12px 40px ${benefit.color}15, 0 0 0 1px ${benefit.color}10`
-              : "0 4px 24px rgba(0,0,0,0.2)",
+            border: `1px solid ${expanded ? benefit.color + "30" : hovered ? benefit.color + "25" : "rgba(229,231,235,1)"}`,
+            boxShadow: "none",
           }}
         >
           <div className="relative p-6">
@@ -122,7 +118,7 @@ const BenefitCard = (function () {
 
               <div className="flex-1 min-w-0">
                 <div className="flex items-center justify-between gap-2">
-                  <h4 className="text-[15px] font-bold text-white transition-colors duration-300"
+                  <h4 className="text-[15px] font-bold text-[#0f172a] transition-colors duration-300"
                     style={{ color: hovered ? benefit.color : undefined }}>
                     {benefit.title}
                   </h4>
@@ -140,7 +136,7 @@ const BenefitCard = (function () {
                   </div>
                 </div>
 
-                <p className="text-[13px] text-[#b0d0e8] mt-1.5 leading-relaxed">
+                <p className="text-[13px] text-[#334155] mt-1.5 leading-relaxed">
                   {benefit.shortDesc}
                 </p>
               </div>
@@ -157,8 +153,8 @@ const BenefitCard = (function () {
             }}
           >
             <div className="px-6 pb-6">
-              <div className="border-t border-white/[0.08] pt-4">
-                <p className="text-[13px] text-white/80 leading-[1.8]">
+              <div className="border-t border-[#e2e8f0] pt-4">
+                <p className="text-[13px] text-[#334155] leading-[1.8]">
                   {benefit.fullDesc}
                 </p>
               </div>
@@ -212,7 +208,7 @@ export default function BenefitsSection() {
         ))}
       </div>
 
-      <div className="w-full max-w-6xl mx-auto px-5 sm:px-6 z-10 relative text-glow">
+      <div className="w-full max-w-6xl mx-auto px-5 sm:px-6 z-10 relative">
         <div
           ref={header.ref}
           className="text-center mb-8"
@@ -225,12 +221,12 @@ export default function BenefitsSection() {
           <span className="text-[10px] text-[#38bdf8] font-bold tracking-[0.25em] uppercase bg-[#0ea5e9]/[0.15] px-4 py-1.5 rounded-full inline-block">
             Clinical Applications
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-5 mb-4 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#0f172a] mt-5 mb-4 leading-tight">
             Applications{" "}
             <span className="text-[#38bdf8]">&amp;</span>{" "}
             Benefits
           </h2>
-          <p className="text-[#b0d0e8] text-sm md:text-base max-w-xl mx-auto leading-relaxed">
+          <p className="text-[#334155] text-sm md:text-base max-w-xl mx-auto leading-relaxed">
             Exosome technology delivers measurable outcomes across regenerative medicine,
             dermatology, and aesthetic applications — backed by science, driven by results.
           </p>
@@ -249,15 +245,15 @@ export default function BenefitsSection() {
             <div className="absolute inset-0 rounded-full border border-[#38bdf8]/15"
               style={{ animation: "spin 25s linear infinite" }}>
               <div className="absolute w-2.5 h-2.5 rounded-full bg-[#38bdf8]/50 -top-1 left-1/2 -translate-x-1/2" />
-              <div className="absolute w-2 h-2 rounded-full bg-[#7ab8a0]/50 -bottom-1 left-1/2 -translate-x-1/2" />
+              <div className="absolute w-2.5 h-2.5 rounded-full bg-[#0ea5e9]/50 -bottom-1 left-1/2 -translate-x-1/2" />
             </div>
             <div className="absolute inset-3 rounded-full border border-[#38bdf8]/10"
               style={{ animation: "spin 18s linear infinite reverse" }}>
               <div className="absolute w-2 h-2 rounded-full bg-[#38bdf8]/50 top-1/2 -right-1 -translate-y-1/2" />
-              <div className="absolute w-1.5 h-1.5 rounded-full bg-[#a088c4]/50 top-1/2 -left-1 -translate-y-1/2" />
+              <div className="absolute w-1.5 h-1.5 rounded-full bg-[#0284c7]/50 top-1/2 -left-1 -translate-y-1/2" />
             </div>
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-white/20 to-[#0ea5e9]/[0.15] flex items-center justify-center backdrop-blur-sm border border-white/20 shadow-[0_0_40px_rgba(14,165,233,0.15)]">
+              <div className="w-14 h-14 rounded-full bg-gradient-to-br from-white/20 to-[#0ea5e9]/[0.15] flex items-center justify-center backdrop-blur-sm border border-white/20">
                 <span className="text-lg">💎</span>
               </div>
             </div>
@@ -309,8 +305,8 @@ export default function BenefitsSection() {
             transition: "opacity 0.8s ease, transform 0.8s ease",
           }}
         >
-          <div className="glass-card rounded-2xl p-8">
-            <p className="text-[#b0d0e8] text-sm leading-relaxed mb-6">
+          <div className="glass-card rounded-2xl p-8 bg-[#f8fafc] border border-[#e2e8f0]">
+            <p className="text-[#334155] text-sm leading-relaxed mb-6">
               Every exosome treatment is backed by rigorous research, manufactured under strict quality protocols,
               and designed to deliver consistent, measurable regenerative outcomes.
             </p>
@@ -321,8 +317,8 @@ export default function BenefitsSection() {
                 { val: "GMP", label: "Manufacturing" },
               ].map((s, i) => (
                 <div key={i}>
-                  <p className="text-xl font-bold text-white">{s.val}</p>
-                  <p className="text-[11px] text-[#94b8d8] mt-0.5">{s.label}</p>
+                  <p className="text-xl font-bold text-[#0f172a]">{s.val}</p>
+                  <p className="text-[11px] text-[#64748b] mt-0.5">{s.label}</p>
                 </div>
               ))}
             </div>
