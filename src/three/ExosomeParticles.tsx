@@ -112,8 +112,8 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
 
   // LAYER 1: NEAR — large, covers ALL edges + corners
   {
-    const c = isMobile ? 2 : 6
-    const r = isMobile ? 1 : 3
+    const c = isMobile ? 5 : 8
+    const r = isMobile ? 3 : 4
     const pts = scatter(-0.5, -5, c, r, 1.8, 1.5, 1.0, rand)
     for (const [x, y, z] of pts) {
       instances.push({
@@ -138,8 +138,8 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
 
   // LAYER 2: HERO — dominant foreground
   {
-    const c = isMobile ? 2 : 6
-    const r = isMobile ? 2 : 4
+    const c = isMobile ? 5 : 8
+    const r = isMobile ? 4 : 5
     const pts = scatter(-3, -9, c, r, 1.7, 1.2, 0.8, rand)
     for (const [x, y, z] of pts) {
       instances.push({
@@ -164,8 +164,8 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
 
   // LAYER 3: MID — medium, dense fill
   {
-    const c = isMobile ? 2 : 8
-    const r = isMobile ? 2 : 5
+    const c = isMobile ? 5 : 10
+    const r = isMobile ? 4 : 6
     const pts = scatter(-8, -18, c, r, 1.5, 1.0, 0.7, rand)
     for (const [x, y, z] of pts) {
       instances.push({
@@ -190,8 +190,8 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
 
   // LAYER 4: DEEP — small, behind
   {
-    const c = isMobile ? 3 : 10
-    const r = isMobile ? 2 : 5
+    const c = isMobile ? 6 : 12
+    const r = isMobile ? 4 : 6
     const pts = scatter(-18, -35, c, r, 1.4, 0.7, 0.5, rand)
     for (const [x, y, z] of pts) {
       instances.push({
@@ -216,8 +216,8 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
 
   // LAYER 5: FAR BG — tiny cloud
   {
-    const c = isMobile ? 3 : 12
-    const r = isMobile ? 2 : 5
+    const c = isMobile ? 6 : 14
+    const r = isMobile ? 4 : 6
     const pts = scatter(-35, -55, c, r, 1.3, 0.5, 0.35, rand)
     for (const [x, y, z] of pts) {
       instances.push({

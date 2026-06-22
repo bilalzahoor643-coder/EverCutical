@@ -24,27 +24,27 @@ export default function LoadingScreen() {
           return 100
         }
         const remaining = 100 - prev
-        return prev + Math.max(1, remaining * 0.15)
+        return prev + Math.max(2, remaining * 0.2)
       })
-    }, 60)
+    }, 40)
     return () => clearInterval(interval)
   }, [mounted])
 
   useEffect(() => {
-    if (allReady && mounted && progress >= 80) {
+    if (allReady && mounted && progress >= 70) {
       setProgress(100)
-      setTimeout(() => setFading(true), 200)
-      setTimeout(() => setVisible(false), 600)
+      setTimeout(() => setFading(true), 150)
+      setTimeout(() => setVisible(false), 500)
     }
   }, [allReady, mounted, progress])
 
-  // Force hide after 2s
+  // Force hide after 1.2s max
   useEffect(() => {
     const forceHide = setTimeout(() => {
       setProgress(100)
       setFading(true)
-      setTimeout(() => setVisible(false), 600)
-    }, 2000)
+      setTimeout(() => setVisible(false), 500)
+    }, 1200)
     return () => clearTimeout(forceHide)
   }, [])
 
@@ -55,66 +55,57 @@ export default function LoadingScreen() {
       className="fixed inset-0 z-[100] flex items-center justify-center"
       style={{
         background: "#ffffff",
-        transition: "opacity 0.5s cubic-bezier(0.4,0,0.2,1)",
+        transition: "opacity 0.4s ease-out",
         opacity: fading ? 0 : 1,
         pointerEvents: fading ? "none" : "auto",
       }}
     >
-      <div className="flex flex-col items-center gap-6">
+      <div className="flex flex-col items-center gap-5">
         {/* Logo with animated ring */}
-        <div className="relative w-20 h-20 md:w-24 md:h-24">
-          {/* Spinning outer ring */}
+        <div className="relative w-16 h-16 md:w-20 md:h-20">
           <svg
             className="absolute inset-0 w-full h-full"
             viewBox="0 0 100 100"
-            style={{ animation: "loadingSpin 2s cubic-bezier(0.4,0,0.2,1) infinite" }}
           >
-            <circle
-              cx="50" cy="50" r="46"
-              fill="none"
-              stroke="#e2e8f0"
-              strokeWidth="2"
-            />
+            {/* Background track */}
+            <circle cx="50" cy="50" r="46" fill="none" stroke="#e2e8f0" strokeWidth="2" />
+            {/* Progress arc */}
             <circle
               cx="50" cy="50" r="46"
               fill="none"
               stroke="#0ea5e9"
-              strokeWidth="2"
+              strokeWidth="2.5"
               strokeLinecap="round"
-              strokeDasharray="290"
-              strokeDashoffset={290 - (290 * progress) / 100}
-              style={{ transition: "stroke-dashoffset 0.3s ease" }}
+              strokeDasharray="289"
+              strokeDashoffset={289 - (289 * Math.min(progress, 100)) / 100}
+              style={{ transition: "stroke-dashoffset 0.15s ease" }}
+              transform="rotate(-90 50 50)"
             />
           </svg>
-          {/* Logo */}
           <img
-            src="images/logo.png?v=2"
+            src="images/logo.png?v=3"
             alt="EverCeutical"
-            className="absolute inset-0 w-full h-full object-contain p-3 md:p-4"
+            className="absolute inset-0 w-full h-full object-contain p-2.5 md:p-3"
           />
         </div>
 
         {/* Brand name */}
-        <div className="text-center">
-          <h1 className="text-lg md:text-xl font-bold text-[#0f172a] tracking-tight">
-            Ever<span className="text-[#0ea5e9]">Ceutical</span>
-          </h1>
-        </div>
+        <h1 className="text-base md:text-lg font-bold text-[#0f172a] tracking-tight">
+          Ever<span className="text-[#0ea5e9]">Ceutical</span>
+        </h1>
 
         {/* Progress bar */}
-        <div className="w-40 md:w-48">
-          <div className="h-[2px] bg-[#e2e8f0] rounded-full overflow-hidden">
+        <div className="w-32 md:w-40">
+          <div className="h-[2px] bg-[#f1f5f9] rounded-full overflow-hidden">
             <div
-              className="h-full bg-gradient-to-r from-[#0ea5e9] to-[#38bdf8] rounded-full"
+              className="h-full rounded-full"
               style={{
                 width: `${Math.min(progress, 100)}%`,
-                transition: "width 0.3s cubic-bezier(0.4,0,0.2,1)",
+                background: "linear-gradient(90deg, #0ea5e9, #38bdf8)",
+                transition: "width 0.15s ease",
               }}
             />
           </div>
-          <p className="text-[10px] text-[#94a3b8] text-center mt-2 tracking-widest uppercase font-medium">
-            {progress < 100 ? "Initializing" : "Ready"}
-          </p>
         </div>
       </div>
     </div>
