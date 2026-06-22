@@ -436,14 +436,14 @@ html.lenis {
 }
 
 /* Loading screen animations */
-@keyframes loadingRingSpin {
+@keyframes loadingSpin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
 
-@keyframes loadingLogoSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes loadingRingSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 @keyframes loadingPulse {
@@ -536,4 +536,33 @@ section {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Mobile performance optimizations */
+@media (max-width: 768px) {
+  .glass-card, .glass-surface, .glass-surface-strong {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  section {
+    contain: layout style;
+  }
+
+  img {
+    content-visibility: auto;
+  }
+}
+
+/* GPU acceleration for animated elements */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Smooth scrolling container */
+.smooth-scroll {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
 }

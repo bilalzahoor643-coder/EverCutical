@@ -91,11 +91,11 @@ export default function ExosomeBackground() {
         <WebGLErrorBoundary>
           <Canvas
             camera={{ position: [0, 0, 14], fov: 55, near: 0.1, far: 150 }}
-            dpr={isMobile ? [0.75, 1] : [1, 1.2]}
+            dpr={isMobile ? [0.5, 0.75] : [1, 1.1]}
             gl={{
               alpha: true,
               antialias: false,
-              powerPreference: isMobile ? "default" : "high-performance",
+              powerPreference: isMobile ? "low-power" : "high-performance",
               stencil: false,
               depth: true,
             }}
