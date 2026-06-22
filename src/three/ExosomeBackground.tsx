@@ -5,6 +5,7 @@ import { Canvas } from "@react-three/fiber"
 import * as THREE from "three"
 import ExosomeParticles from "./ExosomeParticles"
 import { PostProcessing } from "./PostProcessing"
+import { useLoading } from "@/components/LoadingContext"
 
 class WebGLErrorBoundary extends Component<{ children: ReactNode }, { hasError: boolean }> {
   state = { hasError: false }
@@ -26,6 +27,36 @@ function checkWebGLSupport(): boolean {
   }
 }
 
+function Scene({ isMobile }: { isMobile: boolean }) {
+  const { setSceneReady } = useLoading()
+
+  return (
+    <Canvas
+      camera={{ position: [0, 0, 14], fov: 55, near: 0.1, far: 150 }}
+      dpr={isMobile ? [0.75, 1] : [1, 1.2]}
+      gl={{
+        alpha: true,
+        antialias: false,
+        powerPreference: isMobile ? "low-power" : "high-performance",
+        stencil: false,
+        depth: true,
+      }}
+      style={{ background: "transparent", width: "100%", height: "100%" }}
+      frameloop="always"
+      onCreated={({ gl }) => {
+        gl.setClearColor(0x000000, 0)
+        gl.toneMapping = THREE.ACESFilmicToneMapping
+        gl.toneMappingExposure = 1.3
+        // Signal that 3D scene is ready
+        setTimeout(() => setSceneReady(true), 800)
+      }}
+    >
+      <ExosomeParticles />
+      <PostProcessing isMobile={isMobile} />
+    </Canvas>
+  )
+}
+
 export default function ExosomeBackground() {
   const [webglOk, setWebglOk] = useState(true)
   const [isMobile, setIsMobile] = useState(false)
@@ -40,10 +71,9 @@ export default function ExosomeBackground() {
     }
     setIsMobile(window.innerWidth < 768)
 
-    // Delay canvas init to not block first paint
     const timer = setTimeout(() => {
       setCanvasReady(true)
-    }, 50)
+    }, 100)
     return () => clearTimeout(timer)
   }, [])
 
@@ -51,7 +81,6 @@ export default function ExosomeBackground() {
 
   return (
     <>
-      {/* White fluid gradient background - instant, no 3D needed */}
       <div
         className="fixed inset-0 pointer-events-none"
         style={{
@@ -69,7 +98,6 @@ export default function ExosomeBackground() {
         }}
       />
 
-      {/* Light patches */}
       <div
         className="fixed inset-0 pointer-events-none"
         style={{
@@ -83,33 +111,12 @@ export default function ExosomeBackground() {
         }}
       />
 
-      {/* 3D Canvas — optimized for performance */}
       <div
         className="fixed pointer-events-none"
         style={{ zIndex: 0, inset: 0 }}
       >
         <WebGLErrorBoundary>
-          <Canvas
-            camera={{ position: [0, 0, 14], fov: 55, near: 0.1, far: 150 }}
-            dpr={isMobile ? [0.75, 1] : [1, 1.2]}
-            gl={{
-              alpha: true,
-              antialias: false,
-              powerPreference: isMobile ? "low-power" : "high-performance",
-              stencil: false,
-              depth: true,
-            }}
-            style={{ background: "transparent", width: "100%", height: "100%" }}
-            frameloop="always"
-            onCreated={({ gl }) => {
-              gl.setClearColor(0x000000, 0)
-              gl.toneMapping = THREE.ACESFilmicToneMapping
-              gl.toneMappingExposure = 1.3
-            }}
-          >
-            <ExosomeParticles />
-            <PostProcessing isMobile={isMobile} />
-          </Canvas>
+          <Scene isMobile={isMobile} />
         </WebGLErrorBoundary>
       </div>
     </>

@@ -5,12 +5,16 @@ import { createContext, useContext, useState, useCallback, useEffect, type React
 interface LoadingState {
   contentReady: boolean
   setContentReady: (v: boolean) => void
+  sceneReady: boolean
+  setSceneReady: (v: boolean) => void
   allReady: boolean
 }
 
 const LoadingContext = createContext<LoadingState>({
   contentReady: false,
   setContentReady: () => {},
+  sceneReady: false,
+  setSceneReady: () => {},
   allReady: false,
 })
 
@@ -20,10 +24,12 @@ export function useLoading() {
 
 export function LoadingProvider({ children }: { children: ReactNode }) {
   const [contentReady, setContentReady] = useState(false)
+  const [sceneReady, setSceneReady] = useState(false)
   const handleSetContentReady = useCallback((v: boolean) => setContentReady(v), [])
+  const handleSetSceneReady = useCallback((v: boolean) => setSceneReady(v), [])
 
   useEffect(() => {
-    const timer = setTimeout(() => setContentReady(true), 500)
+    const timer = setTimeout(() => setContentReady(true), 300)
     return () => clearTimeout(timer)
   }, [])
 
@@ -32,7 +38,9 @@ export function LoadingProvider({ children }: { children: ReactNode }) {
       value={{
         contentReady,
         setContentReady: handleSetContentReady,
-        allReady: contentReady,
+        sceneReady,
+        setSceneReady: handleSetSceneReady,
+        allReady: contentReady && sceneReady,
       }}
     >
       {children}

@@ -14,37 +14,40 @@ export default function LoadingScreen() {
     setMounted(true)
   }, [])
 
-  // Smooth progress animation
+  // Smooth progress animation — fills up as time passes
   useEffect(() => {
     if (!mounted) return
     const interval = setInterval(() => {
       setProgress((prev) => {
-        if (prev >= 100) {
-          clearInterval(interval)
-          return 100
-        }
+        if (allReady) return 100
+        if (prev >= 95) return 95
         const remaining = 100 - prev
-        return prev + Math.max(2, remaining * 0.2)
+        return prev + Math.max(1, remaining * 0.08)
       })
-    }, 40)
+    }, 80)
     return () => clearInterval(interval)
-  }, [mounted])
+  }, [mounted, allReady])
 
+  // When allReady = true, complete and fade out
   useEffect(() => {
-    if (allReady && mounted && progress >= 70) {
+    if (allReady && mounted) {
       setProgress(100)
-      setTimeout(() => setFading(true), 150)
-      setTimeout(() => setVisible(false), 500)
+      const fadeTimer = setTimeout(() => setFading(true), 300)
+      const hideTimer = setTimeout(() => setVisible(false), 700)
+      return () => {
+        clearTimeout(fadeTimer)
+        clearTimeout(hideTimer)
+      }
     }
-  }, [allReady, mounted, progress])
+  }, [allReady, mounted])
 
-  // Force hide after 1.2s max
+  // Force hide after 5 seconds max (fallback)
   useEffect(() => {
     const forceHide = setTimeout(() => {
       setProgress(100)
       setFading(true)
-      setTimeout(() => setVisible(false), 500)
-    }, 1200)
+      setTimeout(() => setVisible(false), 700)
+    }, 5000)
     return () => clearTimeout(forceHide)
   }, [])
 
@@ -55,7 +58,7 @@ export default function LoadingScreen() {
       className="fixed inset-0 z-[100] flex items-center justify-center"
       style={{
         background: "#ffffff",
-        transition: "opacity 0.4s ease-out",
+        transition: "opacity 0.5s ease-out",
         opacity: fading ? 0 : 1,
         pointerEvents: fading ? "none" : "auto",
       }}
@@ -66,10 +69,9 @@ export default function LoadingScreen() {
           <svg
             className="absolute inset-0 w-full h-full"
             viewBox="0 0 100 100"
+            style={{ animation: "loadingSpin 2.5s linear infinite" }}
           >
-            {/* Background track */}
             <circle cx="50" cy="50" r="46" fill="none" stroke="#e2e8f0" strokeWidth="2" />
-            {/* Progress arc */}
             <circle
               cx="50" cy="50" r="46"
               fill="none"
@@ -78,12 +80,12 @@ export default function LoadingScreen() {
               strokeLinecap="round"
               strokeDasharray="289"
               strokeDashoffset={289 - (289 * Math.min(progress, 100)) / 100}
-              style={{ transition: "stroke-dashoffset 0.15s ease" }}
+              style={{ transition: "stroke-dashoffset 0.3s ease" }}
               transform="rotate(-90 50 50)"
             />
           </svg>
           <img
-            src="images/logo.png?v=3"
+            src="images/logo.png?v=4"
             alt="EverCeutical"
             className="absolute inset-0 w-full h-full object-contain p-2.5 md:p-3"
           />
@@ -102,10 +104,13 @@ export default function LoadingScreen() {
               style={{
                 width: `${Math.min(progress, 100)}%`,
                 background: "linear-gradient(90deg, #0ea5e9, #38bdf8)",
-                transition: "width 0.15s ease",
+                transition: "width 0.3s ease",
               }}
             />
           </div>
+          <p className="text-[10px] text-[#94a3b8] text-center mt-2 tracking-widest uppercase font-medium">
+            {progress < 100 ? "Loading" : "Welcome"}
+          </p>
         </div>
       </div>
     </div>
