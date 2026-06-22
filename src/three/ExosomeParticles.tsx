@@ -112,8 +112,8 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
 
   // LAYER 1: NEAR — large, covers ALL edges + corners
   {
-    const c = isMobile ? 5 : 8
-    const r = isMobile ? 3 : 4
+    const c = isMobile ? 3 : 8
+    const r = isMobile ? 2 : 4
     const pts = scatter(-0.5, -5, c, r, 1.8, 1.5, 1.0, rand)
     for (const [x, y, z] of pts) {
       instances.push({
@@ -138,8 +138,8 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
 
   // LAYER 2: HERO — dominant foreground
   {
-    const c = isMobile ? 5 : 8
-    const r = isMobile ? 4 : 5
+    const c = isMobile ? 3 : 8
+    const r = isMobile ? 3 : 5
     const pts = scatter(-3, -9, c, r, 1.7, 1.2, 0.8, rand)
     for (const [x, y, z] of pts) {
       instances.push({
@@ -164,8 +164,8 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
 
   // LAYER 3: MID — medium, dense fill
   {
-    const c = isMobile ? 5 : 10
-    const r = isMobile ? 4 : 6
+    const c = isMobile ? 3 : 10
+    const r = isMobile ? 3 : 6
     const pts = scatter(-8, -18, c, r, 1.5, 1.0, 0.7, rand)
     for (const [x, y, z] of pts) {
       instances.push({
@@ -190,8 +190,8 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
 
   // LAYER 4: DEEP — small, behind
   {
-    const c = isMobile ? 6 : 12
-    const r = isMobile ? 4 : 6
+    const c = isMobile ? 4 : 12
+    const r = isMobile ? 3 : 6
     const pts = scatter(-18, -35, c, r, 1.4, 0.7, 0.5, rand)
     for (const [x, y, z] of pts) {
       instances.push({
@@ -216,8 +216,8 @@ function generateInstances(isMobile: boolean): ExoInstance[] {
 
   // LAYER 5: FAR BG — tiny cloud
   {
-    const c = isMobile ? 6 : 14
-    const r = isMobile ? 4 : 6
+    const c = isMobile ? 4 : 14
+    const r = isMobile ? 3 : 6
     const pts = scatter(-35, -55, c, r, 1.3, 0.5, 0.35, rand)
     for (const [x, y, z] of pts) {
       instances.push({
@@ -253,7 +253,7 @@ export default function ExosomeParticles() {
   const { viewport } = useThree()
 
   const isMobile = viewport.width < 768
-  const segments = isMobile ? 24 : 32
+  const segments = isMobile ? 16 : 32
 
   const noise = useMemo(() => new SimplexNoise(42), [])
 
@@ -277,27 +277,42 @@ export default function ExosomeParticles() {
     ...(coreNormal ? { normalMap: coreNormal, normalScale: new THREE.Vector2(1.8, 1.8) } : {}),
   }), [coreBump, coreNormal])
 
-  const memMat = useMemo(() => new THREE.MeshPhysicalMaterial({
-    color: new THREE.Color("#c8dce8"),
-    emissive: new THREE.Color("#4080a0"),
-    emissiveIntensity: 0.08,
-    roughness: 0.3,
-    metalness: 0.0,
-    transmission: 0.88,
-    thickness: 0.5,
-    transparent: true,
-    opacity: 0.22,
-    side: THREE.DoubleSide,
-    depthWrite: false,
-    clearcoat: 0.6,
-    clearcoatRoughness: 0.1,
-    ior: 1.33,
-    attenuationColor: new THREE.Color("#a0c8e0"),
-    attenuationDistance: 2.0,
-    specularIntensity: 1.0,
-    specularColor: new THREE.Color("#e0f0ff"),
-    ...(memBump ? { bumpMap: memBump, bumpScale: 0.015 } : {}),
-  }), [memBump])
+  const memMat = useMemo(() => {
+    if (isMobile) {
+      return new THREE.MeshStandardMaterial({
+        color: new THREE.Color("#c8dce8"),
+        emissive: new THREE.Color("#4080a0"),
+        emissiveIntensity: 0.08,
+        roughness: 0.4,
+        metalness: 0.0,
+        transparent: true,
+        opacity: 0.25,
+        side: THREE.DoubleSide,
+        depthWrite: false,
+      })
+    }
+    return new THREE.MeshPhysicalMaterial({
+      color: new THREE.Color("#c8dce8"),
+      emissive: new THREE.Color("#4080a0"),
+      emissiveIntensity: 0.08,
+      roughness: 0.3,
+      metalness: 0.0,
+      transmission: 0.88,
+      thickness: 0.5,
+      transparent: true,
+      opacity: 0.22,
+      side: THREE.DoubleSide,
+      depthWrite: false,
+      clearcoat: 0.6,
+      clearcoatRoughness: 0.1,
+      ior: 1.33,
+      attenuationColor: new THREE.Color("#a0c8e0"),
+      attenuationDistance: 2.0,
+      specularIntensity: 1.0,
+      specularColor: new THREE.Color("#e0f0ff"),
+      ...(memBump ? { bumpMap: memBump, bumpScale: 0.015 } : {}),
+    })
+  }, [memBump, isMobile])
 
   const glowTex = useMemo(() => getGlowTexture(), [])
 
@@ -401,10 +416,10 @@ export default function ExosomeParticles() {
         args={[memGeo, memMat, count]}
         frustumCulled={false}
       />
-      <ambientLight intensity={0.9} color="#b0d8f0" />
-      <directionalLight position={[0, 3, 10]} intensity={2.4} color="#e0f4ff" />
-      <directionalLight position={[-4, 2, 8]} intensity={1.0} color="#80b8d8" />
-      <directionalLight position={[4, -1, 6]} intensity={0.6} color="#70b0d0" />
+      <ambientLight intensity={isMobile ? 1.0 : 0.9} color="#b0d8f0" />
+      <directionalLight position={[0, 3, 10]} intensity={isMobile ? 1.8 : 2.4} color="#e0f4ff" />
+      {!isMobile && <directionalLight position={[-4, 2, 8]} intensity={1.0} color="#80b8d8" />}
+      {!isMobile && <directionalLight position={[4, -1, 6]} intensity={0.6} color="#70b0d0" />}
     </group>
   )
 }

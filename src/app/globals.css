@@ -544,14 +544,6 @@ section {
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
   }
-
-  section {
-    contain: layout style;
-  }
-
-  img {
-    content-visibility: auto;
-  }
 }
 
 /* GPU acceleration for animated elements */

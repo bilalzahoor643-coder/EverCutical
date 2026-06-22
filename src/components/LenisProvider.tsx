@@ -13,22 +13,19 @@ export default function LenisProvider({ children }: { children: ReactNode }) {
     const isMobile = typeof window !== "undefined" && window.innerWidth < 768
 
     const lenis = new Lenis({
-      duration: isMobile ? 1.2 : 1.0,
+      duration: isMobile ? 1.6 : 1.0,
       easing: (t: number) => Math.min(1, 1 - Math.pow(2, -10 * t)),
       orientation: "vertical",
       gestureOrientation: "vertical",
       smoothWheel: true,
-      wheelMultiplier: isMobile ? 0.6 : 0.8,
-      touchMultiplier: 1.5,
+      wheelMultiplier: isMobile ? 0.5 : 0.8,
+      touchMultiplier: 2.0,
       infinite: false,
     })
 
     lenisRef.current = lenis
 
-    let lastTime = 0
     function raf(time: number) {
-      const delta = time - lastTime
-      lastTime = time
       lenis.raf(time)
       rafIdRef.current = requestAnimationFrame(raf)
     }
